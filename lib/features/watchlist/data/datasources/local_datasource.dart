@@ -1,5 +1,6 @@
 import 'package:animewatchlist/core/core.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
+import 'package:animewatchlist/features/watchlist/presentation/presentation.dart';
 
 import 'datasource_watchlist.dart';
 
@@ -49,7 +50,7 @@ class LocalDatasourceImpl implements LocalDatasource {
     try {
       final Map<String, dynamic> onholdAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
-        return element['folder'] == 'watching';
+        return element['folder'] == AnimeFolder.watching;
       });
       return WatchListModel.fromJson(onholdAnimes);
     } catch (e) {
@@ -62,7 +63,7 @@ class LocalDatasourceImpl implements LocalDatasource {
     try {
       final Map<String, dynamic> onholdAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
-        return element['folder'] == 'onhold';
+        return element['folder'] == AnimeFolder.onhold;
       });
       return WatchListModel.fromJson(onholdAnimes);
     } catch (e) {
@@ -75,7 +76,7 @@ class LocalDatasourceImpl implements LocalDatasource {
     try {
       final Map<String, dynamic> plannedAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
-        return element['folder'] == 'planned';
+        return element['folder'] == AnimeFolder.planned;
       });
       return WatchListModel.fromJson(plannedAnimes);
     } catch (e) {
@@ -88,7 +89,7 @@ class LocalDatasourceImpl implements LocalDatasource {
     try {
       final Map<String, dynamic> droppedAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
-        return element['folder'] == 'dropped';
+        return element['folder'] == AnimeFolder.dropped;
       });
       return WatchListModel.fromJson(droppedAnimes);
     } catch (e) {
@@ -101,7 +102,7 @@ class LocalDatasourceImpl implements LocalDatasource {
     try {
       final Map<String, dynamic> watchedAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
-        return element['folder'] == 'watched';
+        return element['folder'] == AnimeFolder.watched;
       });
       return WatchListModel.fromJson(watchedAnimes);
     } catch (e) {
