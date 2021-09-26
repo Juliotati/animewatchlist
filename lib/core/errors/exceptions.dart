@@ -1,3 +1,5 @@
+part of core;
+
 class AnimeWatchListException implements Exception {
   AnimeWatchListException([this.message]);
 

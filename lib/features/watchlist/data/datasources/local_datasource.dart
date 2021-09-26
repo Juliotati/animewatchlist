@@ -1,4 +1,4 @@
-import 'package:animewatchlist/core/errors/exceptions.dart';
+import 'package:animewatchlist/core/core.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 
 import 'datasource_watchlist.dart';
