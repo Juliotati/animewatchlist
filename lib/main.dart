@@ -6,15 +6,19 @@ import 'package:flutter/material.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
   LocalDatasourceImpl.instance.source = AnimeWatchList.instance;
-  runApp(AnimeArchive());
+
+  runApp(const AnimeArchive());
 }
 
 class AnimeArchive extends StatelessWidget {
+  const AnimeArchive();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: '9Anime Watchlist',
+        title: 'Anime Watchlist',
         darkTheme: ThemeData.dark(),
         themeMode: ThemeMode.dark,
         theme: ThemeData(
