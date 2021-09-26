@@ -41,7 +41,8 @@ class LocalDatasourceImpl implements LocalDatasource {
     } on AnimeWatchListException catch (_) {
       instance.source = AnimeWatchList.instance;
       await getAllAnimes();
-      throw AnimeWatchListException('Datasource has been automatically initialized, do initialize manually to avoid sever errors');
+      throw AnimeWatchListException(
+          'Datasource has been automatically initialized, do initialize manually to avoid sever errors');
     }
   }
 

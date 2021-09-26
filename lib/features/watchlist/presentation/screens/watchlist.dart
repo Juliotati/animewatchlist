@@ -29,7 +29,7 @@ class WatchlistScreen extends StatelessWidget {
             },
             itemBuilder: (BuildContext context, int i) {
               final List<WatchListModel> data = snapshot.data!;
-              if(data[i].folder.isEmpty) return const SizedBox.shrink();
+              if (data[i].folder.isEmpty) return const SizedBox.shrink();
               return WatchlistCard(
                 key: ValueKey<String>('$i-${data[i].folder}'),
                 child: Column(
