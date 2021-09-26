@@ -1,0 +1,33 @@
+include: package:lint/analysis_options.yaml
+
+strong-mode: true
+analyzer:
+  errors:
+    missing_return: error
+    missing_required_param: error
+
+    parameter_assignments: info
+    prefer_const_constructors: error
+
+    todo: info
+
+linter:
+  rules:
+
+    always_put_required_named_parameters_first: false
+
+    always_specify_types: true
+
+    avoid_classes_with_only_static_members: false
+
+    avoid_escaping_inner_quotes: false
+
+    close_sinks: true
+
+    lines_longer_than_80_chars: false
+
+    prefer_single_quotes: true
+
+    public_member_api_docs: false
+
+    sort_constructors_first: true
