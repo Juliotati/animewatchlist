@@ -1,13 +1,19 @@
 part of presentation;
 
+enum Anime {
+  id,
+  name,
+  link,
+}
+
 class AnimeName extends StatelessWidget {
   const AnimeName(this.data, {Key? key}) : super(key: key);
   final String data;
 
   Future<void> openAnimePage() async {
     try {
-      canLaunch(data);
-      await launch(data);
+      final bool _canLaunch = await canLaunch(data);
+      if (_canLaunch) await launch(data);
     } catch (_) {
       rethrow;
     }

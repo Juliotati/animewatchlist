@@ -48,9 +48,3 @@ class WatchlistScreen extends StatelessWidget {
     );
   }
 }
-
-enum Anime {
-  id,
-  name,
-  link,
-}
