@@ -7,77 +7,78 @@ abstract class LocalDatasource {
 
   Future<WatchListModel> getWatchingAnimes();
 
-  Future<WatchListModel> getPlanToWatch();
+  Future<WatchListModel> getOnHoldAnimes();
 
-  Future<WatchListModel> getWatchedAnimes();
+  Future<WatchListModel> getPlanToWatch();
 
   Future<WatchListModel> getDroppedAnimes();
 
-  Future<WatchListModel> getOnHoldAnimes();
+  Future<WatchListModel> getWatchedAnimes();
 }
 
 class LocalDatasourceImpl implements LocalDatasource {
-  LocalDatasourceImpl([this.source]);
+  LocalDatasourceImpl._();
 
-  static final LocalDatasourceImpl instance = LocalDatasourceImpl();
+  static LocalDatasourceImpl instance = LocalDatasourceImpl._();
 
-  final AnimeWatchList? source;
+  late final AnimeWatchList source;
 
   @override
   Future<List<WatchListModel>> getAllAnimes() async {
     final List<WatchListModel> allAnimes = <WatchListModel>[
-      await getWatchedAnimes(),
-      await getDroppedAnimes(),
+      const WatchListModel(folder: '',links: <String>['']),
+      await getWatchingAnimes(),
       await getOnHoldAnimes(),
       await getPlanToWatch(),
-      await getWatchingAnimes(),
+      await getDroppedAnimes(),
+      await getWatchedAnimes(),
     ];
 
     return allAnimes;
   }
 
   @override
-  Future<WatchListModel> getWatchedAnimes() async {
-    final Map<String, dynamic> watchedAnimes =
-        source!.watchlist.firstWhere((Map<String, dynamic> element) {
-      return element['folder'] == 'watched';
+  Future<WatchListModel> getWatchingAnimes() async {
+    final Map<String, dynamic> onholdAnimes =
+        source.watchlist.firstWhere((Map<String, dynamic> element) {
+      return element['folder'] == 'watching';
     });
-    return WatchListModel.fromJson(watchedAnimes);
-  }
-
-  @override
-  Future<WatchListModel> getDroppedAnimes() async {
-    final Map<String, dynamic> droppedAnimes =
-        source!.watchlist.firstWhere((Map<String, dynamic> element) {
-      return element['folder'] == 'dropped';
-    });
-    return WatchListModel.fromJson(droppedAnimes);
-  }
-
-  @override
-  Future<WatchListModel> getPlanToWatch() async {
-    final Map<String, dynamic> plannedAnimes =
-        source!.watchlist.firstWhere((Map<String, dynamic> element) {
-      return element['folder'] == 'planned';
-    });
-    return WatchListModel.fromJson(plannedAnimes);
+    return WatchListModel.fromJson(onholdAnimes);
   }
 
   @override
   Future<WatchListModel> getOnHoldAnimes() async {
     final Map<String, dynamic> onholdAnimes =
-        source!.watchlist.firstWhere((Map<String, dynamic> element) {
+        source.watchlist.firstWhere((Map<String, dynamic> element) {
       return element['folder'] == 'onhold';
     });
     return WatchListModel.fromJson(onholdAnimes);
   }
 
   @override
-  Future<WatchListModel> getWatchingAnimes() async {
-    final Map<String, dynamic> onholdAnimes =
-        source!.watchlist.firstWhere((Map<String, dynamic> element) {
-      return element['folder'] == 'watching';
+  Future<WatchListModel> getPlanToWatch() async {
+    final Map<String, dynamic> plannedAnimes =
+        source.watchlist.firstWhere((Map<String, dynamic> element) {
+      return element['folder'] == 'planned';
     });
-    return WatchListModel.fromJson(onholdAnimes);
+    return WatchListModel.fromJson(plannedAnimes);
+  }
+
+  @override
+  Future<WatchListModel> getDroppedAnimes() async {
+    final Map<String, dynamic> droppedAnimes =
+        source.watchlist.firstWhere((Map<String, dynamic> element) {
+      return element['folder'] == 'dropped';
+    });
+    return WatchListModel.fromJson(droppedAnimes);
+  }
+
+  @override
+  Future<WatchListModel> getWatchedAnimes() async {
+    final Map<String, dynamic> watchedAnimes =
+        source.watchlist.firstWhere((Map<String, dynamic> element) {
+      return element['folder'] == 'watched';
+    });
+    return WatchListModel.fromJson(watchedAnimes);
   }
 }
