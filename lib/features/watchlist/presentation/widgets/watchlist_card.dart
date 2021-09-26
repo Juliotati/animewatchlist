@@ -12,7 +12,7 @@ class WatchlistCard extends StatelessWidget {
     return Card(
       elevation: 5.0,
       shadowColor: const Color.fromRGBO(255, 255, 255, 0.1),
-      margin: const EdgeInsets.symmetric(horizontal: 16.0),
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(20.0),
@@ -20,7 +20,7 @@ class WatchlistCard extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 12.0,
+          horizontal: 18.0,
           vertical: 18.0,
         ),
         child: child,
