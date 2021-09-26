@@ -51,7 +51,6 @@ class CustomSimulation extends Simulation {
 
   @override
   double dx(double time) {
-    print(velocity.toString());
     return velocity;
   }
 
