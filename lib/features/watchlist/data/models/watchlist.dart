@@ -4,8 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'watchlist.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class WatchListModel extends WatchList {
-  const WatchListModel({
+class WatchlistModel extends Watchlist {
+  const WatchlistModel({
     required this.folder,
     required this.links,
   }) : super(
@@ -13,7 +13,7 @@ class WatchListModel extends WatchList {
           links: links,
         );
 
-  factory WatchListModel.fromJson(Map<String, dynamic> json) {
+  factory WatchlistModel.fromJson(Map<String, dynamic> json) {
     return _$WatchListModelFromJson(json);
   }
 

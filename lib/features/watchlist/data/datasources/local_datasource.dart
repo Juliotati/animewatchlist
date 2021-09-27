@@ -5,17 +5,17 @@ import 'package:animewatchlist/features/watchlist/presentation/presentation.dart
 import 'datasource_watchlist.dart';
 
 abstract class LocalDatasource {
-  Future<List<WatchListModel>> getAllAnimes();
+  Future<List<WatchlistModel>> getAllAnimes();
 
-  Future<WatchListModel> getWatchingAnimes();
+  Future<WatchlistModel> getWatchingAnimes();
 
-  Future<WatchListModel> getOnHoldAnimes();
+  Future<WatchlistModel> getOnHoldAnimes();
 
-  Future<WatchListModel> getPlanToWatch();
+  Future<WatchlistModel> getPlanToWatchAnimes();
 
-  Future<WatchListModel> getDroppedAnimes();
+  Future<WatchlistModel> getDroppedAnimes();
 
-  Future<WatchListModel> getWatchedAnimes();
+  Future<WatchlistModel> getWatchedAnimes();
 }
 
 class LocalDatasourceImpl implements LocalDatasource {
@@ -26,13 +26,13 @@ class LocalDatasourceImpl implements LocalDatasource {
   late final AnimeWatchList source;
 
   @override
-  Future<List<WatchListModel>> getAllAnimes() async {
+  Future<List<WatchlistModel>> getAllAnimes() async {
     try {
-      final List<WatchListModel> allAnimes = <WatchListModel>[
-        const WatchListModel(folder: '', links: <String>['']),
+      final List<WatchlistModel> allAnimes = <WatchlistModel>[
+        const WatchlistModel(folder: '', links: <String>['']),
         await getWatchingAnimes(),
         await getOnHoldAnimes(),
-        await getPlanToWatch(),
+        await getPlanToWatchAnimes(),
         await getDroppedAnimes(),
         await getWatchedAnimes(),
       ];
@@ -47,65 +47,65 @@ class LocalDatasourceImpl implements LocalDatasource {
   }
 
   @override
-  Future<WatchListModel> getWatchingAnimes() async {
+  Future<WatchlistModel> getWatchingAnimes() async {
     try {
       final Map<String, dynamic> onholdAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
         return element['folder'] == AnimeFolder.watching;
       });
-      return WatchListModel.fromJson(onholdAnimes);
+      return WatchlistModel.fromJson(onholdAnimes);
     } catch (e) {
       throw AnimeWatchListException();
     }
   }
 
   @override
-  Future<WatchListModel> getOnHoldAnimes() async {
+  Future<WatchlistModel> getOnHoldAnimes() async {
     try {
       final Map<String, dynamic> onholdAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
         return element['folder'] == AnimeFolder.onhold;
       });
-      return WatchListModel.fromJson(onholdAnimes);
+      return WatchlistModel.fromJson(onholdAnimes);
     } catch (e) {
       throw AnimeWatchListException();
     }
   }
 
   @override
-  Future<WatchListModel> getPlanToWatch() async {
+  Future<WatchlistModel> getPlanToWatchAnimes() async {
     try {
       final Map<String, dynamic> plannedAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
         return element['folder'] == AnimeFolder.planned;
       });
-      return WatchListModel.fromJson(plannedAnimes);
+      return WatchlistModel.fromJson(plannedAnimes);
     } catch (e) {
       throw AnimeWatchListException();
     }
   }
 
   @override
-  Future<WatchListModel> getDroppedAnimes() async {
+  Future<WatchlistModel> getDroppedAnimes() async {
     try {
       final Map<String, dynamic> droppedAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
         return element['folder'] == AnimeFolder.dropped;
       });
-      return WatchListModel.fromJson(droppedAnimes);
+      return WatchlistModel.fromJson(droppedAnimes);
     } catch (e) {
       throw AnimeWatchListException();
     }
   }
 
   @override
-  Future<WatchListModel> getWatchedAnimes() async {
+  Future<WatchlistModel> getWatchedAnimes() async {
     try {
       final Map<String, dynamic> watchedAnimes =
           source.watchlist.firstWhere((Map<String, dynamic> element) {
         return element['folder'] == AnimeFolder.watched;
       });
-      return WatchListModel.fromJson(watchedAnimes);
+      return WatchlistModel.fromJson(watchedAnimes);
     } catch (e) {
       throw AnimeWatchListException();
     }

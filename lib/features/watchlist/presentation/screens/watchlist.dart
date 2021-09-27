@@ -6,10 +6,10 @@ class WatchlistScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder<List<WatchListModel>>(
+      body: FutureBuilder<List<WatchlistModel>>(
         future: LocalDatasourceImpl.instance.getAllAnimes(),
         builder: (BuildContext context,
-            AsyncSnapshot<List<WatchListModel>> snapshot) {
+            AsyncSnapshot<List<WatchlistModel>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const AnimeAlert('LOADING');
           }
@@ -28,7 +28,7 @@ class WatchlistScreen extends StatelessWidget {
               );
             },
             itemBuilder: (BuildContext context, int i) {
-              final List<WatchListModel> data = snapshot.data!;
+              final List<WatchlistModel> data = snapshot.data!;
               if (data[i].folder.isEmpty) return const SizedBox.shrink();
               return WatchlistCard(
                 key: ValueKey<String>('$i-${data[i].folder}'),

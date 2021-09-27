@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-class WatchList extends Equatable {
-  const WatchList({
+class Watchlist extends Equatable {
+  const Watchlist({
     required this.folder,
     required this.links,
   });

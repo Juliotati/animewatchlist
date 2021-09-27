@@ -13,6 +13,8 @@ dependencies:
   
   cupertino_icons: ^1.0.2
 
+  dartz: 0.10.0-nullsafety.2
+
   equatable: ^2.0.3
 
   flutter:
@@ -31,6 +33,7 @@ dev_dependencies:
   json_serializable: ^4.1.4
 
   lint: any
+  mocktail: ^0.1.4
 
 flutter:
 

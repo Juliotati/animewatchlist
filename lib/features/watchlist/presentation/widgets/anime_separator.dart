@@ -9,7 +9,7 @@ class AnimeSeparator extends StatelessWidget {
 
   final int index;
 
-  final List<WatchListModel> watchlist;
+  final List<WatchlistModel> watchlist;
 
   Color watchlistColor() {
     final String folder = watchlist[index + 1].folder;
@@ -33,7 +33,7 @@ class AnimeSeparator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final WatchListModel nextWatchlist = watchlist[index + 1];
+    final WatchlistModel nextWatchlist = watchlist[index + 1];
     if (watchlist[index].folder != nextWatchlist.folder) {
       final String label = nextWatchlist.folder;
       final String totalInFolder = '${nextWatchlist.links.length}';
