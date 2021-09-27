@@ -29,7 +29,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
 
   FlutterWindow window(&run_loop, project);
   Win32Window::Point origin(10, 10);
-  Win32Window::Size size(800, 500);
+  Win32Window::Size size(600, 700);
   if (!window.CreateAndShow(L"Anime Watchlist", origin, size)) {
     return EXIT_FAILURE;
   }
