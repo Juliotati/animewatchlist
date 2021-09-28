@@ -243,7 +243,7 @@ class AnimeWatchList {
       'folder': 'watching',
       'links': <String>[
         'http://myanimelist.net/anime/43814/Deatte_5-byou_de_Battle',
-        'http://myanimelist.net/anime/40075/Koi_to_Producer__EVOL%C3%97LOVE',
+        'http://myanimelist.net/anime/40075/Mr Love: Queen\'s Choice',
         'http://myanimelist.net/anime/34566/Boruto__Naruto_Next_Generations',
         'http://myanimelist.net/anime/42544/Kaizoku_Oujo',
         'http://myanimelist.net/anime/21/One_Piece',
