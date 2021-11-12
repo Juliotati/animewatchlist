@@ -14,11 +14,11 @@ class WatchlistModel extends Watchlist {
         );
 
   factory WatchlistModel.fromJson(Map<String, dynamic> json) {
-    return _$WatchlistModelFromJson(json);
+    return _$WatchListModelFromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    return _$WatchlistModelToJson(this);
+    return _$WatchListModelToJson(this);
   }
 
   @override
