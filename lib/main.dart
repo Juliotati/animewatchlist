@@ -15,6 +15,7 @@ class AnimeArchive extends StatelessWidget {
     return MaterialApp(
       title: 'Anime Watchlist',
       darkTheme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,

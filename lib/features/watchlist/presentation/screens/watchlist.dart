@@ -23,10 +23,10 @@ class WatchlistScreen extends StatelessWidget {
             snapshot.data?.onHold,
             AnimeFolderType.watching,
             snapshot.data?.watching,
-            AnimeFolderType.dropped,
-            snapshot.data?.dropped,
             AnimeFolderType.planned,
             snapshot.data?.planned,
+            AnimeFolderType.dropped,
+            snapshot.data?.dropped,
             AnimeFolderType.watched,
             snapshot.data?.watched,
           ];
