@@ -2,27 +2,26 @@ part of presentation;
 
 class WatchlistCard extends StatelessWidget {
   const WatchlistCard({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+    required this.folderType,
+  });
+
   final Widget child;
+  final AnimeFolderType folderType;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 5.0,
-      shadowColor: const Color.fromRGBO(255, 255, 255, 0.1),
+      elevation: 10.0,
+      color: folderType.color.withOpacity(0.25),
+      shadowColor: folderType.color,
       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(20.0),
-        ),
+        borderRadius: BorderRadius.all(Radius.circular(20.0)),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 18.0,
-          vertical: 18.0,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 18.0),
         child: child,
       ),
     );

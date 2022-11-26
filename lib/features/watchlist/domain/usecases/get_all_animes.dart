@@ -1,16 +1,16 @@
 import 'package:animewatchlist/core/errors/failures.dart';
 import 'package:animewatchlist/core/usecases/usecases.dart';
-import 'package:animewatchlist/features/watchlist/domain/entities/watchlist.dart';
+import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/domain/repositories/watchlist_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class GetAllAnimes implements UseCase<List<Watchlist>, NoParams> {
-  const GetAllAnimes(this.repository);
+class GetAnimeWatchlist implements UseCase<WatchlistModel, NoParams> {
+  const GetAnimeWatchlist(this.repository);
 
   final WatchlistRepository repository;
 
   @override
-  Future<Either<Failure, List<Watchlist>>> call(NoParams params) async {
-    return repository.getAllAnimes();
+  Future<Either<Failure, WatchlistModel>> call(NoParams params) async {
+    return repository.animeWatchlist();
   }
 }

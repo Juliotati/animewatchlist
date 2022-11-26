@@ -1,19 +1,19 @@
 part of presentation;
 
-enum Anime {
-  id,
-  name,
-  link,
-}
-
 class AnimeName extends StatelessWidget {
-  const AnimeName(this.data, {Key? key}) : super(key: key);
-  final String data;
+  const AnimeName({
+    required this.anime,
+    required this.folderType,
+    super.key,
+  });
+
+  final WatchlistCategoryModel anime;
+  final AnimeFolderType folderType;
 
   Future<void> openAnimePage() async {
     try {
-      final bool _canLaunch = await canLaunch(data);
-      if (_canLaunch) await launch(data);
+      final bool _canLaunch = await canLaunch(anime.link);
+      if (_canLaunch) await launch(anime.link);
     } catch (_) {
       rethrow;
     }
@@ -21,49 +21,40 @@ class AnimeName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        if (Platform.isWindows || Platform.isLinux || Platform.isMacOS)
-          Expanded(
-            child: SelectableText(
-              animeData(data: data, anime: Anime.name),
-              maxLines: 1,
-              scrollPhysics: const BouncingScrollPhysics(),
-              style: Theme.of(context).textTheme.headline6,
+    final headline6 = Theme.of(context).textTheme.headline6;
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 3.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          if (Platform.isWindows || Platform.isLinux || Platform.isMacOS)
+            Expanded(
+              child: SelectableText(
+                anime.name,
+                maxLines: 3,
+                scrollPhysics: const BouncingScrollPhysics(),
+                style: headline6,
+              ),
+            )
+          else
+            Expanded(
+              child: Text(
+                anime.name,
+                maxLines: 2,
+                style: headline6?.copyWith(fontSize: 18.0),
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          )
-        else
-          Expanded(
-            child: Text(
-              animeData(data: data, anime: Anime.name),
-              maxLines: 1,
-              style: Theme.of(context).textTheme.headline6,
-              overflow: TextOverflow.fade,
+          InkWell(
+            onTap: openAnimePage,
+            borderRadius: BorderRadius.circular(8.0),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.launch, color: folderType.color),
             ),
           ),
-        InkWell(
-          onTap: openAnimePage,
-          borderRadius: BorderRadius.circular(8.0),
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.launch),
-          ),
-        )
-      ],
+        ],
+      ),
     );
   }
-}
-
-String animeData({required String data, required Anime anime}) {
-  final List<String> _data = data
-      .replaceFirst('http://myanimelist.net/anime/', '')
-      .replaceAll('_', ' ')
-      .split('/');
-
-  if (anime == Anime.id) return _data.first;
-
-  if (anime == Anime.name) return _data.last;
-
-  return data;
 }

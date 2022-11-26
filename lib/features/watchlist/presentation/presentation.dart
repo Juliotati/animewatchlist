@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:animewatchlist/features/watchlist/data/datasources/local_datasource.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
+import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

@@ -1,5 +1,5 @@
 import 'package:animewatchlist/core/errors/failures.dart';
-import 'package:animewatchlist/features/watchlist/domain/entities/watchlist.dart';
+import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
@@ -10,7 +10,7 @@ abstract class UseCase<Type, Params> {
 class WatchlistParams extends Equatable {
   const WatchlistParams(this.watchlist);
 
-  final Watchlist watchlist;
+  final WatchlistModel watchlist;
 
   @override
   List<Object?> get props => throw UnimplementedError();
