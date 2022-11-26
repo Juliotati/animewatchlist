@@ -19,6 +19,51 @@ class AnimeName extends StatelessWidget {
     }
   }
 
+  String get animeName {
+    if (hasTopAnime) return '🔥${anime.name}';
+    return anime.name;
+  }
+
+  bool get hasTopAnime {
+    return (has('naruto') && !has('boruto')) ||
+        has('bleach') ||
+        has('aot') ||
+        has('quintessential') ||
+        has('shield hero') ||
+        has('dororo') ||
+        has('to your eternity') ||
+        has('weathering with you') ||
+        has('your name') ||
+        has('tower of god') ||
+        has('golden boy') ||
+        has('golden kamuy') ||
+        has('i am what i am') ||
+        has('certain scientific') ||
+        has('blaze of the immortal') ||
+        has('jormungand') ||
+        has('baki') ||
+        has('berserk') ||
+        has('black lagoon') ||
+        has('ajin') ||
+        has('attack on titan') ||
+        has('arcane') ||
+        has('days') ||
+        has('relife') ||
+        has('one piece') ||
+        has('death note') ||
+        has('chainsaw man') ||
+        (has('kingdom') && !has('hero')) ||
+        has('cyberpunk') ||
+        has('rent-a-girlfriend') ||
+        has('overlord') ||
+        has('gleipnir') ||
+        has('jujutsu kaisen');
+  }
+
+  bool has(String value) {
+    return anime.name.toLowerCase().contains(value.toLowerCase());
+  }
+
   @override
   Widget build(BuildContext context) {
     final headline6 = Theme.of(context).textTheme.headline6;
@@ -30,7 +75,7 @@ class AnimeName extends StatelessWidget {
           if (Platform.isWindows || Platform.isLinux || Platform.isMacOS)
             Expanded(
               child: SelectableText(
-                anime.name,
+                animeName,
                 maxLines: 3,
                 scrollPhysics: const BouncingScrollPhysics(),
                 style: headline6,
@@ -39,7 +84,7 @@ class AnimeName extends StatelessWidget {
           else
             Expanded(
               child: Text(
-                anime.name,
+                animeName,
                 maxLines: 2,
                 style: headline6?.copyWith(fontSize: 18.0),
                 overflow: TextOverflow.ellipsis,
@@ -47,6 +92,8 @@ class AnimeName extends StatelessWidget {
             ),
           InkWell(
             onTap: openAnimePage,
+            splashColor: const Color.fromRGBO(0, 0, 0, 0.0),
+            highlightColor: folderType.color.withOpacity(0.15),
             borderRadius: BorderRadius.circular(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
