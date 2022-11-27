@@ -6,6 +6,7 @@ import 'package:animewatchlist/features/watchlist/data/datasources/local_datasou
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'provider/folder.dart';

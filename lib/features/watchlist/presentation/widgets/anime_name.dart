@@ -67,8 +67,8 @@ class AnimeName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final headline6 = Theme.of(context).textTheme.headline6;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 3.0),
+    return WatchlistCard(
+      folderType: folderType,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
