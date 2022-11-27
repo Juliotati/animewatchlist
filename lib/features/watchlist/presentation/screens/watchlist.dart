@@ -133,7 +133,16 @@ class _WatchlistBuilderState extends State<WatchlistBuilder> {
               if (!snapshot.hasData) {
                 return const AnimeAlert('WATCHLIST IS EMPTY');
               }
-              return widget.builder(context, snapshot.data!);
+              return widget.builder(
+                context,
+                WatchlistModel(
+                  planned: sortByName(snapshot.data!.planned),
+                  dropped: sortByName(snapshot.data!.dropped),
+                  onHold: sortByName(snapshot.data!.onHold),
+                  watched: sortByName(snapshot.data!.watched),
+                  watching: sortByName(snapshot.data!.watching),
+                ),
+              );
             },
           ),
         ),
@@ -142,8 +151,9 @@ class _WatchlistBuilderState extends State<WatchlistBuilder> {
   }
 }
 
-List<WatchlistCategoryModel>? sortByName(List<WatchlistCategoryModel>? data) {
+List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
+  if (data == null) return [];
   return data
-    ?..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()))
+    ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()))
     ..toList();
 }
