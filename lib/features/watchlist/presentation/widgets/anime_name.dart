@@ -12,8 +12,7 @@ class AnimeName extends StatelessWidget {
 
   Future<void> openAnimePage() async {
     try {
-      final bool _canLaunch = await canLaunch(anime.link);
-      if (_canLaunch) await launch(anime.link);
+      await launchUrl(Uri.parse(anime.link));
     } catch (_) {
       rethrow;
     }
@@ -66,7 +65,7 @@ class AnimeName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final headline6 = Theme.of(context).textTheme.headline6;
+    final headline6 = Theme.of(context).textTheme.titleLarge;
     return WatchlistCard(
       folderType: folderType,
       child: Row(

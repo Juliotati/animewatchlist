@@ -8,9 +8,20 @@ class AnimeWatchList {
   static const Map<String, dynamic> _watchlist = {
     'Planned': [
       {
-        'name': 'Joshiraku',
-        'link': 'https://myanimelist.net/anime/12679/',
+        'name': 'Mushoku Tensei: Jobless Reincarnation Season 2',
+        'link': 'https://myanimelist.net/anime/51179/'
       },
+      {
+        'name': 'SHAMAN KING (2021)',
+        'link': 'https://myanimelist.net/anime/42205/'
+      },
+      {'name': 'D.Gray-man', 'link': 'https://myanimelist.net/anime/1482/'},
+      {'name': 'Joshiraku', 'link': 'https://myanimelist.net/anime/12679/'},
+      {
+        'name': 'The Demon Girl Next Door',
+        'link': 'https://myanimelist.net/anime/39071/'
+      },
+      {'name': 'Soul Land', 'link': 'https://myanimelist.net/anime/37150/'},
       {
         'name': 'Legend of the Galactic Heroes',
         'link': 'https://myanimelist.net/anime/820/'
@@ -20,157 +31,158 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/51105/'
       },
       {
-        'name': 'Shaman King (2021)',
-        'link': 'https://myanimelist.net/anime/42205/'
-      },
-      {
-        'name': 'Mushoku Tensei: Jobless Reincarnation Season 2',
-        'link': 'https://myanimelist.net/anime/51179/'
+        'name': 'Yowamushi Pedal',
+        'link': 'https://myanimelist.net/anime/18179/'
       },
       {
         'name': 'Horizon in the Middle of Nowhere II',
         'link': 'https://myanimelist.net/anime/12487/'
-      },
-      {'name': 'D.Gray-man', 'link': 'https://myanimelist.net/anime/1482/'}
+      }
     ],
     'Dropped': [
       {
-        'name': 'Iwa Kakeru!: Sport Climbing Girls',
-        'link': 'https://myanimelist.net/anime/41783/'
-      },
-      {
-        'name': 'The World God Only Knows',
-        'link': 'https://myanimelist.net/anime/8525/'
-      },
-      {
-        'name': 'How a Realist Hero Rebuilt the Kingdom Part 2',
-        'link': 'https://myanimelist.net/anime/49930/'
-      },
-      {
-        'name': 'The Devil is a Part-Timer! Season 2',
-        'link': 'https://myanimelist.net/anime/48413/'
-      },
-      {
-        'name': 'My Dress-Up Darling',
-        'link': 'https://myanimelist.net/anime/48736/'
-      },
-      {
-        'name': 'The Faraway Paladin',
-        'link': 'https://myanimelist.net/anime/48761/'
-      },
-      {
-        'name': 'Azur Lane the Animation',
-        'link': 'https://myanimelist.net/anime/38328/'
-      },
-      {'name': 'Medaka Box', 'link': 'https://myanimelist.net/anime/11761/'},
-      {
-        'name': 'Nisekoi: False Love',
-        'link': 'https://myanimelist.net/anime/18897/'
-      },
-      {
-        'name': 'Amagami SS+ Plus Specials',
-        'link': 'https://myanimelist.net/anime/12669/'
-      },
-      {
         'name': 'Blood Blockade Battlefront & Beyond',
         'link': 'https://myanimelist.net/anime/34451/'
-      },
-      {
-        'name': 'Rakshasa Street',
-        'link': 'https://myanimelist.net/anime/33350/'
-      },
-      {
-        'name': 'Code:Realize ~Guardian of Rebirth~',
-        'link': 'https://myanimelist.net/anime/31456/'
-      },
-      {
-        'name': 'Fog Hill of Five Elements',
-        'link': 'https://myanimelist.net/anime/37936/'
-      },
-      {
-        'name': 'Life Lessons with Uramichi-Oniisan',
-        'link': 'https://myanimelist.net/anime/40620/'
-      },
-      {
-        'name': 'Mysteria Friends',
-        'link': 'https://myanimelist.net/anime/31537/'
       },
       {
         'name': "The Genius Prince's Guide to Raising a Nation Out of Debt",
         'link': 'https://myanimelist.net/anime/47159/'
       },
       {
-        'name': "Mr Love: Queen's Choice",
-        'link': 'https://myanimelist.net/anime/40075/'
+        'name': 'Amagami SS+ Plus Specials',
+        'link': 'https://myanimelist.net/anime/12669/'
       },
-      {'name': 'Oreshura', 'link': 'https://myanimelist.net/anime/14749/'},
       {
-        'name': 'Chaika -The Coffin Princess-',
-        'link': 'https://myanimelist.net/anime/20853/'
+        'name': 'How a Realist Hero Rebuilt the Kingdom Part 2',
+        'link': 'https://myanimelist.net/anime/49930/'
+      },
+      {'name': 'AZUR LANE', 'link': 'https://myanimelist.net/anime/38328/'},
+      {
+        'name': 'My Dress-Up Darling',
+        'link': 'https://myanimelist.net/anime/48736/'
+      },
+      {
+        'name': 'Cells at Work!',
+        'link': 'https://myanimelist.net/anime/37141/'
       },
       {
         'name': 'Yona of the Dawn',
         'link': 'https://myanimelist.net/anime/25013/'
       },
       {
-        'name': 'The Greatest Demon Lord Is Reborn as a Typical Nobody',
-        'link': 'https://myanimelist.net/anime/48415/'
+        'name': 'Life Lessons with Uramichi Oniisan',
+        'link': 'https://myanimelist.net/anime/40620/'
       },
-      {'name': 'Beelzebub', 'link': 'https://myanimelist.net/anime/9513/'},
       {
-        'name': 'Futsal Boys!!!!!',
-        'link': 'https://myanimelist.net/anime/40488/'
+        'name': 'Spare Me, Great Lord!',
+        'link': 'https://myanimelist.net/anime/44406/'
       },
+      {'name': 'Medaka Box', 'link': 'https://myanimelist.net/anime/11761/'},
+      {
+        'name': 'Yozakura Quartet',
+        'link': 'https://myanimelist.net/anime/4548/'
+      },
+      {
+        'name': 'Rakshasa Street',
+        'link': 'https://myanimelist.net/anime/33350/'
+      },
+      {
+        'name': 'Fog Hill of Five Elements',
+        'link': 'https://myanimelist.net/anime/37936/'
+      },
+      {
+        'name': 'The Faraway Paladin',
+        'link': 'https://myanimelist.net/anime/48761/'
+      },
+      {
+        'name': 'The Devil is a Part-Timer! Season 2',
+        'link': 'https://myanimelist.net/anime/48413/'
+      },
+      {'name': 'Nisekoi', 'link': 'https://myanimelist.net/anime/18897/'},
+      {
+        'name': 'The World God Only Knows',
+        'link': 'https://myanimelist.net/anime/8525/'
+      },
+      {
+        'name': 'Code: Realize ~Guardian of Rebirth~',
+        'link': 'https://myanimelist.net/anime/31456/'
+      },
+      {'name': 'Oreshura', 'link': 'https://myanimelist.net/anime/14749/'},
       {
         'name': "Muhyo & Roji's Bureau of Supernatural Investigation",
         'link': 'https://myanimelist.net/anime/37487/'
       },
-      {
-        'name': 'Shine on! Bakumatsu Bad Boys',
-        'link': 'https://myanimelist.net/anime/51371/'
-      },
       {'name': 'Charlotte', 'link': 'https://myanimelist.net/anime/28999/'},
+      {
+        'name': 'Iwakakeru -Sport Climbing Girls-',
+        'link': 'https://myanimelist.net/anime/41783/'
+      },
+      {'name': 'Beelzebub', 'link': 'https://myanimelist.net/anime/9513/'},
+      {
+        'name': 'The Greatest Demon Lord Is Reborn as a Typical Nobody',
+        'link': 'https://myanimelist.net/anime/48415/'
+      },
+      {
+        'name': 'Blood Blockade Battlefront',
+        'link': 'https://myanimelist.net/anime/24439/'
+      },
+      {
+        'name': 'Futsal Boys!!!!!',
+        'link': 'https://myanimelist.net/anime/40488/'
+      },
+      {'name': 'Cowboy Bebop', 'link': 'https://myanimelist.net/anime/1/'},
       {'name': 'Steins;Gate', 'link': 'https://myanimelist.net/anime/9253/'},
       {
-        'name': 'Cells at Work!',
-        'link': 'https://myanimelist.net/anime/37141/'
+        'name': 'Mysteria Friends',
+        'link': 'https://myanimelist.net/anime/31537/'
       },
       {
         'name': 'Nisemonogatari',
         'link': 'https://myanimelist.net/anime/11597/'
       },
-      {'name': 'Cowboy Bebop', 'link': 'https://myanimelist.net/anime/1/'},
       {
-        'name': 'Blood Blockade Battlefront',
-        'link': 'https://myanimelist.net/anime/24439/'
+        'name': "Mr Love: Queen's Choice",
+        'link': 'https://myanimelist.net/anime/40075/'
+      },
+      {
+        'name': 'Chaika -The Coffin Princess-',
+        'link': 'https://myanimelist.net/anime/20853/'
+      },
+      {
+        'name': 'Shine on! Bakumatsu Bad Boys',
+        'link': 'https://myanimelist.net/anime/51371/'
       }
     ],
     'On-Hold': [
       {
-        'name': 'BLEACH: Thousand-Year Blood War',
-        'link': 'https://myanimelist.net/anime/41467/'
-      },
-      {'name': 'Clannad', 'link': 'https://myanimelist.net/anime/2167/'},
-      {
-        'name': 'Arknights: Prelude to Dawn',
-        'link': 'https://myanimelist.net/anime/50205/'
-      },
-      {
-        'name':
-            'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka IV: Fuka Shou Yakusai-hen',
-        'link': ''
-      },
-      {
-        'name': 'Asobi Asobase: Workshop of Fun',
-        'link': 'https://myanimelist.net/anime/37171/'
+        'name': 'Saint Seiya: The Hades Chapter - Sanctuary',
+        'link': 'https://myanimelist.net/anime/1257/'
       },
       {
         'name': 'Kono Oto Tomare!: Sounds of Life Season 2',
         'link': 'https://myanimelist.net/anime/38889/'
       },
+      {'name': 'K', 'link': 'https://myanimelist.net/anime/14467/'},
+      {
+        'name': 'Saint Seiya: Knights of the Zodiac',
+        'link': 'https://myanimelist.net/anime/1254/'
+      },
+      {'name': 'Clannad', 'link': 'https://myanimelist.net/anime/2167/'},
+      {
+        'name': 'Towanoquon: Eternal Quon',
+        'link': 'https://myanimelist.net/anime/10717/'
+      },
       {
         'name': 'Cat Planet Cuties',
         'link': 'https://myanimelist.net/anime/6166/'
+      },
+      {
+        'name': 'Asobi Asobase - workshop of fun -',
+        'link': 'https://myanimelist.net/anime/37171/'
+      },
+      {
+        'name': 'Tokyo Revengers Season 2',
+        'link': 'https://myanimelist.net/anime/50608/'
       },
       {
         'name': 'Nichijou - My Ordinary Life',
@@ -179,96 +191,106 @@ class AnimeWatchList {
     ],
     'Watched': [
       {
-        'name': 'World Trigger 2nd Season',
-        'link': 'https://myanimelist.net/anime/40907/'
-      },
-      {
-        'name': 'Sword Art Online: Alicization - War of Underworld',
-        'link': 'https://myanimelist.net/anime/39597/'
-      },
-      {
-        'name': 'The Seven Deadly Sins: Imperial Wrath of the Gods',
-        'link': 'https://myanimelist.net/anime/39701/'
-      },
-      {
-        'name': 'Keep Your Hands Off Eizouken!',
-        'link': 'https://myanimelist.net/anime/39792/'
-      },
-      {
-        'name': 'Attack on Titan: The Final Season',
-        'link': 'https://myanimelist.net/anime/40028/'
-      },
-      {
-        'name': 'Kingdom: Season 3',
-        'link': 'https://myanimelist.net/anime/40682/'
-      },
-      {
-        'name': 'The Quintessential Quintuplets 2',
-        'link': 'https://myanimelist.net/anime/39783/'
-      },
-      {
-        'name': 'Sing \"Yesterday\" for Me',
-        'link': 'https://myanimelist.net/anime/39710/'
-      },
-      {
-        'name': 'Fire Force Season 2',
-        'link': 'https://myanimelist.net/anime/40956/'
-      },
-      {
-        'name': 'Dr. Stone: Stone Wars',
-        'link': 'https://myanimelist.net/anime/40852/'
-      },
-      {
-        'name': "Goblin Slayer: Goblin's Crown",
-        'link': 'https://myanimelist.net/anime/39576/'
-      },
-      {
-        'name': "Arifureta: From Commonplace to World's Strongest Season 2",
-        'link': 'https://myanimelist.net/anime/40507/'
-      },
-      {
-        'name': 'The Misfit of Demon King Academy',
-        'link': 'https://myanimelist.net/anime/40496/'
+        'name': "Vivy -Fluorite Eye's Song-",
+        'link': 'https://myanimelist.net/anime/46095/'
       },
       {
         'name': 'The Irregular at Magic High School: Visitor Arc',
         'link': 'https://myanimelist.net/anime/40497/'
       },
       {
+        'name': 'Dr. STONE: STONE WARS',
+        'link': 'https://myanimelist.net/anime/40852/'
+      },
+      {
+        'name': 'Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train',
+        'link': 'https://myanimelist.net/anime/40456/'
+      },
+      {'name': 'Akudama Drive', 'link': 'https://myanimelist.net/anime/41433/'},
+      {
+        'name': 'Attack on Titan Final Season',
+        'link': 'https://myanimelist.net/anime/40028/'
+      },
+      {'name': '86 EIGHTY-SIX', 'link': 'https://myanimelist.net/anime/41457/'},
+      {
+        'name': 'World Trigger 2nd Season',
+        'link': 'https://myanimelist.net/anime/40907/'
+      },
+      {
+        'name': 'Golden Kamuy 2 OVA',
+        'link': 'https://myanimelist.net/anime/38710/'
+      },
+      {
+        'name': 'Kingdom Season 3',
+        'link': 'https://myanimelist.net/anime/40682/'
+      },
+      {'name': 'Tower of God', 'link': 'https://myanimelist.net/anime/40221/'},
+      {
+        'name': 'Mushoku Tensei: Jobless Reincarnation',
+        'link': 'https://myanimelist.net/anime/39535/'
+      },
+      {
+        'name': 'Great Pretender',
+        'link': 'https://myanimelist.net/anime/40052/'
+      },
+      {
+        'name': 'Fire Force Season 2',
+        'link': 'https://myanimelist.net/anime/40956/'
+      },
+      {
+        'name': "Arifureta: From Commonplace to World's Strongest Season 2",
+        'link': 'https://myanimelist.net/anime/40507/'
+      },
+      {
+        'name': 'Dorohedoro: Bonus Curse or Extra Evil',
+        'link': 'https://myanimelist.net/anime/41053/'
+      },
+      {
+        'name': 'Kaguya-sama: Love is War?',
+        'link': 'https://myanimelist.net/anime/40591/'
+      },
+      {
         'name': 'Golden Kamuy Season 3',
         'link': 'https://myanimelist.net/anime/40059/'
+      },
+      {
+        'name':
+            'The Misfit of Demon King Academy: History\u2019s Strongest Demon King Reincarnates and Goes to School with His Descendants',
+        'link': 'https://myanimelist.net/anime/40496/'
       },
       {
         'name': 'Rent-a-Girlfriend',
         'link': 'https://myanimelist.net/anime/40839/'
       },
       {
-        'name': 'Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train',
-        'link': 'https://myanimelist.net/anime/40456/'
-      },
-      {
-        'name': 'Kaguya-sama: Love is War Season 2',
-        'link': 'https://myanimelist.net/anime/40591/'
-      },
-      {
         'name': 'Sword Art Online: Alicization - War of Underworld Part 2',
         'link': 'https://myanimelist.net/anime/40540/'
       },
       {
-        'name': 'Golden Kamuy 2nd Season OVA',
-        'link': 'https://myanimelist.net/anime/38710/'
+        'name': 'TONIKAWA: Over The Moon For You',
+        'link': 'https://myanimelist.net/anime/41389/'
       },
       {
-        'name': 'Blade of the Immortal',
+        'name': 'Blade of the Immortal (ONA)',
         'link': 'https://myanimelist.net/anime/39806/'
       },
       {
-        'name': 'Mushoku Tensei: Jobless Reincarnation',
-        'link': 'https://myanimelist.net/anime/39535/'
+        'name': 'GOBLIN SLAYER -GOBLIN\u2019S CROWN-',
+        'link': 'https://myanimelist.net/anime/39576/'
+      },
+      {'name': 'Fire Force', 'link': 'https://myanimelist.net/anime/38671/'},
+      {'name': 'Dorohedoro', 'link': 'https://myanimelist.net/anime/38668/'},
+      {
+        'name': 'Cautious Hero: The Hero Is Overpowered but Overly Cautious',
+        'link': 'https://myanimelist.net/anime/38659/'
       },
       {
-        'name': 'The Promised Neverland Season 2',
-        'link': 'https://myanimelist.net/anime/39617/'
+        'name': 'Yi Ren Zhi Xia 3',
+        'link': 'https://myanimelist.net/anime/38536/'
+      },
+      {
+        'name': 'Golden Kamuy Season 2',
+        'link': 'https://myanimelist.net/anime/37989/'
       },
       {
         'name': 'A Certain Scientific Accelerator',
@@ -279,6 +301,10 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/38481/'
       },
       {'name': 'Dororo', 'link': 'https://myanimelist.net/anime/37520/'},
+      {
+        'name': 'Children of the Sea',
+        'link': 'https://myanimelist.net/anime/37981/'
+      },
       {
         'name': 'The Quintessential Quintuplets',
         'link': 'https://myanimelist.net/anime/38101/'
@@ -311,35 +337,38 @@ class AnimeWatchList {
         'name': 'Chinkoroheibei and the Treasure Box',
         'link': 'https://myanimelist.net/anime/12803/'
       },
+      {'name': 'HERO MASK', 'link': 'https://myanimelist.net/anime/38628/'},
       {
-        'name': 'The Promised Neverland',
-        'link': 'https://myanimelist.net/anime/37779/'
-      },
-      {'name': 'Overlord III', 'link': 'https://myanimelist.net/anime/37675/'},
-      {
-        'name': 'Kabaneri of the Iron Fortress: The Battle of Unato',
-        'link': 'https://myanimelist.net/anime/34544/'
+        'name': 'Weathering With You',
+        'link': 'https://myanimelist.net/anime/38826/'
       },
       {
-        'name': 'City Hunter: Shinjuku Private Eyes',
-        'link': 'https://myanimelist.net/anime/37516/'
-      },
-      {'name': 'VINLAND SAGA', 'link': 'https://myanimelist.net/anime/37521/'},
-      {
-        'name': 'Golden Kamuy Season 2',
-        'link': 'https://myanimelist.net/anime/37989/'
+        'name': 'Shagahai ReLIFE Kenkyuujo Support-ka',
+        'link': 'https://myanimelist.net/anime/37921/'
       },
       {
-        'name': 'The Outcast 3rd Season',
-        'link': 'https://myanimelist.net/anime/38536/'
+        'name': 'SING \"YESTERDAY\" FOR ME',
+        'link': 'https://myanimelist.net/anime/39710/'
       },
       {
-        'name': 'Call of the Night',
-        'link': 'https://myanimelist.net/anime/50346/'
+        'name': 'The Quintessential Quintuplets 2',
+        'link': 'https://myanimelist.net/anime/39783/'
       },
       {
-        'name': 'Re:ZERO -Starting Life in Another World- Season 2',
-        'link': 'https://myanimelist.net/anime/39587/'
+        'name': 'Keep Your Hands Off Eizouken!',
+        'link': 'https://myanimelist.net/anime/39792/'
+      },
+      {
+        'name': 'The Seven Deadly Sins: Imperial Wrath of the Gods',
+        'link': 'https://myanimelist.net/anime/39701/'
+      },
+      {
+        'name': 'Sword Art Online: Alicization - War of Underworld',
+        'link': 'https://myanimelist.net/anime/39597/'
+      },
+      {
+        'name': 'The Promised Neverland Season 2',
+        'link': 'https://myanimelist.net/anime/39617/'
       },
       {
         'name': 'That Time I Got Reincarnated as a Slime Season 2',
@@ -359,6 +388,7 @@ class AnimeWatchList {
         'name': "Miss Kobayashi's Dragon Maid S",
         'link': 'https://myanimelist.net/anime/39247/'
       },
+      {'name': 'Dr. STONE', 'link': 'https://myanimelist.net/anime/38691/'},
       {'name': 'In/Spectre', 'link': 'https://myanimelist.net/anime/39017/'},
       {
         'name': 'Kakegurui Picture Drama',
@@ -369,28 +399,35 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/38992/'
       },
       {
-        'name': 'The 8th son? Are you kidding me?',
+        'name': 'The 8th Son? Are You Kidding Me?',
         'link': 'https://myanimelist.net/anime/38830/'
       },
       {
-        'name': 'ReLIFE: Kanketsu-hen Specials',
-        'link': 'https://myanimelist.net/anime/37921/'
+        'name': 'The Promised Neverland',
+        'link': 'https://myanimelist.net/anime/37779/'
       },
       {
-        'name': 'Weathering with You',
-        'link': 'https://myanimelist.net/anime/38826/'
-      },
-      {'name': 'Dr. Stone', 'link': 'https://myanimelist.net/anime/38691/'},
-      {'name': 'Hero Mask', 'link': 'https://myanimelist.net/anime/38628/'},
-      {'name': 'Fire Force', 'link': 'https://myanimelist.net/anime/38671/'},
-      {
-        'name': 'Cautious Hero: The Hero Is Overpowered but Overly Cautious',
-        'link': 'https://myanimelist.net/anime/38659/'
+        'name': 'Tekken: Bloodline',
+        'link': 'https://myanimelist.net/anime/51347/'
       },
       {
-        'name': 'Cyberpunk: Edgerunners',
-        'link': 'https://myanimelist.net/anime/42310/'
+        'name': 'Street Fighter IV: Aftermath',
+        'link': 'https://myanimelist.net/anime/41873/'
       },
+      {
+        'name': 'BLEACH: Thousand-Year Blood War',
+        'link': 'https://myanimelist.net/anime/41467/'
+      },
+      {'name': 'ROAD OF NARUTO', 'link': ''},
+      {
+        'name': 'Fena: Pirate Princess',
+        'link': 'https://myanimelist.net/anime/42544/'
+      },
+      {
+        'name': 'Komi Can\u2019t Communicate',
+        'link': 'https://myanimelist.net/anime/48926/'
+      },
+      {'name': 'Overlord IV', 'link': 'https://myanimelist.net/anime/48895/'},
       {
         'name': 'The Way of the Househusband Part 2',
         'link': 'https://myanimelist.net/anime/48707/'
@@ -398,7 +435,7 @@ class AnimeWatchList {
       {'name': 'Afro Samurai', 'link': 'https://myanimelist.net/anime/1292/'},
       {'name': 'Yasuke', 'link': 'https://myanimelist.net/anime/43697/'},
       {
-        'name': 'Attack on Titan: The Final Season Part 2',
+        'name': 'Attack on Titan Final Season Part 2',
         'link': 'https://myanimelist.net/anime/48583/'
       },
       {
@@ -414,7 +451,7 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/41487/'
       },
       {
-        'name': 'Jujutsu Kaisen 0',
+        'name': 'JUJUTSU KAISEN 0',
         'link': 'https://myanimelist.net/anime/48561/'
       },
       {
@@ -423,50 +460,33 @@ class AnimeWatchList {
       },
       {'name': 'Berserk Recap', 'link': 'https://myanimelist.net/anime/35009/'},
       {
-        'name':
-            "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat",
-        'link': 'https://myanimelist.net/anime/47790/'
+        'name': 'The Eminence in Shadow',
+        'link': 'https://myanimelist.net/anime/48316/'
       },
       {
-        'name': 'Demon Slayer: Kimetsu no Yaiba Entertainment District Arc',
-        'link': 'https://myanimelist.net/anime/47778/'
+        'name': 'Record of Ragnarok II',
+        'link': 'https://myanimelist.net/anime/49618/'
       },
       {
-        'name': 'Summer Time Rendering',
-        'link': 'https://myanimelist.net/anime/47194/'
+        'name': 'Reincarnated as a Sword',
+        'link': 'https://myanimelist.net/anime/49891/'
       },
-      {
-        'name': 'Tokyo Revengers',
-        'link': 'https://myanimelist.net/anime/42249/'
-      },
-      {
-        'name': 'The Strongest Sage with the Weakest Crest',
-        'link': 'https://myanimelist.net/anime/47161/'
-      },
-      {
-        'name': 'Is It Wrong to Try to Pick Up Girls in a Dungeon? IV',
-        'link': 'https://myanimelist.net/anime/47164/'
-      },
-      {'name': 'Overlord IV', 'link': 'https://myanimelist.net/anime/48895/'},
-      {
-        'name': "Komi Can't Communicate",
-        'link': 'https://myanimelist.net/anime/48926/'
-      },
-      {
-        'name': 'Tekken: Bloodline',
-        'link': 'https://myanimelist.net/anime/51347/'
-      },
+      {'name': 'Sabikui Bisco', 'link': 'https://myanimelist.net/anime/48414/'},
       {
         'name':
             'Is It Wrong to Try to Pick Up Girls in a Dungeon? IV: Play Back',
         'link': 'https://myanimelist.net/anime/52357/'
       },
       {
+        'name': 'Shinobi no Ittoki',
+        'link': 'https://myanimelist.net/anime/51098/'
+      },
+      {
         'name': 'I Am What I Am',
         'link': 'https://myanimelist.net/anime/52769/'
       },
       {
-        'name': 'Classroom of the Elite II',
+        'name': 'Classroom of the Elite Season 2',
         'link': 'https://myanimelist.net/anime/51096/'
       },
       {
@@ -482,8 +502,17 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/50709/'
       },
       {
-        'name': "Komi Can't Communicate Season 2",
+        'name': "Komi Can't Communicate Part 2",
         'link': 'https://myanimelist.net/anime/50631/'
+      },
+      {
+        'name': 'SPY x FAMILY Cour 2',
+        'link': 'https://myanimelist.net/anime/50602/'
+      },
+      {'name': 'Bubble', 'link': 'https://myanimelist.net/anime/50549/'},
+      {
+        'name': 'Call of the Night',
+        'link': 'https://myanimelist.net/anime/50346/'
       },
       {'name': 'Arcane', 'link': ''},
       {
@@ -496,22 +525,35 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/50160/'
       },
       {
-        'name': "I'm Quitting Heroing",
+        'name': 'Mob Psycho 100 III',
+        'link': 'https://myanimelist.net/anime/50172/'
+      },
+      {
+        'name': 'I\u2019m Quitting Heroing',
         'link': 'https://myanimelist.net/anime/50175/'
       },
-      {'name': 'Sabikui Bisco', 'link': 'https://myanimelist.net/anime/48414/'},
       {
-        'name': 'Street Fighter IV: Aftermath',
-        'link': 'https://myanimelist.net/anime/41873/'
+        'name':
+            "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat",
+        'link': 'https://myanimelist.net/anime/47790/'
       },
       {
-        'name': 'Fena: Pirate Princess',
-        'link': 'https://myanimelist.net/anime/42544/'
+        'name': 'Demon Slayer: Kimetsu no Yaiba Entertainment District Arc',
+        'link': 'https://myanimelist.net/anime/47778/'
       },
-      {'name': 'Blue Period', 'link': 'https://myanimelist.net/anime/46352/'},
       {
-        'name': "Vivy -Fluorite Eye's Song-",
-        'link': 'https://myanimelist.net/anime/46095/'
+        'name': '2.43: Seiin High School Boys Volleyball Team',
+        'link': 'https://myanimelist.net/anime/40679/'
+      },
+      {'name': 'Noblesse', 'link': 'https://myanimelist.net/anime/41345/'},
+      {
+        'name': 'Peach Boy Riverside',
+        'link': 'https://myanimelist.net/anime/42627/'
+      },
+      {'name': 'Honkai Impact 3 ~ Lament of the Fallen', 'link': ''},
+      {
+        'name': 'To Your Eternity',
+        'link': 'https://myanimelist.net/anime/41025/'
       },
       {
         'name': 'JUJUTSU KAISEN',
@@ -526,7 +568,11 @@ class AnimeWatchList {
         'name': "DON'T TOY WITH ME, MISS NAGATORO",
         'link': 'https://myanimelist.net/anime/42361/'
       },
-      {'name': 'Deca-Dence', 'link': 'https://myanimelist.net/anime/40056/'},
+      {
+        'name': 'CYBERPUNK: EDGERUNNERS',
+        'link': 'https://myanimelist.net/anime/42310/'
+      },
+      {'name': 'DECA-DENCE', 'link': 'https://myanimelist.net/anime/40056/'},
       {
         'name': 'The God of High School',
         'link': 'https://myanimelist.net/anime/41353/'
@@ -553,23 +599,37 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/40529/'
       },
       {
-        'name': "The Seven Deadly Sins: Dragon's Judgement",
-        'link': 'https://myanimelist.net/anime/41491/'
+        'name': 'MEGALOBOX 2: NOMAD',
+        'link': 'https://myanimelist.net/anime/40729/'
       },
-      {'name': '86 Eighty Six', 'link': 'https://myanimelist.net/anime/41457/'},
-      {'name': 'Akudama Drive', 'link': 'https://myanimelist.net/anime/41433/'},
       {
-        'name': 'TONIKAWA: Over The Moon For You',
-        'link': 'https://myanimelist.net/anime/41389/'
+        'name': 'Farewell, My Dear Cramer',
+        'link': 'https://myanimelist.net/anime/42774/'
       },
-      {'name': 'Tower of God', 'link': 'https://myanimelist.net/anime/40221/'},
+      {'name': 'Horimiya', 'link': 'https://myanimelist.net/anime/42897/'},
       {
-        'name': 'To Your Eternity',
-        'link': 'https://myanimelist.net/anime/41025/'
+        'name': 'Summer Time Rendering',
+        'link': 'https://myanimelist.net/anime/47194/'
       },
-      {'name': 'Honkai Impact 3 ~ Lament of the Fallen', 'link': ''},
       {
-        'name': 'Mushoku Tensei: Jobless Reincarnation Part 2',
+        'name': 'Tokyo Revengers',
+        'link': 'https://myanimelist.net/anime/42249/'
+      },
+      {
+        'name': 'The Strongest Sage with the Weakest Crest',
+        'link': 'https://myanimelist.net/anime/47161/'
+      },
+      {
+        'name': 'Is It Wrong to Try to Pick Up Girls in a Dungeon? IV',
+        'link': 'https://myanimelist.net/anime/47164/'
+      },
+      {'name': 'Blue Period', 'link': 'https://myanimelist.net/anime/46352/'},
+      {
+        'name': 'Holy Knight Light',
+        'link': 'https://myanimelist.net/anime/45574/'
+      },
+      {
+        'name': 'Mushoku Tensei: Jobless Reincarnation Cour 2',
         'link': 'https://myanimelist.net/anime/45576/'
       },
       {
@@ -582,6 +642,7 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/44942/'
       },
       {'name': 'Love of Kill', 'link': 'https://myanimelist.net/anime/44516/'},
+      {'name': 'Chainsaw Man', 'link': 'https://myanimelist.net/anime/44511/'},
       {
         'name':
             'Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway',
@@ -604,43 +665,30 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/40454/'
       },
       {
-        'name': 'Rent-a-Girlfriend 2nd Season',
+        'name': 'Rent-a-Girlfriend Season 2',
         'link': 'https://myanimelist.net/anime/42963/'
       },
-      {'name': 'Horimiya', 'link': 'https://myanimelist.net/anime/42897/'},
       {
-        'name': 'Farewell, My Dear Cramer',
-        'link': 'https://myanimelist.net/anime/42774/'
+        'name': "The Seven Deadly Sins: Dragon's Judgement",
+        'link': 'https://myanimelist.net/anime/41491/'
       },
+      {'name': 'Blood Lad OVA', 'link': 'https://myanimelist.net/anime/18441/'},
       {
-        'name': 'MEGALOBOX 2: NOMAD',
-        'link': 'https://myanimelist.net/anime/40729/'
+        'name': 'The Garden of Words',
+        'link': 'https://myanimelist.net/anime/16782/'
       },
-      {
-        'name': '2.43: Seiin High School Boys Volleyball Team',
-        'link': 'https://myanimelist.net/anime/40679/'
-      },
-      {'name': 'Noblesse', 'link': 'https://myanimelist.net/anime/41345/'},
-      {
-        'name': 'Peach Boy Riverside',
-        'link': 'https://myanimelist.net/anime/42627/'
-      },
-      {
-        'name': 'Great Pretender',
-        'link': 'https://myanimelist.net/anime/40052/'
-      },
-      {'name': 'Golden Boy', 'link': 'https://myanimelist.net/anime/268/'},
+      {'name': 'Tokyo Ghoul', 'link': 'https://myanimelist.net/anime/22319/'},
       {
         'name': 'Sword of the Stranger',
         'link': 'https://myanimelist.net/anime/2418/'
       },
       {'name': 'Hellsing', 'link': 'https://myanimelist.net/anime/270/'},
       {
-        'name': 'Great Teacher Onizuka',
+        'name': 'GTO: Great Teacher Onizuka',
         'link': 'https://myanimelist.net/anime/245/'
       },
       {
-        'name': 'Ajin: Demi-Human',
+        'name': 'AJIN: Demi-Human',
         'link': 'https://myanimelist.net/anime/31580/'
       },
       {
@@ -678,16 +726,28 @@ class AnimeWatchList {
         'name': 'Dragon Ball Super',
         'link': 'https://myanimelist.net/anime/30694/'
       },
-      {'name': 'Maid Sama!', 'link': 'https://myanimelist.net/anime/7054/'},
-      {'name': 'Tokyo Ghoul', 'link': 'https://myanimelist.net/anime/22319/'},
-      {
-        'name': 'The Garden of Words',
-        'link': 'https://myanimelist.net/anime/16782/'
-      },
       {
         'name': 'Fullmetal Alchemist',
         'link': 'https://myanimelist.net/anime/121/'
       },
+      {
+        'name': '5 Centimeters per Second',
+        'link': 'https://myanimelist.net/anime/1689/'
+      },
+      {
+        'name': 'My Teen Romantic Comedy SNAFU TOO!',
+        'link': 'https://myanimelist.net/anime/23847/'
+      },
+      {
+        'name': 'AJIN: Demi-Human -Compel-',
+        'link': 'https://myanimelist.net/anime/30868/'
+      },
+      {'name': 'Your Name.', 'link': 'https://myanimelist.net/anime/32281/'},
+      {
+        'name': 'Hori-san to Miyamura-kun: Shingakki',
+        'link': 'https://myanimelist.net/anime/14753/'
+      },
+      {'name': 'GOLDEN BOY', 'link': 'https://myanimelist.net/anime/268/'},
       {
         'name': 'Neon Genesis Evangelion',
         'link': 'https://myanimelist.net/anime/30/'
@@ -713,17 +773,13 @@ class AnimeWatchList {
         'name': 'Ninja Scroll: The Series',
         'link': 'https://myanimelist.net/anime/618/'
       },
-      {
-        'name': 'Attack on Titan',
-        'link': 'https://myanimelist.net/anime/16498/'
-      },
       {'name': 'Silver Spoon', 'link': 'https://myanimelist.net/anime/16918/'},
       {
         'name': 'Horizon in the Middle of Nowhere',
         'link': 'https://myanimelist.net/anime/10456/'
       },
       {
-        'name': 'Kingdom: Season 2',
+        'name': 'Kingdom Season 2',
         'link': 'https://myanimelist.net/anime/17389/'
       },
       {'name': 'Kingdom', 'link': 'https://myanimelist.net/anime/12031/'},
@@ -735,21 +791,18 @@ class AnimeWatchList {
         'name': 'Fate/Zero Season 2',
         'link': 'https://myanimelist.net/anime/11741/'
       },
+      {'name': 'Maid-Sama!', 'link': 'https://myanimelist.net/anime/7054/'},
       {
-        'name': 'My Teen Romantic Comedy SNAFU TOO!',
-        'link': 'https://myanimelist.net/anime/23847/'
-      },
-      {
-        'name': '5 Centimeters per Second',
-        'link': 'https://myanimelist.net/anime/1689/'
-      },
-      {
-        'name': "Howl's Moving Castle",
+        'name': 'Howl\u2018s Moving Castle',
         'link': 'https://myanimelist.net/anime/431/'
       },
       {
-        'name': 'Whisper of the Heart',
-        'link': 'https://myanimelist.net/anime/585/'
+        'name': 'Blast of Tempest',
+        'link': 'https://myanimelist.net/anime/14075/'
+      },
+      {
+        'name': 'The Devil is a Part-Timer!',
+        'link': 'https://myanimelist.net/anime/15809/'
       },
       {
         'name': 'My Teen Romantic Comedy SNAFU',
@@ -767,10 +820,6 @@ class AnimeWatchList {
         'name': 'Sword Art Online II',
         'link': 'https://myanimelist.net/anime/21881/'
       },
-      {
-        'name': 'Sword Art Online',
-        'link': 'https://myanimelist.net/anime/11757/'
-      },
       {'name': 'Prison School', 'link': 'https://myanimelist.net/anime/30240/'},
       {'name': 'Overlord', 'link': 'https://myanimelist.net/anime/29803/'},
       {'name': 'Fate/Zero', 'link': 'https://myanimelist.net/anime/10087/'},
@@ -784,27 +833,28 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/30296/'
       },
       {
-        'name': 'Silver Spoon 2nd Season',
+        'name': 'Silver Spoon Season 2',
         'link': 'https://myanimelist.net/anime/19363/'
       },
-      {'name': 'One Punch Man', 'link': 'https://myanimelist.net/anime/30276/'},
+      {'name': 'One-Punch Man', 'link': 'https://myanimelist.net/anime/30276/'},
       {'name': 'ReLIFE', 'link': 'https://myanimelist.net/anime/30015/'},
-      {'name': 'GATE', 'link': 'https://myanimelist.net/anime/28907/'},
+      {'name': 'Gate', 'link': 'https://myanimelist.net/anime/28907/'},
       {
-        'name': "KonoSuba: God's Blessing on This Wonderful World!",
+        'name': "KONOSUBA -God's blessing on this wonderful world!",
         'link': 'https://myanimelist.net/anime/30831/'
-      },
-      {
-        'name': 'The Devil is a Part-Timer!',
-        'link': 'https://myanimelist.net/anime/15809/'
-      },
-      {
-        'name': 'Blast of Tempest',
-        'link': 'https://myanimelist.net/anime/14075/'
       },
       {
         'name': 'Shigurui: Death Frenzy',
         'link': 'https://myanimelist.net/anime/2216/'
+      },
+      {'name': 'Black Lagoon', 'link': 'https://myanimelist.net/anime/889/'},
+      {
+        'name': 'Black Lagoon: The Second Barrage',
+        'link': 'https://myanimelist.net/anime/1519/'
+      },
+      {
+        'name': 'Whisper of the Heart',
+        'link': 'https://myanimelist.net/anime/585/'
       },
       {
         'name': 'Castle in the Sky',
@@ -830,16 +880,24 @@ class AnimeWatchList {
         'name': 'Magi: Adventure of Sinbad',
         'link': 'https://myanimelist.net/anime/31741/'
       },
+      {
+        'name': 'Attack on Titan',
+        'link': 'https://myanimelist.net/anime/16498/'
+      },
       {'name': 'Berserk', 'link': 'https://myanimelist.net/anime/33/'},
       {
         'name': 'Samurai Champloo',
         'link': 'https://myanimelist.net/anime/205/'
       },
       {'name': 'Death Note', 'link': 'https://myanimelist.net/anime/1535/'},
+      {
+        'name': 'Sword Art Online',
+        'link': 'https://myanimelist.net/anime/11757/'
+      },
       {'name': 'Canaan', 'link': 'https://myanimelist.net/anime/5356/'},
       {'name': 'Katanagatari', 'link': 'https://myanimelist.net/anime/6594/'},
       {
-        'name': 'Jormungand Season 2: Perfect Order',
+        'name': 'Jormungand: Perfect Order',
         'link': 'https://myanimelist.net/anime/13331/'
       },
       {'name': 'Jormungand', 'link': 'https://myanimelist.net/anime/12413/'},
@@ -847,15 +905,27 @@ class AnimeWatchList {
         'name': 'Amagami SS+ plus',
         'link': 'https://myanimelist.net/anime/11235/'
       },
-      {
-        'name': 'Black Lagoon: The Second Barrage',
-        'link': 'https://myanimelist.net/anime/1519/'
-      },
-      {'name': 'Black Lagoon', 'link': 'https://myanimelist.net/anime/889/'},
       {'name': 'ERASED', 'link': 'https://myanimelist.net/anime/31043/'},
       {
-        'name': 'Mob Psycho 100 II',
-        'link': 'https://myanimelist.net/anime/37510/'
+        'name': 'Afro Samurai Pilot',
+        'link': 'https://myanimelist.net/anime/27939/'
+      },
+      {'name': 'BAKI', 'link': 'https://myanimelist.net/anime/34443/'},
+      {
+        'name': 'Kabaneri of the Iron Fortress: The Battle of Unato',
+        'link': 'https://myanimelist.net/anime/34544/'
+      },
+      {
+        'name': 'B: The Beginning',
+        'link': 'https://myanimelist.net/anime/32827/'
+      },
+      {
+        'name': 'DARLING in the FRANXX',
+        'link': 'https://myanimelist.net/anime/35849/'
+      },
+      {
+        'name': 'ReLIFE: Final Arc',
+        'link': 'https://myanimelist.net/anime/35466/'
       },
       {
         'name': 'Record of Grancrest War',
@@ -872,10 +942,10 @@ class AnimeWatchList {
       },
       {
         'name':
-            "KonoSuba: God's Blessing on This Wonderful World! 2 - God's Blessing on This Wonderful Art!",
+            "KONOSUBA -God's blessing on this wonderful world! 2: God's Blessings on These Wonderful Works of Art!",
         'link': 'https://myanimelist.net/anime/34626/'
       },
-      {'name': 'Castlevania', 'link': ''},
+      {'name': 'Overlord III', 'link': 'https://myanimelist.net/anime/37675/'},
       {
         'name': 'Classroom of the Elite',
         'link': 'https://myanimelist.net/anime/35507/'
@@ -895,42 +965,17 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/34577/'
       },
       {
-        'name': 'Juni Taisen: Zodiac War',
+        'name': 'JUNI TAISEN\uff1aZODIAC WAR',
         'link': 'https://myanimelist.net/anime/35076/'
       },
       {
-        'name': 'Tsuredure Children',
-        'link': 'https://myanimelist.net/anime/34902/'
+        'name': 'Angels of Death',
+        'link': 'https://myanimelist.net/anime/35994/'
       },
-      {
-        'name': 'Princess Principal',
-        'link': 'https://myanimelist.net/anime/35240/'
-      },
-      {'name': 'Kakegurui', 'link': 'https://myanimelist.net/anime/34933/'},
-      {
-        'name': 'Ajin: Demi-Human Movie 2: Confront',
-        'link': 'https://myanimelist.net/anime/30869/'
-      },
-      {
-        'name': 'Ajin: Demi-Human Movie 3: Collide',
-        'link': 'https://myanimelist.net/anime/30870/'
-      },
-      {
-        'name': 'ReLIFE: Final Arc',
-        'link': 'https://myanimelist.net/anime/35466/'
-      },
-      {
-        'name': 'DARLING in the FRANXX',
-        'link': 'https://myanimelist.net/anime/35849/'
-      },
-      {'name': 'BAKI', 'link': 'https://myanimelist.net/anime/34443/'},
+      {'name': 'Golden Kamuy', 'link': 'https://myanimelist.net/anime/36028/'},
       {
         'name': 'That Time I Got Reincarnated as a Slime',
         'link': 'https://myanimelist.net/anime/37430/'
-      },
-      {
-        'name': 'Afro Samurai Pilot',
-        'link': 'https://myanimelist.net/anime/27939/'
       },
       {
         'name': "Didn't I Say to Make My Abilities Average in the Next Life?!",
@@ -946,17 +991,22 @@ class AnimeWatchList {
         'name': 'Is It Wrong to Try to Pick Up Girls in a Dungeon? II',
         'link': 'https://myanimelist.net/anime/37347/'
       },
-      {'name': 'Goblin Slayer', 'link': 'https://myanimelist.net/anime/37349/'},
+      {'name': 'GOBLIN SLAYER', 'link': 'https://myanimelist.net/anime/37349/'},
       {
-        'name': 'How Not to Summon a Demon Lord',
+        'name': 'Mob Psycho 100 II',
+        'link': 'https://myanimelist.net/anime/37510/'
+      },
+      {
+        'name': 'How NOT to Summon a Demon Lord',
         'link': 'https://myanimelist.net/anime/37210/'
       },
       {'name': 'The Outcast 2rd Season', 'link': ''},
+      {'name': 'Vinland Saga', 'link': 'https://myanimelist.net/anime/37521/'},
       {
         'name': "Arifureta: From Commonplace to World's Strongest",
         'link': 'https://myanimelist.net/anime/36882/'
       },
-      {'name': 'Banana Fish', 'link': 'https://myanimelist.net/anime/36649/'},
+      {'name': 'BANANA FISH', 'link': 'https://myanimelist.net/anime/36649/'},
       {'name': 'Megalobox', 'link': 'https://myanimelist.net/anime/36563/'},
       {'name': 'HINAMATSURI', 'link': 'https://myanimelist.net/anime/36296/'},
       {'name': 'Overlord II', 'link': 'https://myanimelist.net/anime/35073/'},
@@ -964,30 +1014,52 @@ class AnimeWatchList {
         'name': 'The Rising of the Shield Hero',
         'link': 'https://myanimelist.net/anime/35790/'
       },
-      {'name': 'Golden Kamuy', 'link': 'https://myanimelist.net/anime/36028/'},
       {
-        'name': 'Angels of Death',
-        'link': 'https://myanimelist.net/anime/35994/'
+        'name': 'City Hunter: Shinjuku Private Eyes',
+        'link': 'https://myanimelist.net/anime/37516/'
       },
       {
-        'name': 'Dances with the Dragons',
-        'link': 'https://myanimelist.net/anime/33889/'
+        'name': 'Tsuredure Children',
+        'link': 'https://myanimelist.net/anime/34902/'
       },
       {
-        'name': 'Attack on Titan Season 2',
-        'link': 'https://myanimelist.net/anime/25777/'
+        'name': 'Princess Principal',
+        'link': 'https://myanimelist.net/anime/35240/'
       },
       {
-        'name': 'Expelled from Paradise',
+        'name': 'The Girl Who Leapt Through Time',
+        'link': 'https://myanimelist.net/anime/2236/'
+      },
+      {'name': 'Castlevania', 'link': ''},
+      {'name': 'Blood Lad', 'link': 'https://myanimelist.net/anime/11633/'},
+      {
+        'name': 'Expelled From Paradise',
         'link': 'https://myanimelist.net/anime/13391/'
+      },
+      {
+        'name': 'One-Punch Man Season 2',
+        'link': 'https://myanimelist.net/anime/34134/'
       },
       {
         'name': 'Bungo Stray Dogs 2',
         'link': 'https://myanimelist.net/anime/32867/'
       },
       {
-        'name': 'One Punch Man Season 2',
-        'link': 'https://myanimelist.net/anime/34134/'
+        'name': 'AJIN: Demi-Human 2',
+        'link': 'https://myanimelist.net/anime/33253/'
+      },
+      {'name': 'Wolf Children', 'link': 'https://myanimelist.net/anime/12355/'},
+      {
+        'name': 'Sword Art Online the Movie: Ordinal Scale',
+        'link': 'https://myanimelist.net/anime/31765/'
+      },
+      {
+        'name': "Black Lagoon: Roberta's Blood Trail",
+        'link': 'https://myanimelist.net/anime/4901/'
+      },
+      {
+        'name': 'Scryed Alteration II: Quan',
+        'link': 'https://myanimelist.net/anime/12223/'
       },
       {
         'name': 'A Silent Voice',
@@ -998,55 +1070,57 @@ class AnimeWatchList {
         'link': 'https://myanimelist.net/anime/2178/'
       },
       {
-        'name': 'Love, Chunibyo & Other Delusions!: Chuni-Shorts',
+        'name': 'Love, Chunibyo & Other Delusions Lite',
         'link': 'https://myanimelist.net/anime/15687/'
-      },
-      {'name': 'Blood Lad', 'link': 'https://myanimelist.net/anime/11633/'},
-      {
-        'name': "Black Lagoon: Roberta's Blood Trail",
-        'link': 'https://myanimelist.net/anime/4901/'
-      },
-      {
-        'name': 'Scryed Alteration II: Quan',
-        'link': 'https://myanimelist.net/anime/12223/'
-      },
-      {
-        'name': 'Scryed Alteration I: Tao',
-        'link': 'https://myanimelist.net/anime/10592/'
-      },
-      {'name': 'Naruto', 'link': 'https://myanimelist.net/anime/20/'},
-      {
-        'name': 'Hori-san to Miyamura-kun',
-        'link': 'https://myanimelist.net/anime/14753/'
-      },
-      {'name': 'Akira', 'link': 'https://myanimelist.net/anime/47/'},
-      {'name': 'Wolf Children', 'link': 'https://myanimelist.net/anime/12355/'},
-      {
-        'name': 'AJIN: Demi-Human 2',
-        'link': 'https://myanimelist.net/anime/33253/'
-      },
-      {
-        'name': 'Ghost in the Shell',
-        'link': 'https://myanimelist.net/anime/43/'
-      },
-      {
-        'name': 'The Girl Who Leapt Through Time',
-        'link': 'https://myanimelist.net/anime/2236/'
       },
       {
         'name': 'Vampire Hunter D',
         'link': 'https://myanimelist.net/anime/732/'
       },
       {
-        'name': 'Inuyashiki: Last Hero',
-        'link': 'https://myanimelist.net/anime/34542/'
+        'name': 'Ghost in the Shell',
+        'link': 'https://myanimelist.net/anime/43/'
       },
-      {'name': 'Black Clover', 'link': 'https://myanimelist.net/anime/34572/'},
+      {'name': 'Akira', 'link': 'https://myanimelist.net/anime/47/'},
+      {'name': 'Naruto', 'link': 'https://myanimelist.net/anime/20/'},
+      {
+        'name': 'Scryed Alteration I: Tao',
+        'link': 'https://myanimelist.net/anime/10592/'
+      },
+      {
+        'name': 'Attack on Titan Season 2',
+        'link': 'https://myanimelist.net/anime/25777/'
+      },
+      {
+        'name': 'The World God Only Knows: 4 Girls and an Idol',
+        'link': 'https://myanimelist.net/anime/10805/'
+      },
       {
         'name': "Miss Kobayashi's Dragon Maid",
         'link': 'https://myanimelist.net/anime/33206/'
       },
+      {
+        'name': 'Re:ZERO -Starting Life in Another World- Season 2',
+        'link': 'https://myanimelist.net/anime/39587/'
+      },
+      {'name': 'Black Clover', 'link': 'https://myanimelist.net/anime/34572/'},
+      {
+        'name': 'INUYASHIKI LAST HERO',
+        'link': 'https://myanimelist.net/anime/34542/'
+      },
       {'name': "I''s", 'link': 'https://myanimelist.net/anime/1084/'},
+      {
+        'name': 'Dances with the Dragons',
+        'link': 'https://myanimelist.net/anime/33889/'
+      },
+      {
+        'name': 'Ajin: Demi-Human Movie 3: Collide',
+        'link': 'https://myanimelist.net/anime/30870/'
+      },
+      {
+        'name': 'Ajin: Demi-Human Movie 2: Confront',
+        'link': 'https://myanimelist.net/anime/30869/'
+      },
       {
         'name': 'Grimoire of Zero',
         'link': 'https://myanimelist.net/anime/34176/'
@@ -1055,84 +1129,98 @@ class AnimeWatchList {
         'name': 'Ghost in the Shell 2.0',
         'link': 'https://myanimelist.net/anime/4672/'
       },
-      {'name': 'Berserk 2', 'link': 'https://myanimelist.net/anime/34055/'},
+      {
+        'name': 'Violet Evergarden',
+        'link': 'https://myanimelist.net/anime/33352/'
+      },
+      {'name': 'Ajin OVA', 'link': 'https://myanimelist.net/anime/32015/'},
+      {'name': 'Kakegurui', 'link': 'https://myanimelist.net/anime/34933/'},
       {
         'name':
             'Sword Oratoria: Is it Wrong to Try to Pick Up Girls in a Dungeon? On the Side',
         'link': 'https://myanimelist.net/anime/32887/'
       },
-      {
-        'name': 'Violet Evergarden',
-        'link': 'https://myanimelist.net/anime/33352/'
-      },
-      {
-        'name': 'The World God Only Knows: Four Girls and an Idol',
-        'link': 'https://myanimelist.net/anime/10805/'
-      },
-      {'name': 'Blood Lad OVA', 'link': 'https://myanimelist.net/anime/18441/'},
-      {
-        'name': 'Ajin: Demi-Human Movie 1: Compel',
-        'link': 'https://myanimelist.net/anime/30868/'
-      },
-      {'name': 'Your Name.', 'link': 'https://myanimelist.net/anime/32281/'},
-      {
-        'name': 'Sword Art Online the Movie -Ordinal Scale-',
-        'link': 'https://myanimelist.net/anime/31765/'
-      }
+      {'name': 'Berserk 2', 'link': 'https://myanimelist.net/anime/34055/'}
     ],
     'Watching': [
-      {'name': 'Durarara!!', 'link': 'https://myanimelist.net/anime/6746/'},
+      {
+        'name': 'Is It Wrong to Try to Pick Up Girls in a Dungeon? IV Part 2',
+        'link': 'https://myanimelist.net/anime/53111/'
+      },
       {
         'name': 'Do It Yourself!!',
         'link': 'https://myanimelist.net/anime/48542/'
       },
+      {
+        'name': 'Bungo Stray Dogs 3',
+        'link': 'https://myanimelist.net/anime/38003/'
+      },
+      {
+        'name': 'Tomo-chan Is a Girl!',
+        'link': 'https://myanimelist.net/anime/52305/'
+      },
+      {
+        'name':
+            'Chillin\u2019 in My 30s after Getting Fired from the Demon King\u2019s Army',
+        'link': 'https://myanimelist.net/anime/52446/'
+      },
+      {'name': 'Revenger', 'link': 'https://myanimelist.net/anime/53213/'},
+      {
+        'name': 'Vinland Saga Season 2',
+        'link': 'https://myanimelist.net/anime/49387/'
+      },
+      {
+        'name': 'The Reincarnation of the Strongest Exorcist in Another World',
+        'link': 'https://myanimelist.net/anime/50932/'
+      },
+      {'name': 'Durarara!!', 'link': 'https://myanimelist.net/anime/6746/'},
       {'name': 'ONE PIECE', 'link': 'https://myanimelist.net/anime/21/'},
       {
-        'name': 'Berserk: The Golden Age Arc - Memorial Edition',
-        'link': 'https://myanimelist.net/anime/52976/'
+        'name': 'Please\u2606Twins!',
+        'link': 'https://myanimelist.net/anime/196/'
+      },
+      {'name': 'Shin Chan', 'link': 'https://myanimelist.net/anime/966/'},
+      {
+        'name': 'Boruto: Naruto Next Generations',
+        'link': 'https://myanimelist.net/anime/34566/'
       },
       {
-        'name': 'Shinobi no Ittoki',
-        'link': 'https://myanimelist.net/anime/51098/'
+        'name': 'Sengoku Basara: Samurai Kings',
+        'link': 'https://myanimelist.net/anime/5355/'
       },
       {
-        'name': 'Spy x Family Part 2',
-        'link': 'https://myanimelist.net/anime/50602/'
+        'name': 'To Your Eternity Season 2',
+        'link': 'https://myanimelist.net/anime/49709/'
       },
-      {
-        'name': 'The Eminence in Shadow',
-        'link': 'https://myanimelist.net/anime/48316/'
-      },
+      {'name': 'BLUELOCK', 'link': 'https://myanimelist.net/anime/49596/'},
       {
         'name': 'Daily Lives of High School Boys',
         'link': 'https://myanimelist.net/anime/11843/'
       },
-      {'name': 'Ajin OVA', 'link': 'https://myanimelist.net/anime/32015/'},
-      {'name': 'Blue Lock', 'link': 'https://myanimelist.net/anime/49596/'},
-      {'name': 'Chainsaw Man', 'link': 'https://myanimelist.net/anime/44511/'},
-      {'name': 'Psycho-Pass', 'link': 'https://myanimelist.net/anime/13601/'},
-      {
-        'name': 'Reincarnated as a Sword',
-        'link': 'https://myanimelist.net/anime/49891/'
-      },
-      {'name': 'Please Twins!', 'link': 'https://myanimelist.net/anime/196/'},
+      {'name': 'PSYCHO-PASS', 'link': 'https://myanimelist.net/anime/13601/'},
       {
         'name': 'My Hero Academia Season 6',
         'link': 'https://myanimelist.net/anime/49918/'
       },
       {
-        'name': 'Mob Psycho 100 III',
-        'link': 'https://myanimelist.net/anime/50172/'
+        'name':
+            'Reborn to Master the Blade: From Hero-King to Extraordinary Squire',
+        'link': 'https://myanimelist.net/anime/50481/'
       },
-      {'name': 'City Hunter', 'link': 'https://myanimelist.net/anime/1470/'},
       {
         'name': 'Golden Kamuy Season 4',
         'link': 'https://myanimelist.net/anime/50528/'
       },
       {
-        'name': 'Boruto: Naruto Next Generations',
-        'link': 'https://myanimelist.net/anime/34566/'
-      }
+        'name':
+            'Ningen Fushin: Adventurers Who Don\u2019t Believe in Humanity Will Save the World',
+        'link': 'https://myanimelist.net/anime/49612/'
+      },
+      {
+        'name': 'Arknights: PRELUDE TO DAWN',
+        'link': 'https://myanimelist.net/anime/50205/'
+      },
+      {'name': 'City Hunter', 'link': 'https://myanimelist.net/anime/1470/'}
     ]
   };
 }
