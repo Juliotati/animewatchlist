@@ -1,4 +1,4 @@
-part of presentation;
+part of '../presentation.dart';
 
 class WatchlistScreen extends StatelessWidget {
   const WatchlistScreen();
