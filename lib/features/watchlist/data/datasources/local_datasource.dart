@@ -1,7 +1,6 @@
 import 'package:animewatchlist/core/core.dart';
+import 'package:animewatchlist/features/watchlist/data/datasources/datasource_watchlist.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
-
-import 'datasource_watchlist.dart';
 
 abstract class LocalDatasource {
   Future<WatchlistModel> animeWatchlist();
@@ -17,7 +16,7 @@ class LocalDatasourceImpl implements LocalDatasource {
     try {
       return WatchlistModel.fromJson(AnimeWatchList.instance.watchlist);
     } catch (e) {
-      throw AnimeWatchListException(e.toString());
+      throw AppException(e.toString());
     }
   }
 }

@@ -1,7 +1,7 @@
-part of presentation;
+part of '../presentation.dart';
 
 class AnimeAlert extends StatelessWidget {
-  const AnimeAlert(this.data, {Key? key}) : super(key: key);
+  const AnimeAlert(this.data, {super.key});
   final String data;
 
   @override

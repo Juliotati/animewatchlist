@@ -3,7 +3,7 @@ description: A simple app to display all the animes I have on my 9anime.ru watch
 
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 0.0.1+1
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -12,10 +12,6 @@ dependencies:
   animations: ^2.0.0
   
   cupertino_icons: ^1.0.2
-
-  dartz: ^0.10.1
-
-  equatable: ^2.0.3
 
   flutter:
     sdk: flutter
@@ -34,7 +30,6 @@ dev_dependencies:
   json_serializable: ^6.5.4
 
   lint: any
-  mocktail: ^0.3.0
 
 flutter:
 

@@ -1,7 +1,11 @@
-part of presentation;
+part of '../presentation.dart';
 
 class AnimeSeparator extends StatelessWidget {
-  const AnimeSeparator({required this.folderType, required this.totalAnime});
+  const AnimeSeparator({
+    super.key,
+    required this.folderType,
+    required this.totalAnime,
+  });
 
   final int totalAnime;
   final AnimeFolderType folderType;
@@ -10,10 +14,10 @@ class AnimeSeparator extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+        padding: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 8.0),
         child: Text(
           '${folderType.name} - $totalAnime'.toUpperCase(),
-          style: Theme.of(context).textTheme.headline4!.copyWith(
+          style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                 fontWeight: FontWeight.bold,
                 color: folderType.color,
               ),

@@ -1,4 +1,4 @@
-package com.example.animewatchlist
+package com.juliotati.animewatchlist
 
 import io.flutter.embedding.android.FlutterActivity
 

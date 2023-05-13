@@ -1,7 +1,7 @@
-part of core;
+part of '../core.dart';
 
-class AnimeWatchListException implements Exception {
-  AnimeWatchListException([this.message]);
+class AppException implements Exception {
+  AppException([this.message]);
 
   String? message;
 

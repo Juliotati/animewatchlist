@@ -1,4 +1,4 @@
-part of presentation;
+part of '../presentation.dart';
 
 class WatchlistCard extends StatelessWidget {
   const WatchlistCard({
@@ -20,7 +20,7 @@ class WatchlistCard extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
         child: child,
       ),
     );

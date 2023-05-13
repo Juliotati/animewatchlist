@@ -6,86 +6,16 @@ class WatchlistScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WatchlistBuilder(
-      builder: (_, WatchlistModel watchlistModel) {
-        return CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          slivers: [
-            AnimeSeparator(
-              folderType: AnimeFolderType.watching,
-              totalAnime: watchlistModel.watching.length,
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (_, int index) {
-                  return AnimeName(
-                    anime: watchlistModel.watching[index],
-                    folderType: AnimeFolderType.watching,
-                  );
-                },
-                childCount: watchlistModel.watching.length,
-              ),
-            ),
-            AnimeSeparator(
-              folderType: AnimeFolderType.planned,
-              totalAnime: watchlistModel.planned.length,
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (_, int index) {
-                  return AnimeName(
-                    anime: watchlistModel.planned[index],
-                    folderType: AnimeFolderType.planned,
-                  );
-                },
-                childCount: watchlistModel.planned.length,
-              ),
-            ),
-            AnimeSeparator(
-              folderType: AnimeFolderType.onHold,
-              totalAnime: watchlistModel.onHold.length,
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (_, int index) {
-                  return AnimeName(
-                    anime: watchlistModel.onHold[index],
-                    folderType: AnimeFolderType.onHold,
-                  );
-                },
-                childCount: watchlistModel.onHold.length,
-              ),
-            ),
-            AnimeSeparator(
-              folderType: AnimeFolderType.dropped,
-              totalAnime: watchlistModel.dropped.length,
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (_, int index) {
-                  return AnimeName(
-                    anime: watchlistModel.dropped[index],
-                    folderType: AnimeFolderType.dropped,
-                  );
-                },
-                childCount: watchlistModel.dropped.length,
-              ),
-            ),
-            AnimeSeparator(
-              folderType: AnimeFolderType.watched,
-              totalAnime: watchlistModel.watched.length,
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (_, int index) {
-                  return AnimeName(
-                    anime: watchlistModel.watched[index],
-                    folderType: AnimeFolderType.watched,
-                  );
-                },
-                childCount: watchlistModel.watched.length,
-              ),
-            ),
-          ],
+      builder: (_, WatchlistModel watchlist, recommended) {
+        return PageView.builder(
+          itemCount: 2,
+          controller: PageController(),
+          itemBuilder: (context, index) {
+            return [
+              _AllAnime(watchlist),
+              _RecommendedAnime(recommended),
+            ][index];
+          },
         );
       },
     );
@@ -95,7 +25,11 @@ class WatchlistScreen extends StatelessWidget {
 class WatchlistBuilder extends StatefulWidget {
   const WatchlistBuilder({required this.builder, super.key});
 
-  final Widget Function(BuildContext, WatchlistModel) builder;
+  final Widget Function(
+    BuildContext,
+    WatchlistModel,
+    List<WatchlistCategoryModel>,
+  ) builder;
 
   @override
   State<WatchlistBuilder> createState() => _WatchlistBuilderState();
@@ -133,6 +67,7 @@ class _WatchlistBuilderState extends State<WatchlistBuilder> {
               if (!snapshot.hasData) {
                 return const AnimeAlert('WATCHLIST IS EMPTY');
               }
+
               return widget.builder(
                 context,
                 WatchlistModel(
@@ -142,6 +77,7 @@ class _WatchlistBuilderState extends State<WatchlistBuilder> {
                   watched: sortByName(snapshot.data!.watched),
                   watching: sortByName(snapshot.data!.watching),
                 ),
+                snapshot.data!.recommended,
               );
             },
           ),
@@ -149,11 +85,4 @@ class _WatchlistBuilderState extends State<WatchlistBuilder> {
       ),
     );
   }
-}
-
-List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
-  if (data == null) return [];
-  return data
-    ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()))
-    ..toList();
 }
