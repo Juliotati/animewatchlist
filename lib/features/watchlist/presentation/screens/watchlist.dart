@@ -73,11 +73,11 @@ class _WatchlistBuilderState extends State<WatchlistBuilder> {
               return widget.builder(
                 context,
                 WatchlistModel(
-                  planned: sortByName(snapshot.data!.planned),
-                  dropped: sortByName(snapshot.data!.dropped),
-                  onHold: sortByName(snapshot.data!.onHold),
-                  watched: sortByName(snapshot.data!.watched),
-                  watching: sortByName(snapshot.data!.watching),
+                  watching: sortByName(snapshot.data?.watching),
+                  planned: sortByName(snapshot.data?.planned),
+                  onHold: sortByName(snapshot.data?.onHold),
+                  dropped: sortByName(snapshot.data?.dropped),
+                  watched: sortByName(snapshot.data?.watched),
                 ),
                 snapshot.data!.recommended,
               );

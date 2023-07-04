@@ -1,7 +1,7 @@
 part of '../presentation.dart';
 
-class AnimeSeparator extends StatelessWidget {
-  const AnimeSeparator({
+class WatchListSeparator extends StatelessWidget {
+  const WatchListSeparator({
     super.key,
     required this.folderType,
     required this.totalAnime,

@@ -28,38 +28,38 @@ class _AllAnime extends StatelessWidget {
             SizedBox(width: 20),
           ],
         ),
-        AnimeSeparator(
-          key: Key('AnimeSeparator<${AnimeFolderType.watching}>'),
+        WatchListSeparator(
+          key: Key('WatchlistSeparator<${AnimeFolderType.watching}>'),
           folderType: AnimeFolderType.watching,
           totalAnime: watchlist.watching.length,
         ),
         AnimeCategoryList(
           key: Key('AnimeCategoryList<${AnimeFolderType.watching}>'),
           folderType: AnimeFolderType.watching,
-          watchlist: watchlist.dropped,
+          watchlist: watchlist.watching,
         ),
-        AnimeSeparator(
-          key: Key('AnimeSeparator<${AnimeFolderType.planned}>'),
+        WatchListSeparator(
+          key: Key('WatchlistSeparator<${AnimeFolderType.planned}>'),
           folderType: AnimeFolderType.planned,
           totalAnime: watchlist.planned.length,
         ),
         AnimeCategoryList(
           key: Key('AnimeCategoryList<${AnimeFolderType.planned}>'),
           folderType: AnimeFolderType.planned,
-          watchlist: watchlist.dropped,
+          watchlist: watchlist.planned,
         ),
-        AnimeSeparator(
-          key: Key('AnimeSeparator<${AnimeFolderType.onHold}>'),
+        WatchListSeparator(
+          key: Key('WatchlistSeparator<${AnimeFolderType.onHold}>'),
           folderType: AnimeFolderType.onHold,
           totalAnime: watchlist.onHold.length,
         ),
         AnimeCategoryList(
           key: Key('AnimeCategoryList<${AnimeFolderType.onHold}>'),
           folderType: AnimeFolderType.onHold,
-          watchlist: watchlist.dropped,
+          watchlist: watchlist.onHold,
         ),
-        AnimeSeparator(
-          key: Key('AnimeSeparator<${AnimeFolderType.dropped}>'),
+        WatchListSeparator(
+          key: Key('WatchlistSeparator<${AnimeFolderType.dropped}>'),
           folderType: AnimeFolderType.dropped,
           totalAnime: watchlist.dropped.length,
         ),
@@ -68,8 +68,8 @@ class _AllAnime extends StatelessWidget {
           folderType: AnimeFolderType.dropped,
           watchlist: watchlist.dropped,
         ),
-        AnimeSeparator(
-          key: Key('AnimeSeparator<${AnimeFolderType.watched}>'),
+        WatchListSeparator(
+          key: Key('WatchlistSeparator<${AnimeFolderType.watched}>'),
           folderType: AnimeFolderType.watched,
           totalAnime: watchlist.watched.length,
         ),

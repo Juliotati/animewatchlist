@@ -77,7 +77,7 @@ extension AnimeWatchlistExtension on WatchlistModel {
 }
 
 List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
-  if (data == null) return [];
+  if (data == null || data.isEmpty) return [];
   return data
     ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()))
     ..toList();

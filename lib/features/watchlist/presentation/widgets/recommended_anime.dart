@@ -10,7 +10,7 @@ class _RecommendedAnime extends StatelessWidget {
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
-        AnimeSeparator(
+        WatchListSeparator(
           key: Key('AnimeSeparator<${AnimeFolderType.recommended}>'),
           folderType: AnimeFolderType.recommended,
           totalAnime: recommended.length,
