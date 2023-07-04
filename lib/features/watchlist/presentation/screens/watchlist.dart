@@ -3,13 +3,15 @@ part of '../presentation.dart';
 class WatchlistScreen extends StatelessWidget {
   const WatchlistScreen();
 
+  static final PageController _controllers = PageController();
+
   @override
   Widget build(BuildContext context) {
     return WatchlistBuilder(
       builder: (_, WatchlistModel watchlist, recommended) {
         return PageView.builder(
           itemCount: 2,
-          controller: PageController(),
+          controller: _controllers,
           itemBuilder: (context, index) {
             return [
               _AllAnime(watchlist),

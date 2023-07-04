@@ -15,7 +15,7 @@ class WatchlistCard extends StatelessWidget {
     return Card(
       color: folderType.color.withOpacity(0.25),
       shadowColor: folderType.color,
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
+      margin: EdgeInsets.zero,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
       ),

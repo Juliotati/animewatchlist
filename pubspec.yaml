@@ -1,5 +1,5 @@
 name: animewatchlist
-description: A simple app to display all the animes I have on my 9anime.ru watchlist
+description: A simple app to display all the anime I have on my 9anime.to watchlist
 
 publish_to: 'none'
 
@@ -10,7 +10,6 @@ environment:
 
 dependencies:
   animations: ^2.0.0
-  
   cupertino_icons: ^1.0.2
 
   flutter:
@@ -19,6 +18,10 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   json_annotation: ^4.0.1
 
+  link_preview_generator:
+    git:
+      url: https://github.com/Juliotati/link_preview_generator.git
+      ref: main
   url_launcher: ^6.0.9
 
 dev_dependencies:

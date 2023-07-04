@@ -103,7 +103,7 @@ class AnimeCategoryList extends StatelessWidget {
           final showInitial = index == 0 ||
               currentAnime.name.characters.first !=
                   watchlist[index - 1].name.characters.first;
-          return AnimeName(
+          return AnimePreview(
             key: Key('Anime<${currentAnime.name}-$index>'),
             showInitial: showInitial,
             anime: currentAnime,
