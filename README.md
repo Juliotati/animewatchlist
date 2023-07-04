@@ -1,16 +1,9 @@
-# animewatchlist
+# Anime Watchlist
 
-A simple app to display all the animes I have on my 9anime.ru watchlist
+A simple app to quickly access all animes on my personal watchlist, grouped by folders.  
+Feel free to take a peek and find out about new stuff to watch _(but **NARUTO** comes first ofc)_
 
-## Getting Started
+## Preview 🔊
 
-This project is a starting point for a Flutter application.
+https://github.com/Juliotati/animewatchlist/assets/59662912/21bc24de-5a80-47cd-8d5e-2bbdd58630db
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
