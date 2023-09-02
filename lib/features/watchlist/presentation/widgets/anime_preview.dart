@@ -17,6 +17,12 @@ class AnimePreview extends StatefulWidget {
 }
 
 class _AnimePreviewState extends State<AnimePreview> {
+  static String errorTitle = 'Ops could\'t get a title';
+  static String errorDescription =
+      'DANG!! Could\'t load the description new, but i\'m sure it\'s a BANGER!! \nTap on the page to find out.';
+  static String errorImage =
+      'https://fonts.gstatic.com/s/e/notoemoji/latest/1f972/512.webp';
+
   @override
   Widget build(BuildContext context) {
     final headline6 = Theme.of(context).textTheme.titleLarge;
@@ -56,6 +62,9 @@ class _AnimePreviewState extends State<AnimePreview> {
               ),
               boxShadow: const [],
               backgroundColor: widget.folderType.color.withOpacity(0.05),
+              errorBody: errorDescription,
+              errorTitle: errorTitle,
+              errorImage: errorImage,
               errorWidget: AnimePreviewPlaceholder(
                 anime: widget.anime,
                 folderType: widget.folderType,

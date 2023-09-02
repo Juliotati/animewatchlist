@@ -22,7 +22,7 @@ dependencies:
     git:
       url: https://github.com/Juliotati/link_preview_generator.git
       ref: main
-  url_launcher: ^6.0.9
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   build_runner: ^2.0.5
