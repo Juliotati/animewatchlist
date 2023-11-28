@@ -1,12 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:link_preview_generator/link_preview_generator.dart';
 
 part 'watchlist_category.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class WatchlistCategoryModel {
-  const WatchlistCategoryModel({
-    required this.link,
-    required this.name,
+  WatchlistCategoryModel({
+    this.link,
+    this.name,
+    this.id,
+    this.info,
   });
 
   factory WatchlistCategoryModel.fromJson(Map<String, dynamic> json) {
@@ -14,9 +17,31 @@ class WatchlistCategoryModel {
   }
 
   Map<String, dynamic> toJson() {
-    return _$WatchlistCategoryModelToJson(this);
+    final anime = WatchlistCategoryModel(
+      id: idFromLink(link ?? info?.image ?? ''),
+      link: link,
+      name: displayName,
+    );
+    return _$WatchlistCategoryModelToJson(anime);
   }
 
-  final String name;
-  final String link;
+  String idFromLink(String link) {
+    if (link.contains('images/')) return idFromInfoLink(link);
+    return link.split('anime/').last.replaceAll('/', '');
+  }
+
+  String idFromInfoLink(String rawLink) {
+    final linkParts = rawLink.split('/');
+    final idIndex = linkParts.indexOf('anime') + 1;
+    return linkParts[idIndex];
+  }
+
+  String? get displayName {
+    return name ?? info?.title;
+  }
+
+  final String? id;
+  final WebInfo? info;
+  final String? name;
+  final String? link;
 }

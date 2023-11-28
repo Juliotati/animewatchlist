@@ -16,15 +16,41 @@ class AnimePreview extends StatefulWidget {
   State<AnimePreview> createState() => _AnimePreviewState();
 }
 
-class _AnimePreviewState extends State<AnimePreview> {
+class _AnimePreviewState extends State<AnimePreview>
+    with AutomaticKeepAliveClientMixin {
   static String errorTitle = 'Ops could\'t get a title';
-  static String errorDescription =
-      'DANG!! Could\'t load the description new, but i\'m sure it\'s a BANGER!! \nTap on the page to find out.';
-  static String errorImage =
-      'https://fonts.gstatic.com/s/e/notoemoji/latest/1f972/512.webp';
+  static String errorDescription = 'DANG!! Could\'t load the description new, '
+      'but i\'m sure it\'s a BANGER!! \nTap on the page to find out.';
+  static String errorImage = 'https://fonts.gstatic.com/s/e/notoemoji/latest/1f'
+      '972/512.webp';
+
+  WebInfo? _info;
+
+  WatchlistCategoryModel get anime => widget.anime;
+
+  WebInfo? get info => anime.info ?? _info;
+
+  AnimeFolderType get folder => widget.folderType;
+
+  void _onInfoLoaded(WebInfo? info) {
+    if (info?.title == 'Ops could\'t get a title') {
+      log('No data for: ${info?.title}');
+      return;
+    }
+
+    log('Saving: ${info?.title}');
+    RemoteDatasourceImpl().updateAnimeInfo(folder, anime.id, info);
+    if (mounted) setState(() => _info = info);
+  }
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+    log('has info: ${anime.info != null}');
+
     final headline6 = Theme.of(context).textTheme.titleLarge;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,10 +59,8 @@ class _AnimePreviewState extends State<AnimePreview> {
           Padding(
             padding: const EdgeInsets.only(left: 20.0, top: 10),
             child: Text(
-              widget.anime.name.characters.first.toUpperCase(),
-              style: headline6?.copyWith(
-                color: widget.folderType.color.withOpacity(0.5),
-              ),
+              anime.displayName?.characters.first.toUpperCase() ?? '',
+              style: headline6?.copyWith(color: folder.color.withOpacity(0.5)),
             ),
           ),
         Padding(
@@ -44,35 +68,37 @@ class _AnimePreviewState extends State<AnimePreview> {
           child: AnimatedSize(
             duration: const Duration(milliseconds: 300),
             child: LinkPreviewGenerator(
-              key: ValueKey(widget.anime.link),
+              key: ValueKey(anime.link),
+              info: info,
               bodyMaxLines: 4,
-              link: widget.anime.link,
+              link: anime.link ?? '',
               cacheDuration: const Duration(days: 90),
               linkPreviewStyle: LinkPreviewStyle.small,
               borderRadius: 8.0,
               showDomain: false,
-              removeElevation: true,
+              removeShadow: true,
               description: (desc) {
                 final starterInfoIndex = desc.indexOf('. ') + 2;
                 return desc.substring(starterInfoIndex);
               },
               titleStyle: TextStyle(
                 fontSize: 18,
-                color: widget.folderType.color,
+                color: folder.color,
               ),
               boxShadow: const [],
-              backgroundColor: widget.folderType.color.withOpacity(0.05),
+              backgroundColor: folder.color.withOpacity(0.05),
               errorBody: errorDescription,
               errorTitle: errorTitle,
               errorImage: errorImage,
               errorWidget: AnimePreviewPlaceholder(
-                anime: widget.anime,
-                folderType: widget.folderType,
+                anime: anime,
+                folderType: folder,
               ),
               placeholderWidget: AnimePreviewPlaceholder(
-                anime: widget.anime,
-                folderType: widget.folderType,
+                anime: anime,
+                folderType: folder,
               ),
+              onInfoLoaded: _onInfoLoaded,
             ),
           ),
         ),
@@ -93,15 +119,16 @@ class AnimePreviewPlaceholder extends StatelessWidget {
 
   Future<void> openAnimePage() async {
     try {
-      await launchUrl(Uri.parse(anime.link));
+      if (anime.link == null) return;
+      await launchUrl(Uri.parse(anime.link ?? ''));
     } catch (_) {
       rethrow;
     }
   }
 
   String get animeName {
-    if (anime.isRecommended) return '🔥 ${anime.name}';
-    return anime.name;
+    if (anime.isRecommended) return '🔥 ${anime.displayName}';
+    return anime.displayName ?? '';
   }
 
   @override

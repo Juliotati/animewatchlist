@@ -60,7 +60,7 @@ extension AnimeExtension on WatchlistCategoryModel {
   }
 
   bool _has(String value) {
-    return name.toLowerCase().contains(value.toLowerCase());
+    return (displayName ?? '').toLowerCase().contains(value.toLowerCase());
   }
 }
 
@@ -79,6 +79,10 @@ extension AnimeWatchlistExtension on WatchlistModel {
 List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
   if (data == null || data.isEmpty) return [];
   return data
-    ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()))
+    ..sort((a, b) {
+      return (a.displayName ?? '')
+          .toLowerCase()
+          .compareTo((b.displayName ?? '').toLowerCase());
+    })
     ..toList();
 }

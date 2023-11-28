@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "638684765228",
+    "project_id": "aniwavewatchlist",
+    "storage_bucket": "aniwavewatchlist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638684765228:android:c4f848239516ef48f30589",
+        "android_client_info": {
+          "package_name": "com.juliotati.animewatchlist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMbG-F64-Kd-MloiNVW9UbxYvBIJjfrGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

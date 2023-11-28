@@ -1,57 +1,41 @@
 part of '../presentation.dart';
 
-class WatchlistScreen extends StatelessWidget {
-  const WatchlistScreen();
+class WatchlistScreen extends StatefulWidget {
+  const WatchlistScreen({super.key});
 
+  @override
+  State<WatchlistScreen> createState() => _WatchlistScreenState();
+}
+
+class _WatchlistScreenState extends State<WatchlistScreen>
+    with AutomaticKeepAliveClientMixin {
   static final PageController _controllers = PageController();
 
-  @override
-  Widget build(BuildContext context) {
-    return WatchlistBuilder(
-      builder: (_, WatchlistModel watchlist, recommended) {
-        return PageView.builder(
-          itemCount: 2,
-          controller: _controllers,
-          itemBuilder: (context, index) {
-            return [
-              _AllAnime(watchlist),
-              _RecommendedAnime(recommended),
-            ][index];
-          },
-        );
-      },
-    );
-  }
-}
-
-class WatchlistBuilder extends StatefulWidget {
-  const WatchlistBuilder({required this.builder, super.key});
-
-  final Widget Function(
-    BuildContext,
-    WatchlistModel,
-    List<WatchlistCategoryModel>,
-  ) builder;
-
-  @override
-  State<WatchlistBuilder> createState() => _WatchlistBuilderState();
-}
-
-class _WatchlistBuilderState extends State<WatchlistBuilder> {
   late Future<WatchlistModel> watchlistFuture;
 
-  void _initializeAnimeList() {
-    watchlistFuture = LocalDatasourceImpl.instance.animeWatchlist();
+  bool _reloading = false;
+
+  Future<void> _getAnimeWatchList({bool updateUI = true}) async {
+    watchlistFuture = RemoteDatasourceImpl().animeWatchlist();
+    if (updateUI) {
+      log('refreshing watchlist info');
+      _reloading = true;
+      setState(() {});
+    }
   }
 
   @override
   void initState() {
     super.initState();
-    _initializeAnimeList();
+    _getAnimeWatchList(updateUI: false);
   }
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: AnnotatedRegion(
         value: SystemUiOverlayStyle.light,
@@ -60,26 +44,32 @@ class _WatchlistBuilderState extends State<WatchlistBuilder> {
           child: FutureBuilder<WatchlistModel>(
             future: watchlistFuture,
             builder: (_, AsyncSnapshot<WatchlistModel> snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const AnimeAlert('LOADING');
+              if (snapshot.connectionState == ConnectionState.waiting &&
+                  !_reloading) {
+                return const AnimeAlert('LOADING...');
               }
+
               if (snapshot.hasError) {
+                log('${snapshot.error}');
                 return const AnimeAlert('ERROR - COULD NOT LOAD WATCHLIST');
               }
+
               if (!snapshot.hasData) {
                 return const AnimeAlert('WATCHLIST IS EMPTY');
               }
 
-              return widget.builder(
-                context,
-                WatchlistModel(
-                  watching: sortByName(snapshot.data?.watching),
-                  planned: sortByName(snapshot.data?.planned),
-                  onHold: sortByName(snapshot.data?.onHold),
-                  dropped: sortByName(snapshot.data?.dropped),
-                  watched: sortByName(snapshot.data?.watched),
-                ),
-                snapshot.data!.recommended,
+              final watchlist = snapshot.data!;
+              final recommendedWatchlist = watchlist.recommended;
+
+              return PageView.builder(
+                itemCount: 2,
+                controller: _controllers,
+                itemBuilder: (context, index) {
+                  return [
+                    _AllAnime(watchlist, _getAnimeWatchList),
+                    _RecommendedAnime(recommendedWatchlist),
+                  ][index];
+                },
               );
             },
           ),
