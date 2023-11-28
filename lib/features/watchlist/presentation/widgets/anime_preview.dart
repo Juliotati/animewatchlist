@@ -19,8 +19,8 @@ class AnimePreview extends StatefulWidget {
 class _AnimePreviewState extends State<AnimePreview>
     with AutomaticKeepAliveClientMixin {
   static String errorTitle = 'Ops could\'t get a title';
-  static String errorDescription = 'DANG!! Could\'t load the description new, '
-      'but i\'m sure it\'s a BANGER!! \nTap on the page to find out.';
+  static String errorDescription = 'DANG!! Could\'t load this anime\'s '
+      'description, but I\'m pretty sure it\'s a BANGER!! \nTAP ME for more.';
   static String errorImage = 'https://fonts.gstatic.com/s/e/notoemoji/latest/1f'
       '972/512.webp';
 
@@ -38,9 +38,11 @@ class _AnimePreviewState extends State<AnimePreview>
       return;
     }
 
-    log('Saving: ${info?.title}');
-    RemoteDatasourceImpl().updateAnimeInfo(folder, anime.id, info);
-    if (mounted) setState(() => _info = info);
+    _info = info;
+    setState(() {});
+
+    log('Updating: ${info?.title}');
+    const RemoteDatasourceImpl().updateAnimeInfo(folder, anime.id, info);
   }
 
   @override
@@ -49,7 +51,7 @@ class _AnimePreviewState extends State<AnimePreview>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    log('has info: ${anime.info != null}');
+    log('has info: ${anime.info != null} | ${anime.info?.title}');
 
     final headline6 = Theme.of(context).textTheme.titleLarge;
     return Column(

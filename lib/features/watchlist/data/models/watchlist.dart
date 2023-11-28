@@ -11,6 +11,7 @@ class WatchlistModel {
     required this.onHold,
     required this.watched,
     required this.watching,
+    required this.recommended,
   });
 
   factory WatchlistModel.fromJson(Map<String, dynamic> json) {
@@ -35,4 +36,7 @@ class WatchlistModel {
 
   @JsonKey(name: 'Watching')
   final List<WatchlistCategoryModel> watching;
+
+  @JsonKey(name: 'Recommended')
+  final List<WatchlistCategoryModel>? recommended;
 }

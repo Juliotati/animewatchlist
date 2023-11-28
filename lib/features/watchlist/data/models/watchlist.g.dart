@@ -28,6 +28,10 @@ WatchlistModel _$WatchlistModelFromJson(Map<String, dynamic> json) =>
           .map(
               (e) => WatchlistCategoryModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      recommended: (json['Recommended'] as List<dynamic>?)
+          ?.map(
+              (e) => WatchlistCategoryModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$WatchlistModelToJson(WatchlistModel instance) =>
@@ -37,4 +41,5 @@ Map<String, dynamic> _$WatchlistModelToJson(WatchlistModel instance) =>
       'On-Hold': instance.onHold.map((e) => e.toJson()).toList(),
       'Watched': instance.watched.map((e) => e.toJson()).toList(),
       'Watching': instance.watching.map((e) => e.toJson()).toList(),
+      'Recommended': instance.recommended?.map((e) => e.toJson()).toList(),
     };

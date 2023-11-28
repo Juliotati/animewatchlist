@@ -16,7 +16,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
   bool _reloading = false;
 
   Future<void> _getAnimeWatchList({bool updateUI = true}) async {
-    watchlistFuture = RemoteDatasourceImpl().animeWatchlist();
+    watchlistFuture = const RemoteDatasourceImpl().animeWatchlist();
     if (updateUI) {
       log('refreshing watchlist info');
       _reloading = true;
@@ -59,7 +59,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
               }
 
               final watchlist = snapshot.data!;
-              final recommendedWatchlist = watchlist.recommended;
+              final recommendedWatchlist = watchlist.recommended ?? [];
 
               return PageView.builder(
                 itemCount: 2,

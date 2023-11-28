@@ -27,7 +27,7 @@ interface class RemoteDatasource {
 }
 
 class RemoteDatasourceImpl implements RemoteDatasource {
-  RemoteDatasourceImpl();
+  const RemoteDatasourceImpl();
 
   static final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -36,31 +36,37 @@ class RemoteDatasourceImpl implements RemoteDatasource {
     try {
       log('getting watchlist');
 
-      final plannedResponse = await _firestore.collection('Planned').get();
-      final droppedResponse = await _firestore.collection('Dropped').get();
-      final onHoldResponse = await _firestore.collection('On-Hold').get();
-      final watchedResponse = await _firestore.collection('Watched').get();
-      final watchingResponse = await _firestore.collection('Watching').get();
+      final plannedFolder = await _firestore.collection('Planned').get();
+      final droppedFolder = await _firestore.collection('Dropped').get();
+      final onHoldFolder = await _firestore.collection('On-Hold').get();
+      final watchedFolder = await _firestore.collection('Watched').get();
+      final watchingFolder = await _firestore.collection('Watching').get();
+      final recommendedFolder =
+          await _firestore.collection('Recommended').get();
 
       log('loaded watchlist');
 
-      final planned = plannedResponse.docs.map((animeMap) {
+      final planned = plannedFolder.docs.map((animeMap) {
         return WatchlistCategoryModel.fromJson(animeMap.data());
       });
 
-      final dropped = droppedResponse.docs.map((animeMap) {
+      final dropped = droppedFolder.docs.map((animeMap) {
         return WatchlistCategoryModel.fromJson(animeMap.data());
       });
 
-      final onHold = onHoldResponse.docs.map((animeMap) {
+      final onHold = onHoldFolder.docs.map((animeMap) {
         return WatchlistCategoryModel.fromJson(animeMap.data());
       });
 
-      final watched = watchedResponse.docs.map((animeMap) {
+      final watched = watchedFolder.docs.map((animeMap) {
         return WatchlistCategoryModel.fromJson(animeMap.data());
       });
 
-      final watching = watchingResponse.docs.map((animeMap) {
+      final watching = watchingFolder.docs.map((animeMap) {
+        return WatchlistCategoryModel.fromJson(animeMap.data());
+      });
+
+      final recommended = recommendedFolder.docs.map((animeMap) {
         return WatchlistCategoryModel.fromJson(animeMap.data());
       });
 
@@ -71,6 +77,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
         onHold: sortByName(onHold.toList()),
         watched: sortByName(watched.toList()),
         watching: sortByName(watching.toList()),
+        recommended: sortByName(recommended.toList()),
       );
 
       log('built watchlist model');
@@ -89,7 +96,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
     final recommendedList = WatchlistModel.fromJson(
       AnimeWatchList.instance.watchlist,
-    ).recommended;
+    ).recommendedFromAll;
 
     for (final anime in watchlist.planned) {
       _updateHelper(AnimeFolderType.planned, anime);
@@ -142,9 +149,20 @@ class RemoteDatasourceImpl implements RemoteDatasource {
     if (info == null) return;
     if (id?.isEmpty == true) return;
 
+    final blacklistTitles = [
+      'MyAnimeList',
+      'Ops could\'t get a title',
+    ];
+
+    if (blacklistTitles.any((title) => title == info.title)) {
+      log('Preventing update on: ${info.title}');
+      return;
+    }
+
     _firestore.doc('${folder.name}/$id').set(
       {'info': info.toJson()},
       SetOptions(merge: true),
     );
+    log('updated anime info[$id]: ${info.title}');
   }
 }

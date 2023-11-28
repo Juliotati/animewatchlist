@@ -65,7 +65,7 @@ extension AnimeExtension on WatchlistCategoryModel {
 }
 
 extension AnimeWatchlistExtension on WatchlistModel {
-  List<WatchlistCategoryModel> get recommended {
+  List<WatchlistCategoryModel> get recommendedFromAll {
     final List<WatchlistCategoryModel> recommendationList = [];
     recommendationList.addAll(watched.where((anime) => anime.isRecommended));
     recommendationList.addAll(watching.where((anime) => anime.isRecommended));
