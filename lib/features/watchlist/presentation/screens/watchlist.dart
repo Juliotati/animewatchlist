@@ -66,7 +66,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                 controller: _controllers,
                 itemBuilder: (context, index) {
                   return [
-                    _AllAnime(watchlist, _getAnimeWatchList),
+                    _GroupedAnime(watchlist, _getAnimeWatchList),
                     _RecommendedAnime(recommendedWatchlist),
                   ][index];
                 },

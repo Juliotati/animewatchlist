@@ -1,7 +1,7 @@
 part of '../presentation.dart';
 
-class _AllAnime extends StatelessWidget {
-  const _AllAnime(this.watchlist, this.onRefresh);
+class _GroupedAnime extends StatelessWidget {
+  const _GroupedAnime(this.watchlist, this.onRefresh);
 
   final WatchlistModel watchlist;
   final Future<void> Function() onRefresh;
