@@ -125,19 +125,25 @@ class RemoteDatasourceImpl implements RemoteDatasource {
     }
   }
 
-  void _updateHelper(AnimeFolderType folder, WatchlistCategoryModel anime) {
+  Future<void> _updateHelper(
+    AnimeFolderType folder,
+    WatchlistCategoryModel anime,
+  ) async {
     try {
       final id = anime.idFromLink(anime.link ?? anime.info?.image ?? '');
       final path = '${folder.name}/$id';
 
-      log(path);
-
       if (id.isEmpty) return;
+      final exists = (await _firestore.doc(path).get()).exists;
 
-      _firestore.doc(path).set(
-            anime.toJson(),
-            SetOptions(merge: true),
-          );
+      if (exists) {
+        log('$path ALREADY EXISTS');
+        return;
+      }
+
+      log('ADDING NEW: $path');
+      await _firestore.doc(path).set(anime.toJson(), SetOptions(merge: true));
+      return;
     } catch (error) {
       log('$error');
     }
