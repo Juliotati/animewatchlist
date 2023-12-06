@@ -74,6 +74,60 @@ extension AnimeWatchlistExtension on WatchlistModel {
 
     return sortByName(recommendationList);
   }
+
+  bool _foundMatch(String? name, String query) {
+    final neatName = (name ?? '').toLowerCase().trim();
+    final neatQuery = query.toLowerCase().trim();
+
+    if (neatName.isEmpty || neatQuery.isEmpty) return false;
+
+    return neatName.contains(neatQuery) ||
+        neatName.startsWith(neatQuery) ||
+        neatName.endsWith(neatQuery);
+  }
+
+  WatchlistModel filterWatchlist(String query) {
+    const int plannedIndex = 0;
+    const int droppedIndex = 1;
+    const int onHoldIndex = 2;
+    const int watchedIndex = 3;
+    const int watchingIndex = 4;
+    const int recommendedIndex = 5;
+
+    final List<List<WatchlistCategoryModel>> allWatchLists = [
+      planned,
+      dropped,
+      onHold,
+      watched,
+      watching,
+      recommendedFromAll,
+    ];
+
+    final List<List<WatchlistCategoryModel>> allWatchListsResults = [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+    ];
+
+    for (int i = 0; i <= recommendedIndex; i++) {
+      for (final anime in allWatchLists[i]) {
+        if (!_foundMatch(anime.displayName, query)) continue;
+        allWatchListsResults[i].add(anime);
+      }
+    }
+
+    return WatchlistModel(
+      planned: allWatchListsResults[plannedIndex],
+      dropped: allWatchListsResults[droppedIndex],
+      onHold: allWatchListsResults[onHoldIndex],
+      watched: allWatchListsResults[watchedIndex],
+      watching: allWatchListsResults[watchingIndex],
+      recommended: allWatchListsResults[recommendedIndex],
+    );
+  }
 }
 
 List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {

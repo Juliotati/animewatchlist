@@ -19,12 +19,15 @@ dependencies:
     sdk: flutter
 
   flutter_launcher_icons: ^0.13.1
+  get_it: ^7.6.4
+  injectable: ^2.3.2
   json_annotation: ^4.0.1
 
   link_preview_generator:
     git:
       url: https://github.com/Juliotati/link_preview_generator.git
       ref: main
+  provider: ^6.1.1
   url_launcher: ^6.1.11
 
 dev_dependencies:
@@ -33,7 +36,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  json_serializable: ^6.5.4
+  injectable_generator: ^2.4.1
+  json_serializable: ^6.7.1
 
   lint: any
 

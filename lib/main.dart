@@ -1,13 +1,17 @@
+import 'package:animewatchlist/core/config/di/app_di.dart';
 import 'package:animewatchlist/features/watchlist/presentation/presentation.dart';
+import 'package:animewatchlist/features/watchlist/presentation/provider/anime_preview_provider.dart';
 import 'package:animewatchlist/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await setupGetIt();
   runApp(const AnimeArchive());
 }
 
@@ -24,7 +28,10 @@ class AnimeArchive extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const WatchlistScreen(),
+      home: ListenableProvider<AnimeProvider>(
+        create: (_) => sl.get<AnimeProvider>(),
+        child: const WatchlistScreen(),
+      ),
     );
   }
 }

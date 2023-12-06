@@ -6,6 +6,7 @@ import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
 import 'package:animewatchlist/features/watchlist/presentation/presentation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:injectable/injectable.dart';
 import 'package:link_preview_generator/link_preview_generator.dart';
 
 interface class RemoteDatasource {
@@ -26,6 +27,8 @@ interface class RemoteDatasource {
   }
 }
 
+@named
+@Injectable(as: RemoteDatasource)
 class RemoteDatasourceImpl implements RemoteDatasource {
   const RemoteDatasourceImpl();
 

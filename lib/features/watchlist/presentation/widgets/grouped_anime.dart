@@ -1,15 +1,14 @@
 part of '../presentation.dart';
 
 class _GroupedAnime extends StatelessWidget {
-  const _GroupedAnime(this.watchlist, this.onRefresh);
+  const _GroupedAnime(this.watchlist);
 
   final WatchlistModel watchlist;
-  final Future<void> Function() onRefresh;
 
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: onRefresh,
+      onRefresh: context.read<AnimeProvider>().reloadWatchlist,
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
@@ -81,7 +80,7 @@ class _GroupedAnime extends StatelessWidget {
             folderType: AnimeFolderType.watched,
             watchlist: watchlist.watched,
           ),
-          const SliverToBoxAdapter(child: SizedBox(height: 50)),
+          const SliverToBoxAdapter(child: SizedBox(height: 120)),
         ],
       ),
     );
