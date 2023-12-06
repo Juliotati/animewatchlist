@@ -101,7 +101,11 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
           focusNode: _SearchAnimeField._focusNode,
           decoration: InputDecoration(
             filled: true,
-            hintText: reloading ? 'reloading...' : 'search...',
+            hintText: reloading
+                ? 'reloading...'
+                : hasFocus
+                    ? 'search in Japanese/English'
+                    : 'search...',
             contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             fillColor: hasFocus ? color : color.withOpacity(0.9),
             border: OutlineInputBorder(
