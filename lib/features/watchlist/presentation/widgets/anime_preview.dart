@@ -39,7 +39,7 @@ class _AnimePreviewState extends State<AnimePreview>
     }
 
     _info = info;
-    setState(() {});
+    if (mounted) setState(() {});
 
     log('Updating: ${info?.title}');
     const RemoteDatasourceImpl().updateAnimeInfo(folder, anime.id, info);
