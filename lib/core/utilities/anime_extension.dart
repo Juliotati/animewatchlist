@@ -81,8 +81,8 @@ extension AnimeWatchlistExtension on WatchlistModel {
 
     if (neatName.isEmpty || neatQuery.isEmpty) return false;
 
-    return neatName.contains(neatQuery) ||
-        neatName.startsWith(neatQuery) ||
+    return neatName.startsWith(neatQuery) ||
+        neatName.contains(neatQuery) ||
         neatName.endsWith(neatQuery);
   }
 
