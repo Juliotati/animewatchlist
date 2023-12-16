@@ -6,7 +6,6 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('91 Days') ||
         _has('arcane') ||
         _has('Attack on Titan') ||
-        _has('attack on titan') ||
         _has('baki') ||
         _has('berserk') ||
         _has('black lagoon') ||
@@ -25,6 +24,7 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('golden kamuy') ||
         _has('Fate/Zero') ||
         _has('Fighting Spirit:') ||
+        _has('HAIKYU‼') ||
         _has('Hajime no Ippo') ||
         _has('Hunter x Hunter') ||
         _has('Hell’s Paradise') ||
@@ -52,7 +52,6 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('The Eminence in Shadow') ||
         _has('The God of High School') ||
         _has('to your eternity') ||
-        _has('tower of god') ||
         _has('vinland saga') ||
         _has('your name') ||
         _has('weathering with you') ||
@@ -133,8 +132,10 @@ extension AnimeWatchlistExtension on WatchlistModel {
 List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
   if (data == null || data.isEmpty) return [];
   return data
-    ..sort((a, b) => (a.displayName ?? '')
-        .toLowerCase()
-        .compareTo((b.displayName ?? '').toLowerCase()))
+    ..sort(
+      (a, b) => (a.displayName ?? '')
+          .toLowerCase()
+          .compareTo((b.displayName ?? '').toLowerCase()),
+    )
     ..toList();
 }
