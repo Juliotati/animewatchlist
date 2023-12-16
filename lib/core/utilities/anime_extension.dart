@@ -24,7 +24,7 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('golden kamuy') ||
         _has('Fate/Zero') ||
         _has('Fighting Spirit:') ||
-        _has('HAIKYU‼') ||
+        _has('HAIKYU') ||
         _has('Hajime no Ippo') ||
         _has('Hunter x Hunter') ||
         _has('Hell’s Paradise') ||
