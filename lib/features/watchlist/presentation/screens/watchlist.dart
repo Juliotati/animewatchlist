@@ -71,7 +71,9 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
   void _clear(BuildContext context) {
     context.read<AnimeProvider>().filterWatchlist('');
     _SearchAnimeField._controller.clear();
-    _SearchAnimeField._focusNode.unfocus();
+    Future.delayed(const Duration(milliseconds: 350), () {
+      _SearchAnimeField._focusNode.unfocus();
+    });
   }
 
   @override
@@ -92,7 +94,7 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
       child: SizedBox(
         height: 45,
         width: hasFocus
-            ? 300
+            ? MediaQuery.sizeOf(context).width * 0.8
             : reloading
                 ? 120
                 : 105,
