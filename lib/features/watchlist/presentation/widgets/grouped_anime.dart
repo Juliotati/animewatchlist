@@ -5,6 +5,22 @@ class _GroupedAnime extends StatelessWidget {
 
   final WatchlistModel watchlist;
 
+  int get watchingTotal => watchlist.watching.length;
+
+  int get plannedTotal => watchlist.planned.length;
+
+  int get onHoldTotal => watchlist.onHold.length;
+
+  int get droppedTotal => watchlist.dropped.length;
+
+  int get watchedTotal => watchlist.watched.length;
+
+  int get recommendedTotal => watchlist.recommendedFromAll.length;
+
+  String get totalAnime {
+    return '${watchingTotal + plannedTotal + onHoldTotal + droppedTotal + watchedTotal}';
+  }
+
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
@@ -12,28 +28,41 @@ class _GroupedAnime extends StatelessWidget {
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          const SliverToBoxAdapter(child: SizedBox(height: 20)),
-          const SliverAppBar(
-            collapsedHeight: 40,
-            toolbarHeight: 40,
-            expandedHeight: 40,
-            elevation: 0.0,
-            backgroundColor: Colors.transparent,
-            actions: [
-              SizedBox(
-                height: 20,
-                child: TextButton(
-                  onPressed: null,
-                  child: Text('Swipe for recommendations ->'),
-                ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 20.0,
+                horizontal: 16.0,
               ),
-              SizedBox(width: 20),
-            ],
+              child: AnimeStats(label: 'Recommended', '$recommendedTotal 👉'),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: Wrap(
+                runAlignment: WrapAlignment.end,
+                alignment: WrapAlignment.end,
+                spacing: 16.0,
+                runSpacing: 8.0,
+                children: [
+                  AnimeStats(
+                    '$watchingTotal',
+                    folder: AnimeFolderType.watching,
+                  ),
+                  AnimeStats('$plannedTotal', folder: AnimeFolderType.planned),
+                  AnimeStats('$onHoldTotal', folder: AnimeFolderType.onHold),
+                  AnimeStats('$droppedTotal', folder: AnimeFolderType.dropped),
+                  AnimeStats('$watchedTotal', folder: AnimeFolderType.watched),
+                  AnimeStats(label: 'Total Anime:', ' $totalAnime'),
+                ],
+              ),
+            ),
           ),
           WatchListSeparator(
             key: Key('WatchlistSeparator<${AnimeFolderType.watching}>'),
             folderType: AnimeFolderType.watching,
-            totalAnime: watchlist.watching.length,
+            totalAnime: watchingTotal,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${AnimeFolderType.watching}>'),
@@ -43,7 +72,7 @@ class _GroupedAnime extends StatelessWidget {
           WatchListSeparator(
             key: Key('WatchlistSeparator<${AnimeFolderType.planned}>'),
             folderType: AnimeFolderType.planned,
-            totalAnime: watchlist.planned.length,
+            totalAnime: plannedTotal,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${AnimeFolderType.planned}>'),
@@ -53,7 +82,7 @@ class _GroupedAnime extends StatelessWidget {
           WatchListSeparator(
             key: Key('WatchlistSeparator<${AnimeFolderType.onHold}>'),
             folderType: AnimeFolderType.onHold,
-            totalAnime: watchlist.onHold.length,
+            totalAnime: onHoldTotal,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${AnimeFolderType.onHold}>'),
@@ -63,7 +92,7 @@ class _GroupedAnime extends StatelessWidget {
           WatchListSeparator(
             key: Key('WatchlistSeparator<${AnimeFolderType.dropped}>'),
             folderType: AnimeFolderType.dropped,
-            totalAnime: watchlist.dropped.length,
+            totalAnime: droppedTotal,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${AnimeFolderType.dropped}>'),
@@ -73,7 +102,7 @@ class _GroupedAnime extends StatelessWidget {
           WatchListSeparator(
             key: Key('WatchlistSeparator<${AnimeFolderType.watched}>'),
             folderType: AnimeFolderType.watched,
-            totalAnime: watchlist.watched.length,
+            totalAnime: watchedTotal,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${AnimeFolderType.watched}>'),
@@ -114,6 +143,27 @@ class AnimeCategoryList extends StatelessWidget {
           );
         },
         childCount: watchlist.length,
+      ),
+    );
+  }
+}
+
+class AnimeStats extends StatelessWidget {
+  const AnimeStats(this.data, {this.folder, this.label});
+
+  final String data;
+  final String? label;
+  final AnimeFolderType? folder;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      '${folder?.name ?? label}: $data',
+      textAlign: TextAlign.right,
+      style: TextStyle(
+        fontSize: 12,
+        color: folder?.color,
+        fontWeight: FontWeight.w300,
       ),
     );
   }
