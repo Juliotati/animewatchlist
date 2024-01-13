@@ -6,12 +6,9 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('91 Days') ||
         _has('arcane') ||
         _has('Attack on Titan') ||
-        _has('baki') ||
         _has('berserk') ||
         _has('black lagoon') ||
         _has('blade of the immortal') ||
-        _has('bleach') ||
-        _has('certain scientific') ||
         _has('chainsaw man') ||
         _has('cyberpunk') ||
         _has('days') ||
@@ -26,7 +23,6 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('Fighting Spirit:') ||
         _has('HAIKYU') ||
         _has('Hajime no Ippo') ||
-        _has('Hunter x Hunter') ||
         _has('Hell’s Paradise') ||
         _has('i am what i am') ||
         _has('Is It Wrong to Try to Pick Up Girls in a Dungeon') ||
@@ -34,11 +30,9 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('jormungand') ||
         (_has('kingdom') && !_has('hero')) ||
         _has('Megalobox') ||
-        _has('Mob Psycho') ||
         _has('Mushoku Tensei') ||
         _has('My Home Hero') ||
         (_has('naruto') && !_has('boruto')) ||
-        _has('overlord') ||
         _has('quintessential') ||
         _has('Ranking of Kings') ||
         _has('rent-a-girlfriend') ||

@@ -54,7 +54,7 @@ class _GroupedAnime extends StatelessWidget {
                   AnimeStats('$onHoldTotal', folder: AnimeFolderType.onHold),
                   AnimeStats('$droppedTotal', folder: AnimeFolderType.dropped),
                   AnimeStats('$watchedTotal', folder: AnimeFolderType.watched),
-                  AnimeStats(label: 'Total Anime:', ' $totalAnime'),
+                  AnimeStats(totalAnime, label: 'Total Anime'),
                 ],
               ),
             ),

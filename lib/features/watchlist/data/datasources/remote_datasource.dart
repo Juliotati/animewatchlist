@@ -133,15 +133,39 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       final id = anime.idFromLink(anime.link ?? anime.info?.image ?? '');
       final path = '${folder.name}/$id';
 
+      Future<bool> animeExists(String path) async {
+        return (await _firestore.doc(path).get()).exists;
+      }
+
       if (id.isEmpty) return;
-      final exists = (await _firestore.doc(path).get()).exists;
+      final exists = await animeExists(path);
 
       if (exists) {
         log('$path ALREADY EXISTS');
         return;
       }
 
-      log('ADDING NEW: $path');
+      bool movedFolder = false;
+      for (final otherFolder in AnimeFolderType.values) {
+        if (otherFolder == folder || otherFolder == AnimeFolderType.watched) {
+          continue;
+        }
+
+        final otherPath = '${otherFolder.name}/$id';
+        final watchedPath = '${AnimeFolderType.watched.name}/$id';
+
+        final exists = await animeExists(otherPath);
+        final watched = await animeExists(watchedPath);
+
+        if (otherFolder != AnimeFolderType.watched && exists && watched) {
+          movedFolder = true;
+          log('MOVING $id FROM ${otherFolder.name} to ${folder.name}');
+          _firestore.doc(otherPath).delete();
+          break;
+        }
+      }
+
+      if (!movedFolder) log('ADDING NEW: $path');
       await _firestore.doc(path).set(anime.toJson(), SetOptions(merge: true));
       return;
     } catch (error) {
