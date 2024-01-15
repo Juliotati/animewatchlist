@@ -30,6 +30,7 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('jormungand') ||
         (_has('kingdom') && !_has('hero')) ||
         _has('Megalobox') ||
+        _has('Monster') ||
         _has('Mushoku Tensei') ||
         _has('My Home Hero') ||
         (_has('naruto') && !_has('boruto')) ||
