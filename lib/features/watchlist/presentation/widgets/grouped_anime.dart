@@ -1,7 +1,7 @@
 part of '../presentation.dart';
 
 class _GroupedAnime extends StatelessWidget {
-  const _GroupedAnime(this.watchlist);
+  const _GroupedAnime({required this.watchlist});
 
   final WatchlistModel watchlist;
 
@@ -30,20 +30,9 @@ class _GroupedAnime extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 20.0,
-                horizontal: 16.0,
-              ),
-              child: AnimeStats(label: 'Recommended', '$recommendedTotal 👉'),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 16.0),
+              padding: const EdgeInsets.only(left: 16.0, top: 30.0),
               child: Wrap(
-                runAlignment: WrapAlignment.end,
-                alignment: WrapAlignment.end,
-                spacing: 16.0,
+                spacing: 6.0,
                 runSpacing: 8.0,
                 children: [
                   AnimeStats(
@@ -56,6 +45,23 @@ class _GroupedAnime extends StatelessWidget {
                   AnimeStats('$watchedTotal', folder: AnimeFolderType.watched),
                   AnimeStats(totalAnime, label: 'Total Anime'),
                 ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Card(
+                color: Colors.black87,
+                elevation: 2,
+                margin: const EdgeInsets.fromLTRB(16.0, 12.0, 12.0, 0.0),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
+                  child: AnimeStats(label: 'Top10 & Recommended', '$recommendedTotal 👉'),
+                ),
               ),
             ),
           ),
@@ -121,10 +127,12 @@ class AnimeCategoryList extends StatelessWidget {
     super.key,
     required this.watchlist,
     required this.folderType,
+    this.showInitial = true,
   });
 
   final AnimeFolderType folderType;
   final List<WatchlistCategoryModel> watchlist;
+  final bool showInitial;
 
   @override
   Widget build(BuildContext context) {
@@ -132,12 +140,11 @@ class AnimeCategoryList extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (_, int index) {
           final currentAnime = watchlist[index];
-          final showInitial = index == 0 ||
-              currentAnime.name?.characters.first !=
-                  watchlist[index - 1].name?.characters.first;
+          final showAnimeInitial =
+              index == 0 || currentAnime.name?.characters.first != watchlist[index - 1].name?.characters.first;
           return AnimePreview(
             key: Key('Anime<${currentAnime.name}-$index>'),
-            showInitial: showInitial,
+            showInitial: showInitial ? showAnimeInitial : showInitial,
             anime: currentAnime,
             folderType: folderType,
           );
@@ -157,13 +164,23 @@ class AnimeStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      '${folder?.name ?? label}: $data',
-      textAlign: TextAlign.right,
-      style: TextStyle(
-        fontSize: 12,
-        color: folder?.color,
-        fontWeight: FontWeight.w300,
+    return Card(
+      color: Colors.black87,
+      elevation: 2,
+      margin: EdgeInsets.zero,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+        child: Text(
+          '${folder?.name ?? label}: $data',
+          textAlign: TextAlign.right,
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: folder?.color,
+                fontWeight: FontWeight.w300,
+              ),
+        ),
       ),
     );
   }

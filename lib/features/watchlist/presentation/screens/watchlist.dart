@@ -35,8 +35,11 @@ class WatchlistScreen extends StatelessWidget {
                     controller: context.read<AnimeProvider>().controller,
                     itemBuilder: (context, index) {
                       return [
-                        _GroupedAnime(watchlist),
-                        _RecommendedAnime(recommendedWatchlist),
+                        _GroupedAnime(watchlist: watchlist),
+                        _TopRecommendedAnime(
+                          topAnime: watchlist.top10Anime,
+                          recommended: recommendedWatchlist,
+                        ),
                       ][index];
                     },
                   ),

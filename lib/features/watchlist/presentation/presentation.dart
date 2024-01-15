@@ -19,5 +19,5 @@ part 'widgets/anime_alert.dart';
 part 'widgets/anime_preview.dart';
 part 'widgets/anime_separator.dart';
 part 'widgets/grouped_anime.dart';
-part 'widgets/recommended_anime.dart';
+part 'widgets/top_recommended_anime.dart';
 part 'widgets/watchlist_card.dart';

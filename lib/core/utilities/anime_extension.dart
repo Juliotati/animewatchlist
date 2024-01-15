@@ -68,15 +68,17 @@ extension AnimeWatchlistExtension on WatchlistModel {
     return sortByName(recommendationList);
   }
 
+  List<WatchlistCategoryModel> get watchedAndRecommended {
+    return sortByName(watched.where((anime) => anime.isRecommended).toList());
+  }
+
   bool _foundMatch(String? name, String query) {
     final neatName = (name ?? '').toLowerCase().trim();
     final neatQuery = query.toLowerCase().trim();
 
     if (neatName.isEmpty || neatQuery.isEmpty) return false;
 
-    return neatName.startsWith(neatQuery) ||
-        neatName.contains(neatQuery) ||
-        neatName.endsWith(neatQuery);
+    return neatName.startsWith(neatQuery) || neatName.contains(neatQuery) || neatName.endsWith(neatQuery);
   }
 
   WatchlistModel filterWatchlist(String query) {
@@ -121,15 +123,48 @@ extension AnimeWatchlistExtension on WatchlistModel {
       recommended: allWatchListsResults[recommendedIndex],
     );
   }
+
+  List<WatchlistCategoryModel> get top10Anime {
+    const topAnimeIds = [
+      '20',     // 1. Naruto
+      '1735',   // 2. Naruto Shippuden
+      '12031',  // 3. Kingdom
+      '16498',  // 4. Attack on Titan
+      '19',     // 5. Monster
+      '37521',  // 6. Vinland Saga
+      '2418',   // 7. Sword of the Stranger
+      '30015',  // 8. ReLIFE
+      '32494',  // 9. DAYS
+      '20583',  // 10. HAIKYU!!
+    ];
+
+    final rawList = <WatchlistCategoryModel>[];
+
+    for (final anime in watchedAndRecommended) {
+      if (!topAnimeIds.contains(anime.id)) continue;
+      if (anime.id == null || anime.id == null) continue;
+
+      rawList.add(anime);
+      if (rawList.length == topAnimeIds.length) break;
+    }
+
+    final topList = <WatchlistCategoryModel>[];
+
+    for (final id in topAnimeIds) {
+      final anime = rawList.firstWhereOrNull((anime) => anime.id == id);
+      if (anime == null) continue;
+      topList.add(anime);
+    }
+
+    return topList;
+  }
 }
 
 List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
   if (data == null || data.isEmpty) return [];
   return data
     ..sort(
-      (a, b) => (a.displayName ?? '')
-          .toLowerCase()
-          .compareTo((b.displayName ?? '').toLowerCase()),
+      (a, b) => (a.displayName ?? '').toLowerCase().compareTo((b.displayName ?? '').toLowerCase()),
     )
     ..toList();
 }

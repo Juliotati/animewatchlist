@@ -16,10 +16,15 @@ enum AnimeState {
   const AnimeState();
 
   bool get isLoading => this == loading;
+
   bool get isReloading => this == reloading;
+
   bool get showLoading => this == loading || this == reloading;
+
   bool get isReady => this == ready;
+
   bool get hasError => this == error;
+
   bool get notData => this == empty;
 }
 
@@ -31,9 +36,9 @@ final class AnimeProvider extends ChangeNotifier {
     _loadWatchlist();
   }
 
-  final PageController controller = PageController();
-
   final RemoteDatasource _remoteDatasource;
+
+  final PageController controller = PageController();
 
   late WatchlistModel _watchlistModel;
   late WatchlistModel _filteredWatchlistModel;
