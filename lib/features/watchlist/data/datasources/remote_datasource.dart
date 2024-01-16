@@ -131,13 +131,14 @@ class RemoteDatasourceImpl implements RemoteDatasource {
   ) async {
     try {
       final id = anime.idFromLink(anime.link ?? anime.info?.image ?? '');
-      final path = '${folder.name}/$id';
 
       Future<bool> animeExists(String path) async {
         return (await _firestore.doc(path).get()).exists;
       }
 
       if (id.isEmpty) return;
+
+      final path = '${folder.name}/$id';
       final exists = await animeExists(path);
 
       if (exists) {
@@ -147,7 +148,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
       bool movedFolder = false;
       for (final otherFolder in AnimeFolderType.values) {
-        if (otherFolder == folder || otherFolder == AnimeFolderType.watched) {
+        if (otherFolder.recommendedFolder ||  otherFolder.watchedFolder || otherFolder == folder) {
           continue;
         }
 
@@ -157,7 +158,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
         final exists = await animeExists(otherPath);
         final watched = await animeExists(watchedPath);
 
-        if (otherFolder != AnimeFolderType.watched && exists && watched) {
+        if (!otherFolder.watchedFolder && exists && watched) {
           movedFolder = true;
           log('MOVING $id FROM ${otherFolder.name} to ${folder.name}');
           _firestore.doc(otherPath).delete();
