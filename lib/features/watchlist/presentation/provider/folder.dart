@@ -10,6 +10,9 @@ enum AnimeFolderType {
 
   const AnimeFolderType(this.name, this.color);
 
+  bool get recommendedFolder => this == recommended;
+  bool get watchedFolder => this == recommended;
+
   final String name;
   final Color color;
 }
