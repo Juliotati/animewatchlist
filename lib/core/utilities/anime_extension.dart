@@ -126,32 +126,21 @@ extension AnimeWatchlistExtension on WatchlistModel {
   }
 
   List<WatchlistCategoryModel> get top10Anime {
-    const topAnimeIds = [
-      '20',     // 1. Naruto
-      '1735',   // 2. Naruto Shippuden
-      '12031',  // 3. Kingdom
-      '16498',  // 4. Attack on Titan
-      '19',     // 5. Monster
-      '37521',  // 6. Vinland Saga
-      '2418',   // 7. Sword of the Stranger
-      '30015',  // 8. ReLIFE
-      '32494',  // 9. DAYS
-      '20583',  // 10. HAIKYU!!
-    ];
 
     final rawList = <WatchlistCategoryModel>[];
+    final top10AnimeIds = topAnimeIds.take(10);
 
     for (final anime in watchedAndRecommended) {
-      if (!topAnimeIds.contains(anime.id)) continue;
+      if (!top10AnimeIds.contains(anime.id)) continue;
       if (anime.id == null || anime.id == null) continue;
 
       rawList.add(anime);
-      if (rawList.length == topAnimeIds.length) break;
+      if (rawList.length == top10AnimeIds.length) break;
     }
 
     final topList = <WatchlistCategoryModel>[];
 
-    for (final id in topAnimeIds) {
+    for (final id in top10AnimeIds) {
       final anime = rawList.firstWhereOrNull((anime) => anime.id == id);
       if (anime == null) continue;
       topList.add(anime);
@@ -160,6 +149,19 @@ extension AnimeWatchlistExtension on WatchlistModel {
     return topList;
   }
 }
+
+const List<String> topAnimeIds = [
+  '20',     // 1. Naruto
+  '1735',   // 2. Naruto Shippuden
+  '12031',  // 3. Kingdom
+  '16498',  // 4. Attack on Titan
+  '19',     // 5. Monster
+  '37521',  // 6. Vinland Saga
+  '2418',   // 7. Sword of the Stranger
+  '30015',  // 8. ReLIFE
+  '32494',  // 9. DAYS
+  '20583',  // 10. HAIKYU!!
+];
 
 List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
   if (data == null || data.isEmpty) return [];
