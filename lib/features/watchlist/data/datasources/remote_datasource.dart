@@ -112,12 +112,12 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       _updateHelper(AnimeFolderType.onHold, anime);
     }
 
-    for (final anime in watchlist.watched) {
-      _updateHelper(AnimeFolderType.watched, anime);
-    }
-
     for (final anime in watchlist.watching) {
       _updateHelper(AnimeFolderType.watching, anime);
+    }
+
+    for (final anime in watchlist.watched) {
+      _updateHelper(AnimeFolderType.watched, anime);
     }
 
     for (final anime in recommendedList) {
@@ -126,7 +126,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
   }
 
   Future<void> _updateHelper(
-    AnimeFolderType folder,
+    AnimeFolderType toFolder,
     WatchlistCategoryModel anime,
   ) async {
     try {
@@ -138,31 +138,32 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
       if (id.isEmpty) return;
 
-      final path = '${folder.name}/$id';
+      final path = '${toFolder.name}/$id';
       final exists = await animeExists(path);
 
-      if (exists) {
+      if (toFolder.watchedFolder && exists) {
         log('$path ALREADY EXISTS');
         return;
       }
 
       bool movedFolder = false;
       for (final otherFolder in AnimeFolderType.values) {
-        if (otherFolder.recommendedFolder ||  otherFolder.watchedFolder || otherFolder == folder) {
+        if (otherFolder == toFolder || otherFolder.watchedFolder) {
           continue;
         }
 
         final otherPath = '${otherFolder.name}/$id';
         final watchedPath = '${AnimeFolderType.watched.name}/$id';
 
-        final exists = await animeExists(otherPath);
+        final existsElseWhere = await animeExists(otherPath);
         final watched = await animeExists(watchedPath);
 
-        if (!otherFolder.watchedFolder && exists && watched) {
-          movedFolder = true;
-          log('MOVING $id FROM ${otherFolder.name} to ${folder.name}');
-          _firestore.doc(otherPath).delete();
-          break;
+        if (!otherFolder.watchedFolder && existsElseWhere && watched) {
+          if (!otherFolder.recommendedFolder) {
+            movedFolder = true;
+            log('MOVING $id FROM ${otherFolder.name} to ${toFolder.name}');
+            _firestore.doc(otherPath).delete();
+          }
         }
       }
 

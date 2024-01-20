@@ -37,11 +37,18 @@ class WatchlistCategoryModel {
   }
 
   String? get displayName {
-    return name ?? info?.title;
+    return info?.title ?? name;
   }
 
+  @JsonKey(includeIfNull: false)
   final String? id;
+
+  @JsonKey(includeIfNull: false)
   final WebInfo? info;
+
+  @JsonKey(includeIfNull: false)
   final String? name;
+
+  @JsonKey(includeIfNull: false)
   final String? link;
 }

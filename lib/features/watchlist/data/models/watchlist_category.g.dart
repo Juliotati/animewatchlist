@@ -18,10 +18,18 @@ WatchlistCategoryModel _$WatchlistCategoryModelFromJson(
     );
 
 Map<String, dynamic> _$WatchlistCategoryModelToJson(
-        WatchlistCategoryModel instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'info': instance.info?.toJson(),
-      'name': instance.name,
-      'link': instance.link,
-    };
+    WatchlistCategoryModel instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull('info', instance.info?.toJson());
+  writeNotNull('name', instance.name);
+  writeNotNull('link', instance.link);
+  return val;
+}
