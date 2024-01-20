@@ -3,6 +3,9 @@ flutter_icons:
   ios: true
   remove_alpha_ios: true
   image_path: 'assets/app_icons/sage_mode_naruto.png'
+  web:
+    generate: true
+    image_path: 'assets/app_icons/sage_mode_naruto.png'
   macos:
     generate: false
     image_path: 'assets/app_icons/app_icon.png'

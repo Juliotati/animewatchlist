@@ -1,0 +1,40 @@
+html, body {
+  background-color:#121212;
+}
+
+.main, .main .container {
+    height: 100%;
+}
+
+.animeWatchlist {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.animeWatchlist img {
+   flex: block;
+   align-self: center;
+   justify-content:center
+}
+
+.from {
+   bottom: 20px;
+   left: 0px;
+   right: 0px;
+   display: flex;
+   position: fixed;
+   justify-content: center;
+}
+
+.from img {
+   align-self: flex-end;
+   justify-content:center
+}
+
+@media (-webkit-max-device-pixel-ratio: 5) {
+	* {
+		image-rendering: pixelated;
+	}
+}
