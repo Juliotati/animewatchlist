@@ -51,16 +51,27 @@ class _GroupedAnime extends StatelessWidget {
           SliverToBoxAdapter(
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Card(
-                color: Colors.black87,
-                elevation: 2,
-                margin: const EdgeInsets.fromLTRB(16.0, 12.0, 12.0, 0.0),
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                ),
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
-                  child: AnimeStats(label: 'Top10 & Recommended', '$recommendedTotal 👉'),
+                  padding: const EdgeInsets.only(
+                    left: 16.0,
+                    top: 10.0,
+                    bottom: 8.0,
+                  ),
+                  child: GestureDetector(
+                    onTap: () {
+                      context.read<AnimeProvider>().controller.animateToPage(
+                            1,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeInOut,
+                          );
+                    },
+                    child: AnimeStats(
+                      label: 'Top10 & Recommended',
+                      '$recommendedTotal 👉',
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -136,12 +147,35 @@ class AnimeCategoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isLargeScreen = MediaQuery.sizeOf(context).width > 600;
+
+    if (isLargeScreen) {
+      return SliverGrid(
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 400,
+          childAspectRatio: 400 / 212,
+        ),
+        delegate: SliverChildBuilderDelegate(
+          (_, int index) {
+            final currentAnime = watchlist[index];
+            return AnimePreview(
+              key: Key('Anime<${currentAnime.name}-$index>'),
+              anime: currentAnime,
+              folderType: folderType,
+            );
+          },
+          childCount: watchlist.length,
+        ),
+      );
+    }
+
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (_, int index) {
           final currentAnime = watchlist[index];
-          final showAnimeInitial =
-              index == 0 || currentAnime.name?.characters.first != watchlist[index - 1].name?.characters.first;
+          final showAnimeInitial = index == 0 ||
+              currentAnime.name?.characters.first !=
+                  watchlist[index - 1].name?.characters.first;
           return AnimePreview(
             key: Key('Anime<${currentAnime.name}-$index>'),
             showInitial: showInitial ? showAnimeInitial : showInitial,
