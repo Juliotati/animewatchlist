@@ -26,6 +26,8 @@ class _AnimePreviewState extends State<AnimePreview>
 
   WebInfo? _info;
 
+  bool _loading = true;
+
   WatchlistCategoryModel get anime => widget.anime;
 
   WebInfo? get info => anime.info ?? _info;
@@ -39,10 +41,17 @@ class _AnimePreviewState extends State<AnimePreview>
     }
 
     _info = info;
+    _loading = false;
     if (mounted) setState(() {});
 
     log('Updating: ${info?.title}');
     const RemoteDatasourceImpl().updateAnimeInfo(folder, anime.id, info);
+  }
+
+  @override
+  void initState() {
+    _loading = info == null;
+    super.initState();
   }
 
   @override
@@ -69,39 +78,47 @@ class _AnimePreviewState extends State<AnimePreview>
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
           child: AnimatedSize(
             duration: const Duration(milliseconds: 300),
-            child: LinkPreviewGenerator(
-              key: ValueKey(anime.link),
-              info: info,
-              bodyMaxLines: 4,
-              link: anime.link ?? '',
-              cacheDuration: const Duration(days: 90),
-              linkPreviewStyle: LinkPreviewStyle.small,
-              borderRadius: 8.0,
-              showDomain: false,
-              removeShadow: true,
-              description: (desc) {
-                final starterInfoIndex = desc.indexOf('. ') + 2;
-                return desc.substring(starterInfoIndex);
-              },
-              titleStyle: TextStyle(
-                fontSize: 18,
-                color: folder.color,
-              ),
-              boxShadow: const [],
-              backgroundColor: folder.color.withOpacity(0.05),
-              errorBody: errorDescription,
-              errorTitle: errorTitle,
-              errorImage: errorImage,
-              errorWidget: AnimePreviewPlaceholder(
-                anime: anime,
-                folderType: folder,
-              ),
-              placeholderWidget: AnimePreviewPlaceholder(
-                anime: anime,
-                folderType: folder,
-              ),
-              onInfoLoaded: _onInfoLoaded,
-            ),
+            child: _info == null
+                ? AnimePreviewPlaceholder(
+                    anime: anime,
+                    loading: _loading,
+                    folderType: folder,
+                  )
+                : LinkPreviewGenerator(
+                    key: ValueKey(anime.link),
+                    info: info,
+                    bodyMaxLines: 4,
+                    link: anime.link ?? '',
+                    cacheDuration: const Duration(days: 90),
+                    linkPreviewStyle: LinkPreviewStyle.small,
+                    borderRadius: 8.0,
+                    showDomain: false,
+                    removeShadow: true,
+                    description: (desc) {
+                      final starterInfoIndex = desc.indexOf('. ') + 2;
+                      return desc.substring(starterInfoIndex);
+                    },
+                    titleStyle: TextStyle(
+                      fontSize: 18,
+                      color: folder.color,
+                    ),
+                    boxShadow: const [],
+                    backgroundColor: folder.color.withOpacity(0.05),
+                    errorBody: errorDescription,
+                    errorTitle: errorTitle,
+                    errorImage: errorImage,
+                    errorWidget: AnimePreviewPlaceholder(
+                      anime: anime,
+                      loading: _loading,
+                      folderType: folder,
+                    ),
+                    placeholderWidget: AnimePreviewPlaceholder(
+                      anime: anime,
+                      loading: _loading,
+                      folderType: folder,
+                    ),
+                    onInfoLoaded: _onInfoLoaded,
+                  ),
           ),
         ),
       ],
@@ -114,8 +131,10 @@ class AnimePreviewPlaceholder extends StatelessWidget {
     super.key,
     required this.anime,
     required this.folderType,
+    required this.loading,
   });
 
+  final bool loading;
   final WatchlistCategoryModel anime;
   final AnimeFolderType folderType;
 
@@ -156,7 +175,13 @@ class AnimePreviewPlaceholder extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.launch, color: folderType.color),
+              child: loading
+                  ? const SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(),
+                    )
+                  : Icon(Icons.launch, color: folderType.color),
             ),
           ),
         ],
