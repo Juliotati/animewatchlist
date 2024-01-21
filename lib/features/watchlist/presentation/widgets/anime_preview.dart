@@ -35,7 +35,7 @@ class _AnimePreviewState extends State<AnimePreview>
   AnimeFolderType get folder => widget.folderType;
 
   void _onInfoLoaded(WebInfo? info) {
-    if (info?.title == 'Ops could\'t get a title') {
+    if (info?.title == errorTitle) {
       log('No data for: ${info?.title}');
       return;
     }
@@ -78,47 +78,40 @@ class _AnimePreviewState extends State<AnimePreview>
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
           child: AnimatedSize(
             duration: const Duration(milliseconds: 300),
-            child: _info == null
-                ? AnimePreviewPlaceholder(
-                    anime: anime,
-                    loading: _loading,
-                    folderType: folder,
-                  )
-                : LinkPreviewGenerator(
-                    key: ValueKey(anime.link),
-                    info: info,
-                    bodyMaxLines: 4,
-                    link: anime.link ?? '',
-                    cacheDuration: const Duration(days: 90),
-                    linkPreviewStyle: LinkPreviewStyle.small,
-                    borderRadius: 8.0,
-                    showDomain: false,
-                    removeShadow: true,
-                    description: (desc) {
-                      final starterInfoIndex = desc.indexOf('. ') + 2;
-                      return desc.substring(starterInfoIndex);
-                    },
-                    titleStyle: TextStyle(
-                      fontSize: 18,
-                      color: folder.color,
-                    ),
-                    boxShadow: const [],
-                    backgroundColor: folder.color.withOpacity(0.05),
-                    errorBody: errorDescription,
-                    errorTitle: errorTitle,
-                    errorImage: errorImage,
-                    errorWidget: AnimePreviewPlaceholder(
-                      anime: anime,
-                      loading: _loading,
-                      folderType: folder,
-                    ),
-                    placeholderWidget: AnimePreviewPlaceholder(
-                      anime: anime,
-                      loading: _loading,
-                      folderType: folder,
-                    ),
-                    onInfoLoaded: _onInfoLoaded,
-                  ),
+            child: LinkPreviewGenerator(
+              key: ValueKey(anime.link),
+              info: info,
+              bodyMaxLines: 4,
+              link: anime.link ?? '',
+              cacheDuration: const Duration(days: 90),
+              linkPreviewStyle: LinkPreviewStyle.small,
+              borderRadius: 8.0,
+              showDomain: false,
+              removeShadow: true,
+              description: (desc) {
+                final starterInfoIndex = desc.indexOf('. ') + 2;
+                return desc.substring(starterInfoIndex);
+              },
+              titleStyle: TextStyle(
+                fontSize: 18,
+                color: folder.color,
+              ),
+              boxShadow: const [],
+              backgroundColor: folder.color.withOpacity(0.05),
+              errorBody: errorDescription,
+              errorTitle: errorTitle,
+              errorImage: errorImage,
+              errorWidget: AnimePreviewPlaceholder(
+                anime: anime,
+                folderType: folder,
+              ),
+              placeholderWidget: AnimePreviewPlaceholder(
+                anime: anime,
+                loading: _loading,
+                folderType: folder,
+              ),
+              onInfoLoaded: _onInfoLoaded,
+            ),
           ),
         ),
       ],
@@ -131,7 +124,7 @@ class AnimePreviewPlaceholder extends StatelessWidget {
     super.key,
     required this.anime,
     required this.folderType,
-    required this.loading,
+    this.loading = false,
   });
 
   final bool loading;
