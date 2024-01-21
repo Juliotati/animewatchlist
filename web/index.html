@@ -46,11 +46,13 @@
           serviceWorkerVersion: serviceWorkerVersion,
         },
         onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
+            engineInitializer.initializeEngine({
+               useColorEmoji: true,
+            }).then(function(appRunner) {
+                appRunner.runApp();
+            });
+            }
+        });
     });
   </script>
 </body>

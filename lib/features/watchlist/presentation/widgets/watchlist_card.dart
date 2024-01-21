@@ -2,9 +2,9 @@ part of '../presentation.dart';
 
 class WatchlistCard extends StatelessWidget {
   const WatchlistCard({
-    super.key,
     required this.child,
     required this.folderType,
+    super.key,
   });
 
   final Widget child;
