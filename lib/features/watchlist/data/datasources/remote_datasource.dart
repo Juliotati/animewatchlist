@@ -186,10 +186,12 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
     final blacklistTitles = [
       'MyAnimeList',
+      'Human verification',
       'Ops could\'t get a title',
     ];
 
-    if (blacklistTitles.any((title) => title == info.title)) {
+    String noCase(String text) => text.toLowerCase();
+    if (blacklistTitles.any((title) => noCase(title) == noCase(info.title))) {
       log('Preventing update on: ${info.title}');
       return;
     }
@@ -198,6 +200,14 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       {'info': info.toJson()},
       SetOptions(merge: true),
     );
+
+    if (folder.recommendedFolder) {
+      _firestore.doc('${AnimeFolderType.watched.name}/$id').set(
+        {'info': info.toJson()},
+        SetOptions(merge: true),
+      );
+    }
+
     log('updated anime info[$id]: ${info.title}');
   }
 }

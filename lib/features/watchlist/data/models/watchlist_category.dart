@@ -36,8 +36,11 @@ class WatchlistCategoryModel {
     return linkParts[idIndex];
   }
 
-  String? get displayName {
-    return info?.title ?? name;
+  String get displayName {
+    if (info?.title != null && info!.title.isNotEmpty) {
+      return info!.title;
+    }
+    return name ?? '';
   }
 
   @JsonKey(includeIfNull: false)

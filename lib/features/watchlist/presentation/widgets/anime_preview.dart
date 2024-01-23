@@ -66,11 +66,11 @@ class _AnimePreviewState extends State<AnimePreview>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (widget.showInitial)
+        if (widget.showInitial && anime.displayName.isNotEmpty)
           Padding(
             padding: const EdgeInsets.only(left: 20.0, top: 10),
             child: Text(
-              anime.displayName?.characters.first.toUpperCase() ?? '',
+              anime.displayName.characters.first.toUpperCase(),
               style: headline6?.copyWith(color: folder.color.withOpacity(0.5)),
             ),
           ),
@@ -142,7 +142,7 @@ class AnimePreviewPlaceholder extends StatelessWidget {
 
   String get animeName {
     if (anime.isRecommended) return '🔥 ${anime.displayName}';
-    return anime.displayName ?? '';
+    return anime.displayName;
   }
 
   @override

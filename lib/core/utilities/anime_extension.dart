@@ -54,7 +54,7 @@ extension AnimeExtension on WatchlistCategoryModel {
   }
 
   bool _has(String value) {
-    return (displayName ?? '').toLowerCase().contains(value.toLowerCase());
+    return displayName.toLowerCase().contains(value.toLowerCase());
   }
 }
 
@@ -70,7 +70,7 @@ extension AnimeWatchlistExtension on WatchlistModel {
   }
 
   List<WatchlistCategoryModel> get watchedAndRecommended {
-    return sortByName(watched.where((anime) => anime.isRecommended).toList());
+    return sortByName(recommended?.toList());
   }
 
   bool _foundMatch(String? name, String query) {
@@ -79,7 +79,9 @@ extension AnimeWatchlistExtension on WatchlistModel {
 
     if (neatName.isEmpty || neatQuery.isEmpty) return false;
 
-    return neatName.startsWith(neatQuery) || neatName.contains(neatQuery) || neatName.endsWith(neatQuery);
+    return neatName.startsWith(neatQuery) ||
+        neatName.contains(neatQuery) ||
+        neatName.endsWith(neatQuery);
   }
 
   WatchlistModel filterWatchlist(String query) {
@@ -126,7 +128,6 @@ extension AnimeWatchlistExtension on WatchlistModel {
   }
 
   List<WatchlistCategoryModel> get top10Anime {
-
     final rawList = <WatchlistCategoryModel>[];
     final top10AnimeIds = topAnimeIds.take(10);
 
@@ -167,7 +168,11 @@ List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
   if (data == null || data.isEmpty) return [];
   return data
     ..sort(
-      (a, b) => (a.displayName ?? '').toLowerCase().compareTo((b.displayName ?? '').toLowerCase()),
+      (a, b) {
+        return a.displayName
+            .toLowerCase()
+            .compareTo(b.displayName.toLowerCase());
+      },
     )
     ..toList();
 }
