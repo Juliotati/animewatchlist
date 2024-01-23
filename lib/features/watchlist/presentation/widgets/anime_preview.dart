@@ -28,6 +28,10 @@ class _AnimePreviewState extends State<AnimePreview>
 
   bool _loading = true;
 
+  bool get noAnimeInfo {
+    return info?.type == LinkPreviewType.error;
+  }
+
   WatchlistCategoryModel get anime => widget.anime;
 
   WebInfo? get info => anime.info ?? _info;
@@ -35,11 +39,7 @@ class _AnimePreviewState extends State<AnimePreview>
   AnimeFolderType get folder => widget.folderType;
 
   void _onInfoLoaded(WebInfo? info) {
-    final noAnimeInfo = info?.type == LinkPreviewType.error ||
-        info?.title.isEmpty == true ||
-        info?.description.isEmpty == true;
-
-    if (info?.title == errorTitle || noAnimeInfo) {
+    if (info?.title == errorTitle) {
       log('No data for: ${info?.title}');
       return;
     }
@@ -54,7 +54,7 @@ class _AnimePreviewState extends State<AnimePreview>
 
   @override
   void initState() {
-    _loading = info == null;
+    _loading = anime.info == null;
     super.initState();
   }
 
@@ -64,7 +64,7 @@ class _AnimePreviewState extends State<AnimePreview>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    log('has info: ${anime.info != null} | ${anime.info?.title}');
+    log('has info: ${!noAnimeInfo} | ${anime.info?.title}');
 
     final headline6 = Theme.of(context).textTheme.titleLarge;
     return Column(
@@ -84,7 +84,7 @@ class _AnimePreviewState extends State<AnimePreview>
             duration: const Duration(milliseconds: 300),
             child: LinkPreviewGenerator(
               key: ValueKey(anime.link),
-              info: info,
+              info: noAnimeInfo ? null : info,
               bodyMaxLines: 4,
               link: anime.link ?? '',
               cacheDuration: const Duration(days: 90),
