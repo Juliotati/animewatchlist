@@ -35,7 +35,11 @@ class _AnimePreviewState extends State<AnimePreview>
   AnimeFolderType get folder => widget.folderType;
 
   void _onInfoLoaded(WebInfo? info) {
-    if (info?.title == errorTitle) {
+    final noAnimeInfo = info?.type == LinkPreviewType.error ||
+        info?.title.isEmpty == true ||
+        info?.description.isEmpty == true;
+
+    if (info?.title == errorTitle || noAnimeInfo) {
       log('No data for: ${info?.title}');
       return;
     }
