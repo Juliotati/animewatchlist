@@ -19,8 +19,8 @@ class AnimePreview extends StatefulWidget {
 class _AnimePreviewState extends State<AnimePreview>
     with AutomaticKeepAliveClientMixin {
   static String errorTitle = 'Ops could\'t get a title';
-  static String errorDescription = 'DANG!! Could\'t load this anime\'s '
-      'description, but I\'m pretty sure it\'s a BANGER!! \nTAP ME for more.';
+  static String errorDescription = 'DANG!! Could\'t load the description. '
+      'Pretty sure it\'s a BANGER!!';
   static String errorImage = 'https://fonts.gstatic.com/s/e/notoemoji/latest/1f'
       '972/512.webp';
 
@@ -29,7 +29,7 @@ class _AnimePreviewState extends State<AnimePreview>
   bool _loading = true;
 
   bool get noAnimeInfo {
-    return info?.type == LinkPreviewType.error;
+    return info?.type == LinkPreviewType.error || info?.image.isEmpty == true;
   }
 
   WatchlistCategoryModel get anime => widget.anime;
