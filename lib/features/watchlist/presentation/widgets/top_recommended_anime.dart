@@ -47,7 +47,7 @@ class Top10AnimeList extends StatefulWidget {
 class _Top10AnimeListState extends State<Top10AnimeList> {
   int visibleItemCount = 5;
 
-  String get title => visibleItemCount == 5 ? 'expand list' : 'see top 5';
+  String get title => visibleItemCount == 5 ? 'expand to top 10' : 'back to top 5';
 
   List<WatchlistCategoryModel> get topAnime => widget.topAnime.take(visibleItemCount).toList();
 
