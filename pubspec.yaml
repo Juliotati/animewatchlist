@@ -3,7 +3,7 @@ description: A simple app to display all the anime I have on my 9anime.to watchl
 
 publish_to: 'none'
 
-version: 0.3.0+3
+version: 0.3.1+4
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -44,4 +44,6 @@ dev_dependencies:
 
 flutter:
 
+  assets:
+    - shorebird.yaml
   uses-material-design: true
