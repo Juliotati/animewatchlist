@@ -176,3 +176,11 @@ List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
     )
     ..toList();
 }
+
+extension ListExt<E> on Iterable<E> {
+  E get randomElement {
+    final random = math.Random();
+    final int index = random.nextInt(length);
+    return elementAt(index);
+  }
+}

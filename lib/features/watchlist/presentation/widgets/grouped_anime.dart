@@ -15,8 +15,6 @@ class _GroupedAnime extends StatelessWidget {
 
   int get watchedTotal => watchlist.watched.length;
 
-  int get recommendedTotal => watchlist.recommendedFromAll.length;
-
   String get totalAnime {
     return '${watchingTotal + plannedTotal + onHoldTotal + droppedTotal + watchedTotal}';
   }
@@ -48,34 +46,7 @@ class _GroupedAnime extends StatelessWidget {
               ),
             ),
           ),
-          SliverToBoxAdapter(
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 16.0,
-                    top: 10.0,
-                    bottom: 8.0,
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      context.read<AnimeProvider>().controller.animateToPage(
-                            1,
-                            duration: const Duration(milliseconds: 500),
-                            curve: Curves.easeInOut,
-                          );
-                    },
-                    child: AnimeStats(
-                      label: 'Top10 & Recommended',
-                      '$recommendedTotal 👉',
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+          const SectionLabel('👈 Top anime', 0),
           WatchListSeparator(
             key: Key('WatchlistSeparator<${AnimeFolderType.watching}>'),
             folderType: AnimeFolderType.watching,
@@ -210,10 +181,61 @@ class AnimeStats extends StatelessWidget {
         child: Text(
           '${folder?.name ?? label}: $data',
           textAlign: TextAlign.right,
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: folder?.color,
                 fontWeight: FontWeight.w300,
               ),
+        ),
+      ),
+    );
+  }
+}
+
+class SectionLabel extends StatelessWidget {
+  const SectionLabel(this.data, this.screen);
+
+  final String data;
+  final int screen;
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverToBoxAdapter(
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 16.0,
+              top: 10.0,
+              bottom: 8.0,
+            ),
+            child: GestureDetector(
+              onTap: () => context.read<AnimeProvider>().goToPage(screen),
+              child: Card(
+                color: Colors.black87,
+                elevation: 2,
+                margin: EdgeInsets.zero,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8.0,
+                    vertical: 4.0,
+                  ),
+                  child: Text(
+                    data,
+                    textAlign: TextAlign.right,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );

@@ -13,15 +13,15 @@ class WatchlistScreen extends StatelessWidget {
           child: Consumer<AnimeProvider>(
             builder: (_, provider, __) {
               if (provider.state.isLoading) {
-                return const AnimeAlert('LOADING...');
+                return const AnimeAlert(state: AnimeState.loading);
               }
 
               if (provider.state.hasError) {
-                return const AnimeAlert('ERROR - COULD NOT LOAD WATCHLIST');
+                return const AnimeAlert(state: AnimeState.error);
               }
 
               if (provider.state.notData) {
-                return const AnimeAlert('WATCHLIST IS EMPTY');
+                return const AnimeAlert(state: AnimeState.empty);
               }
 
               final watchlist = provider.watchlist;
@@ -35,11 +35,11 @@ class WatchlistScreen extends StatelessWidget {
                     controller: context.read<AnimeProvider>().controller,
                     itemBuilder: (context, index) {
                       return [
-                        _GroupedAnime(watchlist: watchlist),
                         _TopRecommendedAnime(
                           topAnime: watchlist.top10Anime,
                           recommended: recommendedWatchlist,
                         ),
+                        _GroupedAnime(watchlist: watchlist),
                       ][index];
                     },
                   ),

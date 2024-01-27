@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:animewatchlist/core/core.dart';
 import 'package:animewatchlist/features/watchlist/data/datasources/remote_datasource.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
+import 'package:animewatchlist/gen/assets.gen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 
@@ -26,6 +27,26 @@ enum AnimeState {
   bool get hasError => this == error;
 
   bool get notData => this == empty;
+
+  String get stateMessage {
+    return switch (this) {
+      error => 'ERROR - COULD NOT LOAD WATCHLIST 🥲',
+      loading => 'LOADING...',
+      reloading => 'RELOADING...',
+      ready => 'READY',
+      empty => 'WATCHLIST IS EMPTY',
+    };
+  }
+
+  String get stateImage {
+    return switch (this) {
+      error => Assets.loadingGifs.luffySearch.path,
+      loading => Assets.loadingGifs.values.randomElement.path,
+      reloading => '',
+      ready => '',
+      empty => Assets.loadingGifs.luffySearch.path,
+    };
+  }
 }
 
 @lazySingleton
@@ -105,5 +126,13 @@ final class AnimeProvider extends ChangeNotifier {
   void _resetWatchlist() {
     _filteredWatchlistModel = _watchlistModel;
     _updateState(AnimeState.ready);
+  }
+
+  void goToPage(int index) {
+    controller.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
   }
 }

@@ -17,6 +17,7 @@ class _TopRecommendedAnime extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: [
           Top10AnimeList(topAnime: topAnime),
+          const SectionLabel('Swipe for more 👉', 1),
           WatchListSeparator(
             key: Key('AnimeSeparator<${AnimeFolderType.recommended}>'),
             folderType: AnimeFolderType.recommended,
@@ -47,9 +48,11 @@ class Top10AnimeList extends StatefulWidget {
 class _Top10AnimeListState extends State<Top10AnimeList> {
   int visibleItemCount = 5;
 
-  String get title => visibleItemCount == 5 ? 'expand to top 10' : 'back to top 5';
+  String get title =>
+      visibleItemCount == 5 ? 'expand to top 10' : 'back to top 5';
 
-  List<WatchlistCategoryModel> get topAnime => widget.topAnime.take(visibleItemCount).toList();
+  List<WatchlistCategoryModel> get topAnime =>
+      widget.topAnime.take(visibleItemCount).toList();
 
   void toggleVisibleItemCount() {
     setState(() => visibleItemCount = visibleItemCount == 5 ? 10 : 5);
@@ -87,8 +90,8 @@ class _Top10AnimeListState extends State<Top10AnimeList> {
                 child: Text(
                   title,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    letterSpacing: 1,
-                  ),
+                        letterSpacing: 1,
+                      ),
                 ),
               ),
             ),
