@@ -3,7 +3,7 @@ description: A simple app to display all the anime I have on my 9anime.to watchl
 
 publish_to: 'none'
 
-version: 0.4.0+5
+version: 0.4.1+6
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

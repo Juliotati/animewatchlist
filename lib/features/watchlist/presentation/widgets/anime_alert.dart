@@ -19,6 +19,7 @@ class AnimeAlert extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 10.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
