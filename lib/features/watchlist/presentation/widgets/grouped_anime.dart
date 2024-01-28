@@ -148,7 +148,8 @@ class AnimeCategoryList extends StatelessWidget {
           final validIndex = (index - 1).clamp(0, index);
 
           final anime = watchlist[index];
-          final hasDifferentInitial = validChar(anime.displayName.characters) != validChar(watchlist[validIndex].displayName.characters);
+          final hasDifferentInitial = validChar(anime.displayName.characters) !=
+              validChar(watchlist[validIndex].displayName.characters);
           final shouldShowInitial = index == 0 || hasDifferentInitial;
 
           return AnimePreview(
