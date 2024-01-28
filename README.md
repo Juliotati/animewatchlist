@@ -1,6 +1,6 @@
 # Anime Watchlist
 
-A simple app to quickly access all animes on my personal watchlist, grouped by folders.  
+A simple app to quickly access all anime on my personal watchlist, grouped by folders.  
 Feel free to take a peek and find out about new stuff to watch _(but **NARUTO** comes first ofc)_
 
 ## Preview 🔊
