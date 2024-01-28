@@ -143,14 +143,18 @@ class AnimeCategoryList extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (_, int index) {
-          final currentAnime = watchlist[index];
-          final showAnimeInitial = index == 0 ||
-              currentAnime.name?.characters.first !=
-                  watchlist[index - 1].name?.characters.first;
+          String validChar(Characters char) => char.isEmpty ? '' : char.first;
+
+          final validIndex = (index - 1).clamp(0, index);
+
+          final anime = watchlist[index];
+          final hasDifferentInitial = validChar(anime.displayName.characters) != validChar(watchlist[validIndex].displayName.characters);
+          final shouldShowInitial = index == 0 || hasDifferentInitial;
+
           return AnimePreview(
-            key: Key('Anime<${currentAnime.name}-$index>'),
-            showInitial: showInitial ? showAnimeInitial : showInitial,
-            anime: currentAnime,
+            key: Key('Anime<${anime.name}-$index>'),
+            showInitial: showInitial ? shouldShowInitial : showInitial,
+            anime: anime,
             folderType: folderType,
           );
         },

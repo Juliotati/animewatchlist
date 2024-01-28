@@ -37,7 +37,7 @@ class WatchlistCategoryModel {
   }
 
   String get displayName {
-    if (info?.title != null && info!.title.isNotEmpty) {
+    if (info?.title != null && info?.title.isNotEmpty == true) {
       return info!.title;
     }
     return name ?? '';

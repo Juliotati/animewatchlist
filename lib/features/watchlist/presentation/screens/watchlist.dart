@@ -43,11 +43,18 @@ class WatchlistScreen extends StatelessWidget {
                       ][index];
                     },
                   ),
-                  const Positioned(
-                    left: 30,
-                    bottom: 20,
-                    child: _SearchAnimeField(key: Key('SearchAnimeField')),
-                  ),
+                  if (kIsWeb)
+                    const Positioned(
+                      right: 30,
+                      bottom: 20,
+                      child: _SearchAnimeField(key: Key('SearchAnimeField')),
+                    )
+                  else
+                    const Positioned(
+                      left: 30,
+                      bottom: 20,
+                      child: _SearchAnimeField(key: Key('SearchAnimeField')),
+                    ),
                 ],
               );
             },
@@ -92,12 +99,13 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
   Widget build(BuildContext context) {
     const color = Colors.black;
     final reloading = context.select((AnimeProvider p) => p.state.isReloading);
+    final totalWidth = MediaQuery.sizeOf(context).width;
     return AnimatedSize(
       duration: const Duration(milliseconds: 300),
       child: SizedBox(
         height: 45,
         width: hasFocus
-            ? MediaQuery.sizeOf(context).width * 0.8
+            ? totalWidth * (kIsWeb ? 0.4 : 0.8)
             : reloading
                 ? 120
                 : 105,
@@ -109,7 +117,7 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
             hintText: reloading
                 ? 'reloading...'
                 : hasFocus
-                    ? 'search in Japanese/English'
+                    ? 'search anime name'
                     : 'search...',
             contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             fillColor: hasFocus ? color : color.withOpacity(0.9),
