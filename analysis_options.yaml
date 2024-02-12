@@ -1,7 +1,13 @@
 include: package:lint/analysis_options.yaml
 
 strong-mode: true
+
 analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/generated/**"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
   errors:
     missing_return: error
     missing_required_param: error
