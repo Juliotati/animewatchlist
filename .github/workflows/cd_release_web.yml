@@ -30,10 +30,11 @@ jobs:
           cache-path: '${{ runner.tool_cache }}/flutter-macos-stable-3.19.0-x64-hash'
           channel: 'stable'
           flutter-version: '3.19.0'
-        name: build web release canvaskit
+      - name: build web release canvaskit
         run: |
           flutter pub get
           flutter build web --release --web-renderer canvaskit
+
       - name: Install firebase tools
         uses: actions/setup-node@v4
         with:
