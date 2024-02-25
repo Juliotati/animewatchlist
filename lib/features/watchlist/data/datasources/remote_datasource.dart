@@ -93,13 +93,9 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
   @override
   Future<void> updateWatchlist() async {
-    final watchlist = WatchlistModel.fromJson(
-      AnimeWatchList.instance.watchlist,
-    );
-
-    final recommendedList = WatchlistModel.fromJson(
-      AnimeWatchList.instance.watchlist,
-    ).recommendedFromAll;
+    final watchlistJson = await AnimeWatchList.instance.watchlist();
+    log('UPDATING WATCHLIST');
+    final watchlist = WatchlistModel.fromJson(watchlistJson);
 
     for (final anime in watchlist.planned) {
       _updateHelper(AnimeFolderType.planned, anime);
@@ -120,9 +116,10 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       _updateHelper(AnimeFolderType.watched, anime);
     }
 
-    for (final anime in recommendedList) {
+    for (final anime in watchlist.recommendedFromAll) {
       _updateHelper(AnimeFolderType.recommended, anime);
     }
+    log('UPDATED WATCHLIST');
   }
 
   Future<void> _updateHelper(
@@ -132,47 +129,58 @@ class RemoteDatasourceImpl implements RemoteDatasource {
     try {
       final id = anime.idFromLink(anime.link ?? anime.info?.image ?? '');
 
-      Future<bool> animeExists(String path) async {
-        return (await _firestore.doc(path).get()).exists;
-      }
-
       if (id.isEmpty) return;
 
       final path = '${toFolder.name}/$id';
-      final exists = await animeExists(path);
+      final exists = await _alreadyExistsOnCurrentFolder(path);
 
-      if (toFolder.watchedFolder && exists) {
+      if (exists) {
         log('$path ALREADY EXISTS');
         return;
       }
 
       bool movedFolder = false;
       for (final otherFolder in AnimeFolderType.values) {
-        if (otherFolder == toFolder || otherFolder.watchedFolder) {
+        if (otherFolder == toFolder ||
+            otherFolder.watchedFolder ||
+            otherFolder.recommendedFolder) {
+          log('SKIPPING ${otherFolder.name} FOLDER');
           continue;
         }
 
         final otherPath = '${otherFolder.name}/$id';
         final watchedPath = '${AnimeFolderType.watched.name}/$id';
 
-        final existsElseWhere = await animeExists(otherPath);
-        final watched = await animeExists(watchedPath);
+        final existsElseWhere = await _alreadyExistsOnCurrentFolder(otherPath);
+        final watched = await _alreadyExistsOnCurrentFolder(watchedPath);
 
-        if (!otherFolder.watchedFolder && existsElseWhere && watched) {
-          if (!otherFolder.recommendedFolder) {
-            movedFolder = true;
-            log('MOVING $id FROM ${otherFolder.name} to ${toFolder.name}');
-            _firestore.doc(otherPath).delete();
-          }
+        if (existsElseWhere && watched) {
+          movedFolder = true;
+          log('MOVING $id FROM ${otherFolder.name} to ${toFolder.name}');
+          _firestore.doc(otherPath).delete();
+          await _mergeDoc(path, anime.toJson());
         }
+        movedFolder = false;
       }
 
-      if (!movedFolder) log('ADDING NEW: $path');
-      await _firestore.doc(path).set(anime.toJson(), SetOptions(merge: true));
+      if (!movedFolder) {
+        log('ADDING NEW: $path');
+        final updatedAnime = anime.copyWith(addedAt: DateTime.now());
+        await _mergeDoc(path, updatedAnime.toJson());
+      }
       return;
     } catch (error) {
       log('$error');
     }
+  }
+
+  Future<void> _mergeDoc(String path, Map<String, dynamic> data) async {
+    return _firestore.doc(path).set(data, SetOptions(merge: true));
+  }
+
+  Future<bool> _alreadyExistsOnCurrentFolder(String path) async {
+    final exists = (await _firestore.doc(path).get()).exists;
+    return exists;
   }
 
   @override

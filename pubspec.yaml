@@ -3,19 +3,19 @@ description: A simple app to display all the anime I have on my 9anime.to watchl
 
 publish_to: 'none'
 
-version: 0.4.3+8
+version: 0.4.4+9
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   animations: ^2.0.0
-  cloud_firestore: ^4.13.2
+  cloud_firestore: ^4.15.5
   collection: ^1.18.0
   cupertino_icons: ^1.0.2
 
-  firebase_analytics: ^10.7.1
-  firebase_core: ^2.23.0
+  firebase_analytics: ^10.8.6
+  firebase_core: ^2.25.4
   flutter:
     sdk: flutter
 
@@ -28,6 +28,8 @@ dependencies:
     git:
       url: https://github.com/Juliotati/link_preview_generator.git
       ref: main
+  path: ^1.9.0
+  path_provider: ^2.1.2
   provider: ^6.1.1
   url_launcher: ^6.1.11
 

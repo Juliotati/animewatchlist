@@ -9,6 +9,7 @@ class WatchlistCategoryModel {
     this.link,
     this.name,
     this.id,
+    this.addedAt,
     this.info,
   });
 
@@ -23,6 +24,22 @@ class WatchlistCategoryModel {
       name: displayName,
     );
     return _$WatchlistCategoryModelToJson(anime);
+  }
+
+  WatchlistCategoryModel copyWith({
+    String? id,
+    String? link,
+    String? name,
+    DateTime? addedAt,
+    WebInfo? info,
+  }) {
+    return WatchlistCategoryModel(
+      id: id ?? this.id,
+      link: link ?? this.link,
+      name: name ?? this.name,
+      addedAt: addedAt ?? this.addedAt,
+      info: info ?? this.info,
+    );
   }
 
   String idFromLink(String link) {
@@ -54,4 +71,7 @@ class WatchlistCategoryModel {
 
   @JsonKey(includeIfNull: false)
   final String? link;
+
+  @JsonKey(includeIfNull: false)
+  final DateTime? addedAt;
 }

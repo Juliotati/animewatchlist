@@ -14,7 +14,8 @@ class LocalDatasourceImpl implements LocalDatasource {
   @override
   Future<WatchlistModel> animeWatchlist() async {
     try {
-      return WatchlistModel.fromJson(AnimeWatchList.instance.watchlist);
+      final watchlistJson = await AnimeWatchList.instance.watchlist();
+      return WatchlistModel.fromJson(watchlistJson);
     } catch (e) {
       throw AppException(e.toString());
     }
