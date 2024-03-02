@@ -1,6 +1,7 @@
 import 'dart:convert' show jsonDecode;
 import 'dart:developer' show log;
 
+import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class AnimeWatchList {
@@ -8,13 +9,19 @@ class AnimeWatchList {
 
   static const AnimeWatchList instance = AnimeWatchList._();
 
-  Future<Map<String, dynamic>> watchlist() async {
+  Future<WatchlistModel> watchlist() async {
     try {
-      final watchlistJson = await rootBundle.loadString('anime_watchlist.json');
-      if (watchlistJson.isEmpty) throw Exception('No watchlist found');
+      log('UPDATING WATCHLIST');
+      const fileName = 'anime_watchlist.json';
+      final encodedWatchlist = await rootBundle.loadString(fileName);
 
-      log('LOADED "anime_watchlist.json" from assets');
-      return jsonDecode(watchlistJson) as Map<String, dynamic>;
+      if (encodedWatchlist.isEmpty) throw Exception('No watchlist found');
+      log('LOADED watchlist');
+
+      final watchlistMap = jsonDecode(encodedWatchlist) as Map<String, dynamic>;
+      log('DECODED watchlist');
+
+      return WatchlistModel.fromJson(watchlistMap);
     } catch (e) {
       throw Exception(e.toString());
     }

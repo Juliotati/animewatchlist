@@ -93,9 +93,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
   @override
   Future<void> updateWatchlist() async {
-    final watchlistJson = await AnimeWatchList.instance.watchlist();
-    log('UPDATING WATCHLIST');
-    final watchlist = WatchlistModel.fromJson(watchlistJson);
+    final watchlist = await AnimeWatchList.instance.watchlist();
 
     for (final anime in watchlist.planned) {
       _updateHelper(AnimeFolderType.planned, anime);
