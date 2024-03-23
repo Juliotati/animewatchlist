@@ -14,6 +14,7 @@ class WatchlistCategoryModel {
   });
 
   factory WatchlistCategoryModel.fromJson(Map<String, dynamic> json) {
+    if (json['mal'] != null) json['link'] = json['mal'];
     return _$WatchlistCategoryModelFromJson(json);
   }
 
