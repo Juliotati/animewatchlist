@@ -1,11 +1,12 @@
+# fvm flutter pub run flutter_launcher_icons
 flutter_icons:
   android: false
   ios: true
   remove_alpha_ios: true
-  image_path: 'assets/app_icons/sage_mode_naruto.png'
+  image_path: 'assets/app_icons/sage_mode_naruto_circle.png'
   web:
     generate: true
-    image_path: 'assets/app_icons/sage_mode_naruto.png'
+    image_path: 'assets/app_icons/sage_mode_naruto_circle.png'
   macos:
     generate: false
     image_path: 'assets/app_icons/app_icon.png'
