@@ -224,7 +224,7 @@ class _AnimeRanking extends StatelessWidget {
                     topLeft: Radius.circular(8.0),
                     bottomLeft: Radius.circular(8.0),
                   ),
-                  child: Image.network(image, fit: BoxFit.cover, height: 10),
+                  child: Image.network(image, fit: BoxFit.cover, height: 110),
                 ),
               Expanded(
                 child: Row(
