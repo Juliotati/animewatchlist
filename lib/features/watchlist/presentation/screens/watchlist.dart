@@ -36,7 +36,7 @@ class WatchlistScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return [
                         _TopRecommendedAnime(
-                          topAnime: watchlist.top10Anime,
+                          topAnime: watchlist.topAnime,
                           recommended: recommendedWatchlist,
                         ),
                         _GroupedAnime(watchlist: watchlist),

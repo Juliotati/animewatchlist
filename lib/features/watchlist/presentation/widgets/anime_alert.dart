@@ -22,6 +22,7 @@ class AnimeAlert extends StatelessWidget {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 child: Stack(
                   alignment: Alignment.center,
+                  clipBehavior: Clip.none,
                   children: [
                     Image.asset(
                       state.stateImage,

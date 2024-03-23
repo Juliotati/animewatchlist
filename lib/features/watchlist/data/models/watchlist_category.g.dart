@@ -12,6 +12,9 @@ WatchlistCategoryModel _$WatchlistCategoryModelFromJson(
       link: json['link'] as String?,
       name: json['name'] as String?,
       id: json['id'] as String?,
+      addedAt: json['addedAt'] == null
+          ? null
+          : DateTime.parse(json['addedAt'] as String),
       info: json['info'] == null
           ? null
           : WebInfo.fromJson(json['info'] as Map<String, dynamic>),
@@ -31,5 +34,6 @@ Map<String, dynamic> _$WatchlistCategoryModelToJson(
   writeNotNull('info', instance.info?.toJson());
   writeNotNull('name', instance.name);
   writeNotNull('link', instance.link);
+  writeNotNull('addedAt', instance.addedAt?.toIso8601String());
   return val;
 }

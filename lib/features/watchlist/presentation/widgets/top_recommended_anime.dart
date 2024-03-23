@@ -48,14 +48,34 @@ class Top10AnimeList extends StatefulWidget {
 class _Top10AnimeListState extends State<Top10AnimeList> {
   int visibleItemCount = 5;
 
-  String get title =>
-      visibleItemCount == 5 ? 'expand to top 10' : 'back to top 5';
+  String get title {
+    return switch (visibleItemCount) {
+      5 => 'expand top 10',
+      10 => 'expand top 15',
+      15 => 'expand top 20',
+      20 => 'expand top 30',
+      _ => 'back to top 5',
+    };
+  }
 
-  List<WatchlistCategoryModel> get topAnime =>
-      widget.topAnime.take(visibleItemCount).toList();
+  List<WatchlistCategoryModel> get topAnime {
+    return widget.topAnime.take(visibleItemCount).toList();
+  }
 
   void toggleVisibleItemCount() {
-    setState(() => visibleItemCount = visibleItemCount == 5 ? 10 : 5);
+    switch (visibleItemCount) {
+      case 5:
+        visibleItemCount = 10;
+      case 10:
+        visibleItemCount = 15;
+      case 15:
+        visibleItemCount = 20;
+      case 20:
+        visibleItemCount = 30;
+      default:
+        visibleItemCount = 5;
+    }
+    setState(() {});
   }
 
   @override
@@ -75,7 +95,7 @@ class _Top10AnimeListState extends State<Top10AnimeList> {
             WatchListSeparator(
               key: const Key('AnimeSeparator<TopAnime>'),
               folderType: AnimeFolderType.recommended,
-              title: 'TOP 10 🔥',
+              title: 'TOP $visibleItemCount 🔥',
               totalAnime: topAnime.length,
             ),
             AnimeCategoryList(
@@ -83,15 +103,17 @@ class _Top10AnimeListState extends State<Top10AnimeList> {
               folderType: AnimeFolderType.recommended,
               watchlist: topAnime,
               showInitial: false,
+              showRank: true,
             ),
             SliverToBoxAdapter(
               child: TextButton(
                 onPressed: toggleVisibleItemCount,
                 child: Text(
                   title,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        letterSpacing: 1,
-                      ),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall
+                      ?.copyWith(letterSpacing: 1),
                 ),
               ),
             ),

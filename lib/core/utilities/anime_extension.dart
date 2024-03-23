@@ -13,7 +13,7 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('cyberpunk') ||
         _has('days') ||
         _has('death note') ||
-        _has('demon slayer') ||
+        (_has('demon slayer') || _has('Kimetsu no Yaiba')) ||
         _has('dororo') ||
         _has('DRIFTERS') ||
         _has('gleipnir') ||
@@ -21,9 +21,11 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('golden kamuy') ||
         _has('Fate/Zero') ||
         _has('Fighting Spirit:') ||
+        _has('Frieren') ||
         _has('HAIKYU') ||
         _has('Hajime no Ippo') ||
         _has('Hell’s Paradise') ||
+        _has('Hunter x Hunter') ||
         _has('i am what i am') ||
         _has('Is It Wrong to Try to Pick Up Girls in a Dungeon') ||
         _has('jujutsu kaisen') ||
@@ -49,7 +51,7 @@ extension AnimeExtension on WatchlistCategoryModel {
         _has('to your eternity') ||
         _has('vinland saga') ||
         _has('your name') ||
-        _has('weathering with you') ||
+        (_has('weathering with you') || _has('Tenki no Ko')) ||
         _has('World Trigger');
   }
 
@@ -127,21 +129,21 @@ extension AnimeWatchlistExtension on WatchlistModel {
     );
   }
 
-  List<WatchlistCategoryModel> get top10Anime {
+  List<WatchlistCategoryModel> get topAnime {
     final rawList = <WatchlistCategoryModel>[];
-    final top10AnimeIds = topAnimeIds.take(10);
+    final topAnimeIds = blazerTopAnimeIds.take(30);
 
     for (final anime in watchedAndRecommended) {
-      if (!top10AnimeIds.contains(anime.id)) continue;
+      if (!topAnimeIds.contains(anime.id)) continue;
       if (anime.id == null || anime.id == null) continue;
 
       rawList.add(anime);
-      if (rawList.length == top10AnimeIds.length) break;
+      if (rawList.length == topAnimeIds.length) break;
     }
 
     final topList = <WatchlistCategoryModel>[];
 
-    for (final id in top10AnimeIds) {
+    for (final id in topAnimeIds) {
       final anime = rawList.firstWhereOrNull((anime) => anime.id == id);
       if (anime == null) continue;
       topList.add(anime);
@@ -151,7 +153,7 @@ extension AnimeWatchlistExtension on WatchlistModel {
   }
 }
 
-const List<String> topAnimeIds = [
+const List<String> blazerTopAnimeIds = [
   '20',     // 1. Naruto
   '1735',   // 2. Naruto Shippuden
   '12031',  // 3. Kingdom
@@ -159,9 +161,29 @@ const List<String> topAnimeIds = [
   '19',     // 5. Monster
   '37521',  // 6. Vinland Saga
   '2418',   // 7. Sword of the Stranger
-  '30015',  // 8. ReLIFE
-  '32494',  // 9. DAYS
-  '20583',  // 10. HAIKYU!!
+  '39535',  // 8. Mushoku Tensei: Jobless Reincarnation
+  '52991',  // 9. Frieren: Beyond Journey's End
+  '38000',  // 10. Demon Slayer: Kimetsu no Yaiba
+  '31240',  // 11. Re:ZERO -Starting Life in Another World-
+  '37430',  // 12. That Time I Got Reincarnated as a Slime
+  '268',    // 13. Golden boy
+  '36028',  // 14. Golden Kamuy
+  '30015',  // 15. ReLIFE
+  '20583',  // 16. HAIKYU!!
+  '30',     // 17. Bleach
+  '136',    // 18. Hunter x Hunter
+  '44511',  // 19. Chainsaw man
+  '21',     // 20. One Piece
+  '48316',  // 21. The Eminence in Shadow
+  '32494',  // 22. DAYS
+  '889',    // 23. Black Lagoon
+  '263',    // 24. Hajime no Ippo
+  '32615',  // 25. Saga of Tanya the Evil
+  '24405',  // 26. World Trigger
+  '52769',  // 27. I Am What I Am
+  '32281',  // 28. Your Name
+  '38826',  // 29. Weathering with You
+  '40834',  // 30. Ranking of Kings
 ];
 
 List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {

@@ -1,4 +1,5 @@
 import 'package:animewatchlist/core/config/di/app_di.dart';
+import 'package:animewatchlist/features/watchlist/data/datasources/remote_datasource.dart';
 import 'package:animewatchlist/features/watchlist/presentation/presentation.dart';
 import 'package:animewatchlist/features/watchlist/presentation/provider/anime_preview_provider.dart';
 import 'package:animewatchlist/firebase_options.dart';

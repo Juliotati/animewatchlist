@@ -7,9 +7,11 @@ import 'package:animewatchlist/features/watchlist/data/datasources/remote_dataso
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
 import 'package:animewatchlist/features/watchlist/presentation/provider/anime_preview_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:link_preview_generator/link_preview_generator.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';

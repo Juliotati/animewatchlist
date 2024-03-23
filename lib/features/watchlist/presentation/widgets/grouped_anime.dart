@@ -110,11 +110,13 @@ class AnimeCategoryList extends StatelessWidget {
     required this.watchlist,
     required this.folderType,
     this.showInitial = true,
+    this.showRank = false,
   });
 
   final AnimeFolderType folderType;
   final List<WatchlistCategoryModel> watchlist;
   final bool showInitial;
+  final bool showRank;
 
   @override
   Widget build(BuildContext context) {
@@ -122,17 +124,21 @@ class AnimeCategoryList extends StatelessWidget {
 
     if (isLargeScreen) {
       return SliverGrid(
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 400,
-          childAspectRatio: 400 / 212,
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: showRank ? 300 : 400,
+          childAspectRatio: showRank ? (300 / 120) : (400 / 212),
         ),
         delegate: SliverChildBuilderDelegate(
           (_, int index) {
             final currentAnime = watchlist[index];
-            return AnimePreview(
-              key: Key('Anime<${currentAnime.name}-$index>'),
-              anime: currentAnime,
-              folderType: folderType,
+            return _AnimeRanking(
+              rank: index + 1,
+              showRank: showRank,
+              preview: AnimePreview(
+                key: Key('Anime<${currentAnime.name}-$index>'),
+                anime: currentAnime,
+                folderType: folderType,
+              ),
             );
           },
           childCount: watchlist.length,
@@ -152,14 +158,124 @@ class AnimeCategoryList extends StatelessWidget {
               validChar(watchlist[validIndex].displayName.characters);
           final shouldShowInitial = index == 0 || hasDifferentInitial;
 
-          return AnimePreview(
-            key: Key('Anime<${anime.name}-$index>'),
-            showInitial: showInitial ? shouldShowInitial : showInitial,
-            anime: anime,
-            folderType: folderType,
+          return _AnimeRanking(
+            rank: index + 1,
+            showRank: showRank,
+            preview: AnimePreview(
+              key: Key('Anime<${anime.name}-$index>'),
+              showInitial: showInitial ? shouldShowInitial : showInitial,
+              anime: anime,
+              folderType: folderType,
+            ),
           );
         },
         childCount: watchlist.length,
+      ),
+    );
+  }
+}
+
+@immutable
+class _AnimeRanking extends StatelessWidget {
+  const _AnimeRanking({
+    required this.rank,
+    required this.preview,
+    this.showRank = false,
+  });
+
+  final int rank;
+  final bool showRank;
+  final AnimePreview preview;
+
+  WatchlistCategoryModel get anime => preview.anime;
+
+  Future<void> openAnimePage() async {
+    try {
+      if (anime.link == null) return;
+      await launchUrl(Uri.parse(anime.link ?? ''));
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!showRank) return preview;
+
+    final headline6 = Theme.of(context).textTheme.titleLarge;
+    final image = anime.info?.image ?? '';
+    final hasImage = image.isNotEmpty;
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: WatchlistCard(
+        folderType: AnimeFolderType.watched,
+        noPadding: true,
+        child: InkWell(
+          splashColor: Colors.transparent,
+          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+          onTap: openAnimePage,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              if (hasImage)
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(8.0),
+                    bottomLeft: Radius.circular(8.0),
+                  ),
+                  child: Image.network(image, fit: BoxFit.cover, height: 10),
+                ),
+              Expanded(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 6.0, left: 10.0),
+                        child: Text(
+                          anime.name ?? anime.info?.title ?? '???',
+                          maxLines: 3,
+                          softWrap: true,
+                          overflow: TextOverflow.ellipsis,
+                          style: headline6?.copyWith(
+                            fontSize: 18.0,
+                            color: AnimeFolderType.watched.color,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8.0),
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.5),
+                        borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(8.0),
+                          bottomLeft: Radius.circular(8.0),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8.0,
+                          vertical: 4.0,
+                        ),
+                        child: Text(
+                          '#$rank',
+                          style:
+                              Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
