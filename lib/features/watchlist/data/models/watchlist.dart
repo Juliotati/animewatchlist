@@ -1,4 +1,5 @@
 import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
+import 'package:animewatchlist/features/watchlist/presentation/presentation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'watchlist.g.dart';
@@ -20,6 +21,17 @@ class WatchlistModel {
 
   Map<String, dynamic> toJson() {
     return _$WatchlistModelToJson(this);
+  }
+
+  List<WatchlistCategoryModel> folder(AnimeFolderType folder) {
+    return switch (folder) {
+      AnimeFolderType.planned => planned,
+      AnimeFolderType.dropped => dropped,
+      AnimeFolderType.onHold => onHold,
+      AnimeFolderType.watched => watched,
+      AnimeFolderType.watching => watching,
+      AnimeFolderType.recommended => recommended ?? [],
+    };
   }
 
   @JsonKey(name: 'Planned')

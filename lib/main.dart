@@ -12,7 +12,6 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await setupGetIt();
-  // const RemoteDatasourceImpl().updateWatchlist();
   runApp(const AnimeArchive());
 }
 
