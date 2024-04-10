@@ -1,4 +1,4 @@
-name: Web deployments
+name: Web Pipeline
 on:
   push:
     branches:
@@ -14,9 +14,10 @@ on:
         default: "production"
 
 jobs:
-  build-and-deploy:
+  web-app:
     runs-on: macos-latest
     environment: production
+    if: "contains(github.event.head_commit.modified, 'lib/')"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v2
@@ -30,12 +31,12 @@ jobs:
           cache-path: '${{ runner.tool_cache }}/flutter-macos-stable-3.19.0-x64-hash'
           channel: 'stable'
           flutter-version: '3.19.0'
-      - name: build web release canvaskit
+      - name: build-web-release-canvaskit
         run: |
           flutter pub get
           flutter build web --release --web-renderer canvaskit
 
-      - name: Install firebase tools
+      - name: deploy-to-firebase-hosting
         uses: actions/setup-node@v4
         with:
           node-version: "21.2.0"
