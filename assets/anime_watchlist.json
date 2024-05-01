@@ -6,11 +6,6 @@
       "al": "https://anilist.co/anime/21428/"
     },
     {
-      "name": "Horizon in the Middle of Nowhere II",
-      "mal": "https://myanimelist.net/anime/12487/",
-      "al": "https://anilist.co/anime/12487/"
-    },
-    {
       "name": "NieR:Automata Ver1.1a",
       "mal": "https://myanimelist.net/anime/51105/",
       "al": "https://anilist.co/anime/145665/"
@@ -21,29 +16,14 @@
       "al": "https://anilist.co/anime/400/"
     },
     {
-      "name": "Joshiraku",
-      "mal": "https://myanimelist.net/anime/12679/",
-      "al": "https://anilist.co/anime/12679/"
+      "name": "Horizon in the Middle of Nowhere II",
+      "mal": "https://myanimelist.net/anime/12487/",
+      "al": "https://anilist.co/anime/12487/"
     },
     {
-      "name": "Legend of the Galactic Heroes",
-      "mal": "https://myanimelist.net/anime/820/",
-      "al": "https://anilist.co/anime/820/"
-    },
-    {
-      "name": "D.Gray-man",
-      "mal": "https://myanimelist.net/anime/1482/",
-      "al": "https://anilist.co/anime/1482/"
-    },
-    {
-      "name": "WIND BREAKER",
-      "mal": "https://myanimelist.net/anime/54900/",
-      "al": "https://anilist.co/anime/163270/"
-    },
-    {
-      "name": "The Boy and The Beast",
-      "mal": "https://myanimelist.net/anime/28805/",
-      "al": "https://anilist.co/anime/20981/"
+      "name": "Yowamushi Pedal",
+      "mal": "https://myanimelist.net/anime/18179/",
+      "al": "https://anilist.co/anime/18179/"
     },
     {
       "name": "SHAMAN KING (2021)",
@@ -51,14 +31,39 @@
       "al": "https://anilist.co/anime/119675/"
     },
     {
+      "name": "WIND BREAKER",
+      "mal": "https://myanimelist.net/anime/54900/",
+      "al": "https://anilist.co/anime/163270/"
+    },
+    {
+      "name": "Mysterious Disappearances",
+      "mal": "https://myanimelist.net/anime/54199/",
+      "al": "https://anilist.co/anime/160090/"
+    },
+    {
+      "name": "Joshiraku",
+      "mal": "https://myanimelist.net/anime/12679/",
+      "al": "https://anilist.co/anime/12679/"
+    },
+    {
       "name": "The Demon Girl Next Door",
       "mal": "https://myanimelist.net/anime/39071/",
       "al": "https://anilist.co/anime/107490/"
     },
     {
-      "name": "Yowamushi Pedal",
-      "mal": "https://myanimelist.net/anime/18179/",
-      "al": "https://anilist.co/anime/18179/"
+      "name": "Legend of the Galactic Heroes",
+      "mal": "https://myanimelist.net/anime/820/",
+      "al": "https://anilist.co/anime/820/"
+    },
+    {
+      "name": "The Boy and The Beast",
+      "mal": "https://myanimelist.net/anime/28805/",
+      "al": "https://anilist.co/anime/20981/"
+    },
+    {
+      "name": "D.Gray-man",
+      "mal": "https://myanimelist.net/anime/1482/",
+      "al": "https://anilist.co/anime/1482/"
     }
   ],
   "Dropped": [
@@ -68,39 +73,39 @@
       "al": "https://anilist.co/anime/11843/"
     },
     {
-      "name": "Psycho-Pass",
+      "name": "PSYCHO-PASS",
       "mal": "https://myanimelist.net/anime/13601/",
       "al": "https://anilist.co/anime/13601/"
     },
     {
-      "name": "My One-Hit Kill Sister",
-      "mal": "https://myanimelist.net/anime/51219/",
-      "al": "https://anilist.co/anime/146234/"
+      "name": "The Genius Prince's Guide to Raising a Nation Out of Debt",
+      "mal": "https://myanimelist.net/anime/47159/",
+      "al": "https://anilist.co/anime/129190/"
     },
     {
-      "name": "Nisekoi",
-      "mal": "https://myanimelist.net/anime/18897/",
-      "al": "https://anilist.co/anime/18897/"
+      "name": "Mr Love: Queen's Choice",
+      "mal": "https://myanimelist.net/anime/40075/",
+      "al": "https://anilist.co/anime/110371/"
     },
     {
-      "name": "The World God Only Knows",
-      "mal": "https://myanimelist.net/anime/8525/",
-      "al": "https://anilist.co/anime/8525/"
+      "name": "Revenger",
+      "mal": "https://myanimelist.net/anime/53213/",
+      "al": "https://anilist.co/anime/155202/"
     },
     {
-      "name": "Do It Yourself!!",
-      "mal": "https://myanimelist.net/anime/48542/",
-      "al": "https://anilist.co/anime/131516/"
-    },
-    {
-      "name": "The Devil is a Part-Timer! Season 2",
-      "mal": "https://myanimelist.net/anime/48413/",
-      "al": "https://anilist.co/anime/130592/"
+      "name": "A Certain Magical Index",
+      "mal": "https://myanimelist.net/anime/4654/",
+      "al": "https://anilist.co/anime/4654/"
     },
     {
       "name": "Synduality Noir",
       "mal": "https://myanimelist.net/anime/53026/",
       "al": "https://anilist.co/anime/154643/"
+    },
+    {
+      "name": "The Devil is a Part-Timer! Season 2",
+      "mal": "https://myanimelist.net/anime/48413/",
+      "al": "https://anilist.co/anime/130592/"
     },
     {
       "name": "Spare Me, Great Lord!",
@@ -113,74 +118,9 @@
       "al": "https://anilist.co/anime/154391/"
     },
     {
-      "name": "A Certain Magical Index",
-      "mal": "https://myanimelist.net/anime/4654/",
-      "al": "https://anilist.co/anime/4654/"
-    },
-    {
       "name": "Muhyo & Roji's Bureau of Supernatural Investigation",
       "mal": "https://myanimelist.net/anime/37487/",
       "al": "https://anilist.co/anime/101340/"
-    },
-    {
-      "name": "Chaika -The Coffin Princess-",
-      "mal": "https://myanimelist.net/anime/20853/",
-      "al": "https://anilist.co/anime/20462/"
-    },
-    {
-      "name": "Yozakura Quartet",
-      "mal": "https://myanimelist.net/anime/4548/",
-      "al": "https://anilist.co/anime/4548/"
-    },
-    {
-      "name": "Reborn to Master the Blade: From Hero-King to Extraordinary Squire",
-      "mal": "https://myanimelist.net/anime/50481/",
-      "al": "https://anilist.co/anime/142193/"
-    },
-    {
-      "name": "Futsal Boys!!!!!",
-      "mal": "https://myanimelist.net/anime/40488/",
-      "al": "https://anilist.co/anime/112719/"
-    },
-    {
-      "name": "The Greatest Demon Lord Is Reborn as a Typical Nobody",
-      "mal": "https://myanimelist.net/anime/48415/",
-      "al": "https://anilist.co/anime/130586/"
-    },
-    {
-      "name": "Iwakakeru -Sport Climbing Girls-",
-      "mal": "https://myanimelist.net/anime/41783/",
-      "al": "https://anilist.co/anime/117757/"
-    },
-    {
-      "name": "Mr Love: Queen's Choice",
-      "mal": "https://myanimelist.net/anime/40075/",
-      "al": "https://anilist.co/anime/110371/"
-    },
-    {
-      "name": "Insomniacs after school",
-      "mal": "https://myanimelist.net/anime/50796/",
-      "al": "https://anilist.co/anime/143653/"
-    },
-    {
-      "name": "Fog Hill of Five Elements",
-      "mal": "https://myanimelist.net/anime/37936/",
-      "al": "https://anilist.co/anime/107069/"
-    },
-    {
-      "name": "My Dress-Up Darling",
-      "mal": "https://myanimelist.net/anime/48736/",
-      "al": "https://anilist.co/anime/132405/"
-    },
-    {
-      "name": "Cells at Work!",
-      "mal": "https://myanimelist.net/anime/37141/",
-      "al": "https://anilist.co/anime/100977/"
-    },
-    {
-      "name": "KamiKatsu: Working for God in a Godless World",
-      "mal": "https://myanimelist.net/anime/51693/",
-      "al": "https://anilist.co/anime/148048/"
     },
     {
       "name": "How a Realist Hero Rebuilt the Kingdom Part 2",
@@ -188,9 +128,14 @@
       "al": "https://anilist.co/anime/139648/"
     },
     {
-      "name": "KONOSUBA -An Explosion on This Wonderful World!",
-      "mal": "https://myanimelist.net/anime/51958/",
-      "al": "https://anilist.co/anime/150075/"
+      "name": "Chaika -The Coffin Princess-",
+      "mal": "https://myanimelist.net/anime/20853/",
+      "al": "https://anilist.co/anime/20462/"
+    },
+    {
+      "name": "My One-Hit Kill Sister",
+      "mal": "https://myanimelist.net/anime/51219/",
+      "al": "https://anilist.co/anime/146234/"
     },
     {
       "name": "Shine on! Bakumatsu Bad Boys",
@@ -198,9 +143,54 @@
       "al": "https://anilist.co/anime/146650/"
     },
     {
-      "name": "The Faraway Paladin",
-      "mal": "https://myanimelist.net/anime/48761/",
-      "al": "https://anilist.co/anime/132473/"
+      "name": "Cells at Work!",
+      "mal": "https://myanimelist.net/anime/37141/",
+      "al": "https://anilist.co/anime/100977/"
+    },
+    {
+      "name": "KONOSUBA -An Explosion on This Wonderful World!",
+      "mal": "https://myanimelist.net/anime/51958/",
+      "al": "https://anilist.co/anime/150075/"
+    },
+    {
+      "name": "My Dress-Up Darling",
+      "mal": "https://myanimelist.net/anime/48736/",
+      "al": "https://anilist.co/anime/132405/"
+    },
+    {
+      "name": "Fog Hill of Five Elements",
+      "mal": "https://myanimelist.net/anime/37936/",
+      "al": "https://anilist.co/anime/107069/"
+    },
+    {
+      "name": "Do It Yourself!!",
+      "mal": "https://myanimelist.net/anime/48542/",
+      "al": "https://anilist.co/anime/131516/"
+    },
+    {
+      "name": "Nisekoi",
+      "mal": "https://myanimelist.net/anime/18897/",
+      "al": "https://anilist.co/anime/18897/"
+    },
+    {
+      "name": "The World God Only Knows",
+      "mal": "https://myanimelist.net/anime/8525/",
+      "al": "https://anilist.co/anime/8525/"
+    },
+    {
+      "name": "KamiKatsu: Working for God in a Godless World",
+      "mal": "https://myanimelist.net/anime/51693/",
+      "al": "https://anilist.co/anime/148048/"
+    },
+    {
+      "name": "Yona of the Dawn",
+      "mal": "https://myanimelist.net/anime/25013/",
+      "al": "https://anilist.co/anime/20770/"
+    },
+    {
+      "name": "Iwakakeru -Sport Climbing Girls-",
+      "mal": "https://myanimelist.net/anime/41783/",
+      "al": "https://anilist.co/anime/117757/"
     },
     {
       "name": "The Rising of the Shield Hero Season 3",
@@ -208,39 +198,14 @@
       "al": "https://anilist.co/anime/111322/"
     },
     {
-      "name": "Cowboy Bebop",
-      "mal": "https://myanimelist.net/anime/1/",
-      "al": "https://anilist.co/anime/1/"
-    },
-    {
-      "name": "Mysteria Friends",
-      "mal": "https://myanimelist.net/anime/31537/",
-      "al": "https://anilist.co/anime/21322/"
-    },
-    {
       "name": "Charlotte",
       "mal": "https://myanimelist.net/anime/28999/",
       "al": "https://anilist.co/anime/20997/"
     },
     {
-      "name": "AZUR LANE",
-      "mal": "https://myanimelist.net/anime/38328/",
-      "al": "https://anilist.co/anime/104159/"
-    },
-    {
-      "name": "Nisemonogatari",
-      "mal": "https://myanimelist.net/anime/11597/",
-      "al": "https://anilist.co/anime/11597/"
-    },
-    {
-      "name": "Code: Realize ~Guardian of Rebirth~",
-      "mal": "https://myanimelist.net/anime/31456/",
-      "al": "https://anilist.co/anime/98630/"
-    },
-    {
-      "name": "Atelier Ryza: Ever Darkness & the Secret Hideout The Animation",
-      "mal": "https://myanimelist.net/anime/54760/",
-      "al": "https://anilist.co/anime/162893/"
+      "name": "Beelzebub",
+      "mal": "https://myanimelist.net/anime/9513/",
+      "al": "https://anilist.co/anime/9513/"
     },
     {
       "name": "Blood Blockade Battlefront",
@@ -253,34 +218,9 @@
       "al": "https://anilist.co/anime/7762/"
     },
     {
-      "name": "The Genius Prince's Guide to Raising a Nation Out of Debt",
-      "mal": "https://myanimelist.net/anime/47159/",
-      "al": "https://anilist.co/anime/129190/"
-    },
-    {
-      "name": "Beelzebub",
-      "mal": "https://myanimelist.net/anime/9513/",
-      "al": "https://anilist.co/anime/9513/"
-    },
-    {
-      "name": "Yona of the Dawn",
-      "mal": "https://myanimelist.net/anime/25013/",
-      "al": "https://anilist.co/anime/20770/"
-    },
-    {
-      "name": "Rakshasa Street",
-      "mal": "https://myanimelist.net/anime/33350/",
-      "al": "https://anilist.co/anime/99707/"
-    },
-    {
-      "name": "Life Lessons with Uramichi Oniisan",
-      "mal": "https://myanimelist.net/anime/40620/",
-      "al": "https://anilist.co/anime/112802/"
-    },
-    {
-      "name": "Blood Blockade Battlefront & Beyond",
-      "mal": "https://myanimelist.net/anime/34451/",
-      "al": "https://anilist.co/anime/97886/"
+      "name": "Reborn to Master the Blade: From Hero-King to Extraordinary Squire",
+      "mal": "https://myanimelist.net/anime/50481/",
+      "al": "https://anilist.co/anime/142193/"
     },
     {
       "name": "Medaka Box",
@@ -288,14 +228,19 @@
       "al": "https://anilist.co/anime/11761/"
     },
     {
-      "name": "Amagami SS+ plus Specials",
-      "mal": "https://myanimelist.net/anime/12669/",
-      "al": "https://anilist.co/anime/12669/"
+      "name": "Cowboy Bebop",
+      "mal": "https://myanimelist.net/anime/1/",
+      "al": "https://anilist.co/anime/1/"
     },
     {
-      "name": "Revenger",
-      "mal": "https://myanimelist.net/anime/53213/",
-      "al": "https://anilist.co/anime/155202/"
+      "name": "The Greatest Demon Lord Is Reborn as a Typical Nobody",
+      "mal": "https://myanimelist.net/anime/48415/",
+      "al": "https://anilist.co/anime/130586/"
+    },
+    {
+      "name": "Yozakura Quartet",
+      "mal": "https://myanimelist.net/anime/4548/",
+      "al": "https://anilist.co/anime/4548/"
     },
     {
       "name": "Steins;Gate",
@@ -303,61 +248,76 @@
       "al": "https://anilist.co/anime/9253/"
     },
     {
+      "name": "Mysteria Friends",
+      "mal": "https://myanimelist.net/anime/31537/",
+      "al": "https://anilist.co/anime/21322/"
+    },
+    {
+      "name": "Atelier Ryza: Ever Darkness & the Secret Hideout The Animation",
+      "mal": "https://myanimelist.net/anime/54760/",
+      "al": "https://anilist.co/anime/162893/"
+    },
+    {
+      "name": "Code: Realize ~Guardian of Rebirth~",
+      "mal": "https://myanimelist.net/anime/31456/",
+      "al": "https://anilist.co/anime/98630/"
+    },
+    {
+      "name": "Futsal Boys!!!!!",
+      "mal": "https://myanimelist.net/anime/40488/",
+      "al": "https://anilist.co/anime/112719/"
+    },
+    {
+      "name": "The Faraway Paladin",
+      "mal": "https://myanimelist.net/anime/48761/",
+      "al": "https://anilist.co/anime/132473/"
+    },
+    {
+      "name": "Nisemonogatari",
+      "mal": "https://myanimelist.net/anime/11597/",
+      "al": "https://anilist.co/anime/11597/"
+    },
+    {
+      "name": "AZUR LANE",
+      "mal": "https://myanimelist.net/anime/38328/",
+      "al": "https://anilist.co/anime/104159/"
+    },
+    {
       "name": "Oreshura",
       "mal": "https://myanimelist.net/anime/14749/",
       "al": "https://anilist.co/anime/14749/"
+    },
+    {
+      "name": "Insomniacs after school",
+      "mal": "https://myanimelist.net/anime/50796/",
+      "al": "https://anilist.co/anime/143653/"
+    },
+    {
+      "name": "Amagami SS+ plus Specials",
+      "mal": "https://myanimelist.net/anime/12669/",
+      "al": "https://anilist.co/anime/12669/"
+    },
+    {
+      "name": "Blood Blockade Battlefront & Beyond",
+      "mal": "https://myanimelist.net/anime/34451/",
+      "al": "https://anilist.co/anime/97886/"
+    },
+    {
+      "name": "Life Lessons with Uramichi Oniisan",
+      "mal": "https://myanimelist.net/anime/40620/",
+      "al": "https://anilist.co/anime/112802/"
+    },
+    {
+      "name": "Rakshasa Street",
+      "mal": "https://myanimelist.net/anime/33350/",
+      "al": "https://anilist.co/anime/99707/"
     }
   ],
   "On-Hold": [
     {
-      "name": "Asobi Asobase - workshop of fun -",
-      "mal": "https://myanimelist.net/anime/37171/",
-      "al": "https://anilist.co/anime/101001/"
-    },
-    {
-      "name": "Blade of the Phantom Master",
-      "mal": "https://myanimelist.net/anime/884/",
-      "al": "https://anilist.co/anime/884/"
-    },
-    {
-      "name": "Nichijou - My Ordinary Life",
-      "mal": "https://myanimelist.net/anime/10165/",
-      "al": "https://anilist.co/anime/10165/"
-    },
-    {
-      "name": "Kono Oto Tomare!: Sounds of Life Season 2",
-      "mal": "https://myanimelist.net/anime/38889/",
-      "al": "https://anilist.co/anime/108891/"
-    },
-    {
       "name": "Barakamon",
       "mal": "https://myanimelist.net/anime/22789/",
       "al": "https://anilist.co/anime/20722/"
-    },
-    {
-      "name": "K",
-      "mal": "https://myanimelist.net/anime/14467/",
-      "al": "https://anilist.co/anime/14467/"
-    },
-    {
-      "name": "Tokyo Revengers Season 2",
-      "mal": "https://myanimelist.net/anime/50608/",
-      "al": "https://anilist.co/anime/142853/"
-    },
-    {
-      "name": "After the Rain",
-      "mal": "https://myanimelist.net/anime/34984/",
-      "al": "https://anilist.co/anime/98385/"
-    },
-    {
-      "name": "Horimiya: The Missing Pieces",
-      "mal": "https://myanimelist.net/anime/54856/",
-      "al": "https://anilist.co/anime/163132/"
-    },
-    {
-      "name": "Towanoquon: Eternal Quon",
-      "mal": "https://myanimelist.net/anime/10717/",
-      "al": "https://anilist.co/anime/10717/"
     },
     {
       "name": "Please\u2606Twins!",
@@ -365,9 +325,9 @@
       "al": "https://anilist.co/anime/196/"
     },
     {
-      "name": "BIRDIE WING -Golf Girls' Story-",
-      "mal": "https://myanimelist.net/anime/50248/",
-      "al": "https://anilist.co/anime/140830/"
+      "name": "Nichijou - My Ordinary Life",
+      "mal": "https://myanimelist.net/anime/10165/",
+      "al": "https://anilist.co/anime/10165/"
     },
     {
       "name": "the Garden of sinners Chapter 1: Thanatos. (Overlooking View)",
@@ -375,14 +335,29 @@
       "al": "https://anilist.co/anime/2593/"
     },
     {
-      "name": "BUCCHIGIRI?!",
-      "mal": "https://myanimelist.net/anime/55358/",
-      "al": "https://anilist.co/anime/165254/"
-    },
-    {
       "name": "Saint Seiya: Knights of the Zodiac",
       "mal": "https://myanimelist.net/anime/1254/",
       "al": "https://anilist.co/anime/1254/"
+    },
+    {
+      "name": "Tokyo Revengers Season 2",
+      "mal": "https://myanimelist.net/anime/50608/",
+      "al": "https://anilist.co/anime/142853/"
+    },
+    {
+      "name": "BIRDIE WING -Golf Girls' Story-",
+      "mal": "https://myanimelist.net/anime/50248/",
+      "al": "https://anilist.co/anime/140830/"
+    },
+    {
+      "name": "Asobi Asobase - workshop of fun -",
+      "mal": "https://myanimelist.net/anime/37171/",
+      "al": "https://anilist.co/anime/101001/"
+    },
+    {
+      "name": "Towanoquon: Eternal Quon",
+      "mal": "https://myanimelist.net/anime/10717/",
+      "al": "https://anilist.co/anime/10717/"
     },
     {
       "name": "Paprika",
@@ -390,14 +365,9 @@
       "al": "https://anilist.co/anime/1943/"
     },
     {
-      "name": "Cat Planet Cuties",
-      "mal": "https://myanimelist.net/anime/6166/",
-      "al": "https://anilist.co/anime/6166/"
-    },
-    {
-      "name": "Clannad",
-      "mal": "https://myanimelist.net/anime/2167/",
-      "al": "https://anilist.co/anime/2167/"
+      "name": "B: The Beginning: Succession",
+      "mal": "https://myanimelist.net/anime/37994/",
+      "al": "https://anilist.co/anime/102498/"
     },
     {
       "name": "The Gene of AI",
@@ -405,31 +375,71 @@
       "al": "https://anilist.co/anime/158530/"
     },
     {
+      "name": "Cat Planet Cuties",
+      "mal": "https://myanimelist.net/anime/6166/",
+      "al": "https://anilist.co/anime/6166/"
+    },
+    {
       "name": "Bungo Stray Dogs 3",
       "mal": "https://myanimelist.net/anime/38003/",
       "al": "https://anilist.co/anime/103223/"
     },
     {
-      "name": "B: The Beginning: Succession",
-      "mal": "https://myanimelist.net/anime/37994/",
-      "al": "https://anilist.co/anime/102498/"
+      "name": "Horimiya: The Missing Pieces",
+      "mal": "https://myanimelist.net/anime/54856/",
+      "al": "https://anilist.co/anime/163132/"
     },
     {
       "name": "Saint Seiya: The Hades Chapter - Sanctuary",
       "mal": "https://myanimelist.net/anime/1257/",
       "al": "https://anilist.co/anime/1257/"
+    },
+    {
+      "name": "After the Rain",
+      "mal": "https://myanimelist.net/anime/34984/",
+      "al": "https://anilist.co/anime/98385/"
+    },
+    {
+      "name": "K",
+      "mal": "https://myanimelist.net/anime/14467/",
+      "al": "https://anilist.co/anime/14467/"
+    },
+    {
+      "name": "BUCCHIGIRI?!",
+      "mal": "https://myanimelist.net/anime/55358/",
+      "al": "https://anilist.co/anime/165254/"
+    },
+    {
+      "name": "Kaiju No.8",
+      "mal": "https://myanimelist.net/anime/52588/",
+      "al": "https://anilist.co/anime/153288/"
+    },
+    {
+      "name": "Viral Hit",
+      "mal": "https://myanimelist.net/anime/58080/",
+      "al": "https://anilist.co/anime/174653/"
+    },
+    {
+      "name": "Kono Oto Tomare!: Sounds of Life Season 2",
+      "mal": "https://myanimelist.net/anime/38889/",
+      "al": "https://anilist.co/anime/108891/"
+    },
+    {
+      "name": "Clannad",
+      "mal": "https://myanimelist.net/anime/2167/",
+      "al": "https://anilist.co/anime/2167/"
+    },
+    {
+      "name": "Blade of the Phantom Master",
+      "mal": "https://myanimelist.net/anime/884/",
+      "al": "https://anilist.co/anime/884/"
     }
   ],
   "Watched": [
     {
-      "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? III: Is It Wrong to Try to Find a Hot Spring in Orario? -Bath God Forever-",
-      "mal": "https://myanimelist.net/anime/44983/",
-      "al": "https://anilist.co/anime/127368/"
-    },
-    {
-      "name": "Mushoku Tensei: Jobless Reincarnation Cour 2",
-      "mal": "https://myanimelist.net/anime/45576/",
-      "al": "https://anilist.co/anime/127720/"
+      "name": "Summer Time Rendering",
+      "mal": "https://myanimelist.net/anime/47194/",
+      "al": "https://anilist.co/anime/129201/"
     },
     {
       "name": "Tokyo Revengers",
@@ -437,53 +447,13 @@
       "al": "https://anilist.co/anime/120120/"
     },
     {
-      "name": "Holy Knight Light",
-      "mal": "https://myanimelist.net/anime/45574/",
-      "al": "https://anilist.co/anime/127957/"
+      "name": "Horimiya",
+      "mal": "https://myanimelist.net/anime/42897/",
+      "al": "https://anilist.co/anime/124080/"
     },
     {
-      "name": "Peach Boy Riverside",
-      "mal": "https://myanimelist.net/anime/42627/",
-      "al": "https://anilist.co/anime/122441/"
-    },
-    {
-      "name": "Honkai Impact 3 ~ Lament of the Fallen",
-      "mal": "",
-      "al": null
-    },
-    {
-      "name": "Summer Time Rendering",
-      "mal": "https://myanimelist.net/anime/47194/",
-      "al": "https://anilist.co/anime/129201/"
-    },
-    {
-      "name": "Blue Period",
-      "mal": "https://myanimelist.net/anime/46352/",
-      "al": "https://anilist.co/anime/128705/"
-    },
-    {
-      "name": "JUJUTSU KAISEN",
-      "mal": "https://myanimelist.net/anime/40748/",
-      "al": "https://anilist.co/anime/113415/"
-    },
-    {
-      "name": "Re:ZERO -Starting Life in Another World- Season 2 Part 2",
-      "mal": "https://myanimelist.net/anime/42203/",
-      "al": "https://anilist.co/anime/119661/"
-    },
-    {
-      "name": "Vivy -Fluorite Eye's Song-",
-      "mal": "https://myanimelist.net/anime/46095/",
-      "al": "https://anilist.co/anime/128546/"
-    },
-    {
-      "name": "Demon Slayer: Kimetsu no Yaiba Entertainment District Arc",
-      "mal": "https://myanimelist.net/anime/47778/",
-      "al": "https://anilist.co/anime/142329/"
-    },
-    {
-      "name": "Jujutsu Kaisen (TV) Recap",
-      "mal": "",
+      "name": "Berserk Recap",
+      "mal": "https://myanimelist.net/anime/35009/",
       "al": null
     },
     {
@@ -492,69 +462,9 @@
       "al": "https://anilist.co/anime/116005/"
     },
     {
-      "name": "Record of Ragnarok",
-      "mal": "https://myanimelist.net/anime/44942/",
-      "al": "https://anilist.co/anime/127399/"
-    },
-    {
-      "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? III",
-      "mal": "https://myanimelist.net/anime/40454/",
-      "al": "https://anilist.co/anime/112124/"
-    },
-    {
-      "name": "The Way of the Househusband",
-      "mal": "https://myanimelist.net/anime/43692/",
-      "al": "https://anilist.co/anime/125426/"
-    },
-    {
-      "name": "Ranking of Kings",
-      "mal": "https://myanimelist.net/anime/40834/",
-      "al": "https://anilist.co/anime/113717/"
-    },
-    {
-      "name": "Sword Art Online the Movie -Progressive- Aria of a Starless Night",
-      "mal": "https://myanimelist.net/anime/42916/",
-      "al": "https://anilist.co/anime/124140/"
-    },
-    {
-      "name": "The Strongest Sage with the Weakest Crest",
-      "mal": "https://myanimelist.net/anime/47161/",
-      "al": "https://anilist.co/anime/129191/"
-    },
-    {
-      "name": "Battle Game in 5 Seconds",
-      "mal": "https://myanimelist.net/anime/43814/",
-      "al": "https://anilist.co/anime/126047/"
-    },
-    {
-      "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? IV",
-      "mal": "https://myanimelist.net/anime/47164/",
-      "al": "https://anilist.co/anime/129196/"
-    },
-    {
-      "name": "Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway",
-      "mal": "https://myanimelist.net/anime/40938/",
-      "al": "https://anilist.co/anime/114232/"
-    },
-    {
-      "name": "Banished from the Hero\u2019s Party, I Decided to Live a Quiet Life in the Countryside",
-      "mal": "https://myanimelist.net/anime/44037/",
-      "al": "https://anilist.co/anime/126213/"
-    },
-    {
-      "name": "Farewell, My Dear Cramer",
-      "mal": "https://myanimelist.net/anime/42774/",
-      "al": "https://anilist.co/anime/123494/"
-    },
-    {
-      "name": "Chainsaw Man",
-      "mal": "https://myanimelist.net/anime/44511/",
-      "al": "https://anilist.co/anime/127230/"
-    },
-    {
-      "name": "Hell\u2019s Paradise",
-      "mal": "https://myanimelist.net/anime/46569/",
-      "al": "https://anilist.co/anime/128893/"
+      "name": "Vivy -Fluorite Eye's Song-",
+      "mal": "https://myanimelist.net/anime/46095/",
+      "al": "https://anilist.co/anime/128546/"
     },
     {
       "name": "MEGALOBOX 2: NOMAD",
@@ -562,9 +472,19 @@
       "al": "https://anilist.co/anime/113359/"
     },
     {
-      "name": "Love of Kill",
-      "mal": "https://myanimelist.net/anime/44516/",
-      "al": "https://anilist.co/anime/127050/"
+      "name": "Demon Slayer: Kimetsu no Yaiba Entertainment District Arc",
+      "mal": "https://myanimelist.net/anime/47778/",
+      "al": "https://anilist.co/anime/142329/"
+    },
+    {
+      "name": "The Eminence in Shadow",
+      "mal": "https://myanimelist.net/anime/48316/",
+      "al": "https://anilist.co/anime/130298/"
+    },
+    {
+      "name": "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat",
+      "mal": "https://myanimelist.net/anime/47790/",
+      "al": "https://anilist.co/anime/129898/"
     },
     {
       "name": "2.43: Seiin High School Boys Volleyball Team",
@@ -572,59 +492,119 @@
       "al": "https://anilist.co/anime/113231/"
     },
     {
+      "name": "Farewell, My Dear Cramer",
+      "mal": "https://myanimelist.net/anime/42774/",
+      "al": "https://anilist.co/anime/123494/"
+    },
+    {
+      "name": "Sword Art Online the Movie -Progressive- Aria of a Starless Night",
+      "mal": "https://myanimelist.net/anime/42916/",
+      "al": "https://anilist.co/anime/124140/"
+    },
+    {
+      "name": "Chainsaw Man",
+      "mal": "https://myanimelist.net/anime/44511/",
+      "al": "https://anilist.co/anime/127230/"
+    },
+    {
+      "name": "Record of Ragnarok",
+      "mal": "https://myanimelist.net/anime/44942/",
+      "al": "https://anilist.co/anime/127399/"
+    },
+    {
+      "name": "Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway",
+      "mal": "https://myanimelist.net/anime/40938/",
+      "al": "https://anilist.co/anime/114232/"
+    },
+    {
+      "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? III: Is It Wrong to Try to Find a Hot Spring in Orario? -Bath God Forever-",
+      "mal": "https://myanimelist.net/anime/44983/",
+      "al": "https://anilist.co/anime/127368/"
+    },
+    {
+      "name": "Banished from the Hero\u2019s Party, I Decided to Live a Quiet Life in the Countryside",
+      "mal": "https://myanimelist.net/anime/44037/",
+      "al": "https://anilist.co/anime/126213/"
+    },
+    {
+      "name": "Mushoku Tensei: Jobless Reincarnation Cour 2",
+      "mal": "https://myanimelist.net/anime/45576/",
+      "al": "https://anilist.co/anime/127720/"
+    },
+    {
+      "name": "Holy Knight Light",
+      "mal": "https://myanimelist.net/anime/45574/",
+      "al": "https://anilist.co/anime/127957/"
+    },
+    {
+      "name": "Battle Game in 5 Seconds",
+      "mal": "https://myanimelist.net/anime/43814/",
+      "al": "https://anilist.co/anime/126047/"
+    },
+    {
+      "name": "Ranking of Kings",
+      "mal": "https://myanimelist.net/anime/40834/",
+      "al": "https://anilist.co/anime/113717/"
+    },
+    {
+      "name": "Jujutsu Kaisen (TV) Recap",
+      "mal": "",
+      "al": null
+    },
+    {
+      "name": "The Way of the Househusband",
+      "mal": "https://myanimelist.net/anime/43692/",
+      "al": "https://anilist.co/anime/125426/"
+    },
+    {
+      "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? III",
+      "mal": "https://myanimelist.net/anime/40454/",
+      "al": "https://anilist.co/anime/112124/"
+    },
+    {
+      "name": "Blue Period",
+      "mal": "https://myanimelist.net/anime/46352/",
+      "al": "https://anilist.co/anime/128705/"
+    },
+    {
+      "name": "Hell\u2019s Paradise",
+      "mal": "https://myanimelist.net/anime/46569/",
+      "al": "https://anilist.co/anime/128893/"
+    },
+    {
+      "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? IV",
+      "mal": "https://myanimelist.net/anime/47164/",
+      "al": "https://anilist.co/anime/129196/"
+    },
+    {
       "name": "Rent-a-Girlfriend Season 2",
       "mal": "https://myanimelist.net/anime/42963/",
       "al": "https://anilist.co/anime/124410/"
     },
     {
-      "name": "Horimiya",
-      "mal": "https://myanimelist.net/anime/42897/",
-      "al": "https://anilist.co/anime/124080/"
+      "name": "The Strongest Sage with the Weakest Crest",
+      "mal": "https://myanimelist.net/anime/47161/",
+      "al": "https://anilist.co/anime/129191/"
     },
     {
-      "name": "Kemono Jihen",
-      "mal": "https://myanimelist.net/anime/40908/",
-      "al": "https://anilist.co/anime/114085/"
+      "name": "Love of Kill",
+      "mal": "https://myanimelist.net/anime/44516/",
+      "al": "https://anilist.co/anime/127050/"
     },
     {
-      "name": "To Your Eternity",
-      "mal": "https://myanimelist.net/anime/41025/",
-      "al": "https://anilist.co/anime/114535/"
+      "name": "Peach Boy Riverside",
+      "mal": "https://myanimelist.net/anime/42627/",
+      "al": "https://anilist.co/anime/122441/"
     },
     {
-      "name": "Blade of the Immortal (ONA)",
-      "mal": "https://myanimelist.net/anime/39806/",
-      "al": "https://anilist.co/anime/109616/"
-    },
-    {
-      "name": "Golden Kamuy 2nd Season OVA",
-      "mal": "https://myanimelist.net/anime/38710/",
-      "al": "https://anilist.co/anime/124756/"
-    },
-    {
-      "name": "Attack on Titan Final Season",
-      "mal": "https://myanimelist.net/anime/40028/",
-      "al": "https://anilist.co/anime/110277/"
-    },
-    {
-      "name": "HAIKYU!! LAND VS. AIR",
-      "mal": "https://myanimelist.net/anime/40262/",
-      "al": "https://anilist.co/anime/111790/"
-    },
-    {
-      "name": "Saga of Tanya the Evil: The Movie - Manner Movie",
-      "mal": "https://myanimelist.net/anime/40298/",
-      "al": null
+      "name": "No Guns Life",
+      "mal": "https://myanimelist.net/anime/39539/",
+      "al": "https://anilist.co/anime/108478/"
     },
     {
       "name": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
       "mal": "https://myanimelist.net/anime/40456/",
       "al": "https://anilist.co/anime/112151/"
-    },
-    {
-      "name": "The Promised Neverland Season 2",
-      "mal": "https://myanimelist.net/anime/39617/",
-      "al": "https://anilist.co/anime/108725/"
     },
     {
       "name": "The Irregular at Magic High School: Visitor Arc",
@@ -637,6 +617,11 @@
       "al": "https://anilist.co/anime/112301/"
     },
     {
+      "name": "My Teen Romantic Comedy SNAFU Climax!",
+      "mal": "https://myanimelist.net/anime/39547/",
+      "al": "https://anilist.co/anime/108489/"
+    },
+    {
       "name": "Arifureta: From Commonplace to World's Strongest Season 2",
       "mal": "https://myanimelist.net/anime/40507/",
       "al": "https://anilist.co/anime/112323/"
@@ -647,39 +632,44 @@
       "al": "https://anilist.co/anime/108465/"
     },
     {
-      "name": "GOBLIN SLAYER -GOBLIN\u2019S CROWN-",
-      "mal": "https://myanimelist.net/anime/39576/",
-      "al": "https://anilist.co/anime/108623/"
+      "name": "Kaguya-sama: Love is War?",
+      "mal": "https://myanimelist.net/anime/40591/",
+      "al": "https://anilist.co/anime/112641/"
     },
     {
-      "name": "SING \"YESTERDAY\" FOR ME",
-      "mal": "https://myanimelist.net/anime/39710/",
-      "al": "https://anilist.co/anime/109020/"
+      "name": "Golden Kamuy Season 3",
+      "mal": "https://myanimelist.net/anime/40059/",
+      "al": "https://anilist.co/anime/110355/"
     },
     {
-      "name": "Miss Kobayashi's Dragon Maid S",
-      "mal": "https://myanimelist.net/anime/39247/",
-      "al": "https://anilist.co/anime/107717/"
+      "name": "KENGAN ASHURA Part II",
+      "mal": "https://myanimelist.net/anime/40269/",
+      "al": "https://anilist.co/anime/111048/"
     },
     {
-      "name": "Sword Art Online: Alicization - Recollection",
-      "mal": "https://myanimelist.net/anime/39239/",
+      "name": "Rent-a-Girlfriend",
+      "mal": "https://myanimelist.net/anime/40839/",
+      "al": "https://anilist.co/anime/113813/"
+    },
+    {
+      "name": "Sword Art Online: Alicization - War of Underworld Part 2",
+      "mal": "https://myanimelist.net/anime/40540/",
+      "al": "https://anilist.co/anime/114308/"
+    },
+    {
+      "name": "Saga of Tanya the Evil: The Movie - Manner Movie",
+      "mal": "https://myanimelist.net/anime/40298/",
       "al": null
     },
     {
-      "name": "Gleipnir",
-      "mal": "https://myanimelist.net/anime/39463/",
-      "al": "https://anilist.co/anime/108241/"
+      "name": "HAIKYU!! LAND VS. AIR",
+      "mal": "https://myanimelist.net/anime/40262/",
+      "al": "https://anilist.co/anime/111790/"
     },
     {
-      "name": "My Teen Romantic Comedy SNAFU Climax!",
-      "mal": "https://myanimelist.net/anime/39547/",
-      "al": "https://anilist.co/anime/108489/"
-    },
-    {
-      "name": "No Guns Life",
-      "mal": "https://myanimelist.net/anime/39539/",
-      "al": "https://anilist.co/anime/108478/"
+      "name": "Attack on Titan Final Season",
+      "mal": "https://myanimelist.net/anime/40028/",
+      "al": "https://anilist.co/anime/110277/"
     },
     {
       "name": "That Time I Got Reincarnated as a Slime Season 2",
@@ -690,6 +680,11 @@
       "name": "Re:ZERO -Starting Life in Another World- Season 2",
       "mal": "https://myanimelist.net/anime/39587/",
       "al": "https://anilist.co/anime/108632/"
+    },
+    {
+      "name": "The Promised Neverland Season 2",
+      "mal": "https://myanimelist.net/anime/39617/",
+      "al": "https://anilist.co/anime/108725/"
     },
     {
       "name": "Sword Art Online: Alicization - War of Underworld",
@@ -712,39 +707,34 @@
       "al": "https://anilist.co/anime/109261/"
     },
     {
-      "name": "Kaguya-sama: Love is War?",
-      "mal": "https://myanimelist.net/anime/40591/",
-      "al": "https://anilist.co/anime/112641/"
+      "name": "SING \"YESTERDAY\" FOR ME",
+      "mal": "https://myanimelist.net/anime/39710/",
+      "al": "https://anilist.co/anime/109020/"
     },
     {
-      "name": "Golden Kamuy Season 3",
-      "mal": "https://myanimelist.net/anime/40059/",
-      "al": "https://anilist.co/anime/110355/"
+      "name": "GOBLIN SLAYER -GOBLIN\u2019S CROWN-",
+      "mal": "https://myanimelist.net/anime/39576/",
+      "al": "https://anilist.co/anime/108623/"
     },
     {
-      "name": "KENGAN ASHURA Part II",
-      "mal": "https://myanimelist.net/anime/40269/",
-      "al": "https://anilist.co/anime/111048/"
+      "name": "Blade of the Immortal (ONA)",
+      "mal": "https://myanimelist.net/anime/39806/",
+      "al": "https://anilist.co/anime/109616/"
     },
     {
-      "name": "The Seven Deadly Sins: Dragon's Judgement",
-      "mal": "https://myanimelist.net/anime/41491/",
-      "al": "https://anilist.co/anime/116752/"
+      "name": "Golden Kamuy 2nd Season OVA",
+      "mal": "https://myanimelist.net/anime/38710/",
+      "al": "https://anilist.co/anime/124756/"
     },
     {
-      "name": "No Guns Life Season 2",
-      "mal": "https://myanimelist.net/anime/40529/",
-      "al": "https://anilist.co/anime/112803/"
+      "name": "Dr. STONE: STONE WARS",
+      "mal": "https://myanimelist.net/anime/40852/",
+      "al": "https://anilist.co/anime/113936/"
     },
     {
-      "name": "Sword Art Online: Alicization - War of Underworld Reminiscence",
-      "mal": "https://myanimelist.net/anime/41341/",
-      "al": null
-    },
-    {
-      "name": "My Hero Academia Season 5",
-      "mal": "https://myanimelist.net/anime/41587/",
-      "al": "https://anilist.co/anime/117193/"
+      "name": "World Trigger 2nd Season",
+      "mal": "https://myanimelist.net/anime/40907/",
+      "al": "https://anilist.co/anime/114087/"
     },
     {
       "name": "How NOT to Summon a Demon Lord \u03a9",
@@ -772,49 +762,54 @@
       "al": "https://anilist.co/anime/110353/"
     },
     {
-      "name": "Dr. STONE: STONE WARS",
-      "mal": "https://myanimelist.net/anime/40852/",
-      "al": "https://anilist.co/anime/113936/"
-    },
-    {
       "name": "Cyberpunk: Edgerunners",
       "mal": "https://myanimelist.net/anime/42310/",
       "al": "https://anilist.co/anime/120377/"
     },
     {
-      "name": "BURN THE WITCH",
-      "mal": "https://myanimelist.net/anime/41468/",
-      "al": "https://anilist.co/anime/116673/"
+      "name": "DON'T TOY WITH ME, MISS NAGATORO",
+      "mal": "https://myanimelist.net/anime/42361/",
+      "al": "https://anilist.co/anime/120697/"
     },
     {
-      "name": "86 EIGHTY-SIX",
-      "mal": "https://myanimelist.net/anime/41457/",
-      "al": "https://anilist.co/anime/116589/"
+      "name": "Kemono Jihen",
+      "mal": "https://myanimelist.net/anime/40908/",
+      "al": "https://anilist.co/anime/114085/"
     },
     {
-      "name": "Rent-a-Girlfriend",
-      "mal": "https://myanimelist.net/anime/40839/",
-      "al": "https://anilist.co/anime/113813/"
+      "name": "Re:ZERO -Starting Life in Another World- Season 2 Part 2",
+      "mal": "https://myanimelist.net/anime/42203/",
+      "al": "https://anilist.co/anime/119661/"
     },
     {
-      "name": "Sword Art Online: Alicization - War of Underworld Part 2",
-      "mal": "https://myanimelist.net/anime/40540/",
-      "al": "https://anilist.co/anime/114308/"
+      "name": "JUJUTSU KAISEN",
+      "mal": "https://myanimelist.net/anime/40748/",
+      "al": "https://anilist.co/anime/113415/"
     },
     {
-      "name": "World Trigger 2nd Season",
-      "mal": "https://myanimelist.net/anime/40907/",
-      "al": "https://anilist.co/anime/114087/"
-    },
-    {
-      "name": "Fire Force Season 2",
-      "mal": "https://myanimelist.net/anime/40956/",
-      "al": "https://anilist.co/anime/114236/"
+      "name": "To Your Eternity",
+      "mal": "https://myanimelist.net/anime/41025/",
+      "al": "https://anilist.co/anime/114535/"
     },
     {
       "name": "Kingdom Season 3",
       "mal": "https://myanimelist.net/anime/40682/",
       "al": "https://anilist.co/anime/113108/"
+    },
+    {
+      "name": "My Hero Academia Season 5",
+      "mal": "https://myanimelist.net/anime/41587/",
+      "al": "https://anilist.co/anime/117193/"
+    },
+    {
+      "name": "Sword Art Online: Alicization - War of Underworld Reminiscence",
+      "mal": "https://myanimelist.net/anime/41341/",
+      "al": null
+    },
+    {
+      "name": "Fire Force Season 2",
+      "mal": "https://myanimelist.net/anime/40956/",
+      "al": "https://anilist.co/anime/114236/"
     },
     {
       "name": "HAIKYU\u203c TO THE TOP Part 2",
@@ -847,34 +842,39 @@
       "al": "https://anilist.co/anime/116566/"
     },
     {
-      "name": "DON'T TOY WITH ME, MISS NAGATORO",
-      "mal": "https://myanimelist.net/anime/42361/",
-      "al": "https://anilist.co/anime/120697/"
+      "name": "86 EIGHTY-SIX",
+      "mal": "https://myanimelist.net/anime/41457/",
+      "al": "https://anilist.co/anime/116589/"
     },
     {
-      "name": "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat",
-      "mal": "https://myanimelist.net/anime/47790/",
-      "al": "https://anilist.co/anime/129898/"
+      "name": "BURN THE WITCH",
+      "mal": "https://myanimelist.net/anime/41468/",
+      "al": "https://anilist.co/anime/116673/"
     },
     {
-      "name": "Handyman Saitou in Another World",
-      "mal": "https://myanimelist.net/anime/50854/",
-      "al": "https://anilist.co/anime/144092/"
+      "name": "The Seven Deadly Sins: Dragon's Judgement",
+      "mal": "https://myanimelist.net/anime/41491/",
+      "al": "https://anilist.co/anime/116752/"
     },
     {
-      "name": "MASHLE: MAGIC AND MUSCLES",
-      "mal": "https://myanimelist.net/anime/52211/",
-      "al": "https://anilist.co/anime/151801/"
+      "name": "No Guns Life Season 2",
+      "mal": "https://myanimelist.net/anime/40529/",
+      "al": "https://anilist.co/anime/112803/"
     },
     {
-      "name": "Shangri-La Frontier",
-      "mal": "https://myanimelist.net/anime/52347/",
-      "al": "https://anilist.co/anime/151970/"
-    },
-    {
-      "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? IV: Play Back",
-      "mal": "https://myanimelist.net/anime/52357/",
+      "name": "Honkai Impact 3 ~ Lament of the Fallen",
+      "mal": "",
       "al": null
+    },
+    {
+      "name": "The Misfit of Demon King Academy \u2161: History's Strongest Demon King Reincarnates and Goes to School with His Descendants",
+      "mal": "https://myanimelist.net/anime/48417/",
+      "al": "https://anilist.co/anime/130588/"
+    },
+    {
+      "name": "Black Summoner",
+      "mal": "https://myanimelist.net/anime/51064/",
+      "al": "https://anilist.co/anime/145260/"
     },
     {
       "name": "Chillin\u2019 in My 30s after Getting Fired from the Demon King\u2019s Army",
@@ -917,34 +917,34 @@
       "al": "https://anilist.co/anime/146638/"
     },
     {
-      "name": "Tomo-chan Is a Girl!",
-      "mal": "https://myanimelist.net/anime/52305/",
-      "al": "https://anilist.co/anime/151806/"
+      "name": "The Ancient Magus' Bride Season 2",
+      "mal": "https://myanimelist.net/anime/52955/",
+      "al": "https://anilist.co/anime/154364/"
     },
     {
-      "name": "Solo Leveling",
-      "mal": "https://myanimelist.net/anime/52299/",
-      "al": "https://anilist.co/anime/151807/"
+      "name": "Pantheon",
+      "mal": "",
+      "al": ""
     },
     {
-      "name": "Shinobi no Ittoki",
-      "mal": "https://myanimelist.net/anime/51098/",
-      "al": "https://anilist.co/anime/145604/"
+      "name": "Frieren: Beyond Journey\u2019s End",
+      "mal": "https://myanimelist.net/anime/52991/",
+      "al": "https://anilist.co/anime/154587/"
     },
     {
-      "name": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc",
-      "mal": "https://myanimelist.net/anime/51019/",
-      "al": "https://anilist.co/anime/145139/"
+      "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? IV: Play Back",
+      "mal": "https://myanimelist.net/anime/52357/",
+      "al": null
     },
     {
-      "name": "JUJUTSU KAISEN Season 2",
-      "mal": "https://myanimelist.net/anime/51009/",
-      "al": "https://anilist.co/anime/145064/"
+      "name": "Shangri-La Frontier",
+      "mal": "https://myanimelist.net/anime/52347/",
+      "al": "https://anilist.co/anime/151970/"
     },
     {
-      "name": "Black Summoner",
-      "mal": "https://myanimelist.net/anime/51064/",
-      "al": "https://anilist.co/anime/145260/"
+      "name": "MASHLE: MAGIC AND MUSCLES",
+      "mal": "https://myanimelist.net/anime/52211/",
+      "al": "https://anilist.co/anime/151801/"
     },
     {
       "name": "Classroom of the Elite Season 2",
@@ -987,29 +987,29 @@
       "al": "https://anilist.co/anime/141785/"
     },
     {
-      "name": "The Ancient Magus' Bride Season 2",
-      "mal": "https://myanimelist.net/anime/52955/",
-      "al": "https://anilist.co/anime/154364/"
+      "name": "Shinobi no Ittoki",
+      "mal": "https://myanimelist.net/anime/51098/",
+      "al": "https://anilist.co/anime/145604/"
     },
     {
-      "name": "Pantheon",
-      "mal": "",
-      "al": ""
+      "name": "Solo Leveling",
+      "mal": "https://myanimelist.net/anime/52299/",
+      "al": "https://anilist.co/anime/151807/"
     },
     {
-      "name": "Zom 100: Bucket List of the Dead",
-      "mal": "https://myanimelist.net/anime/54112/",
-      "al": "https://anilist.co/anime/159831/"
+      "name": "Tomo-chan Is a Girl!",
+      "mal": "https://myanimelist.net/anime/52305/",
+      "al": "https://anilist.co/anime/151806/"
     },
     {
-      "name": "OVERTAKE!",
-      "mal": "https://myanimelist.net/anime/54301/",
-      "al": "https://anilist.co/anime/160515/"
+      "name": "Rent-a-Girlfriend Season 3",
+      "mal": "https://myanimelist.net/anime/53050/",
+      "al": "https://anilist.co/anime/154745/"
     },
     {
-      "name": "The Kingdoms of Ruin",
-      "mal": "https://myanimelist.net/anime/54362/",
-      "al": "https://anilist.co/anime/160900/"
+      "name": "My Home Hero",
+      "mal": "https://myanimelist.net/anime/52092/",
+      "al": "https://anilist.co/anime/151189/"
     },
     {
       "name": "That Time I Got Reincarnated as a Slime: Visions of Coleus",
@@ -1052,34 +1052,34 @@
       "al": "https://anilist.co/anime/146646/"
     },
     {
-      "name": "BLEACH: Thousand-Year Blood War - The Separation",
-      "mal": "https://myanimelist.net/anime/53998/",
-      "al": "https://anilist.co/anime/159322/"
+      "name": "BURN THE WITCH #0.8",
+      "mal": "https://myanimelist.net/anime/56671/",
+      "al": "https://anilist.co/anime/169362/"
     },
     {
-      "name": "Dead Mount Death Play",
-      "mal": "https://myanimelist.net/anime/53613/",
-      "al": "https://anilist.co/anime/157198/"
+      "name": "Ninja Kamui",
+      "mal": "https://myanimelist.net/anime/52563/",
+      "al": "https://anilist.co/anime/151639/"
     },
     {
-      "name": "The Weakest Tamer Began a Journey to Pick Up Trash",
-      "mal": "https://myanimelist.net/anime/53590/",
-      "al": "https://anilist.co/anime/156891/"
+      "name": "Solo Leveling: How to Get Stronger",
+      "mal": "https://myanimelist.net/anime/58224/",
+      "al": ""
     },
     {
-      "name": "Frieren: Beyond Journey\u2019s End",
-      "mal": "https://myanimelist.net/anime/52991/",
-      "al": "https://anilist.co/anime/154587/"
+      "name": "The Kingdoms of Ruin",
+      "mal": "https://myanimelist.net/anime/54362/",
+      "al": "https://anilist.co/anime/160900/"
     },
     {
-      "name": "Rent-a-Girlfriend Season 3",
-      "mal": "https://myanimelist.net/anime/53050/",
-      "al": "https://anilist.co/anime/154745/"
+      "name": "OVERTAKE!",
+      "mal": "https://myanimelist.net/anime/54301/",
+      "al": "https://anilist.co/anime/160515/"
     },
     {
-      "name": "My Home Hero",
-      "mal": "https://myanimelist.net/anime/52092/",
-      "al": "https://anilist.co/anime/151189/"
+      "name": "Rokudo's Bad Girls",
+      "mal": "https://myanimelist.net/anime/54259/",
+      "al": "https://anilist.co/anime/160442/"
     },
     {
       "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon? IV Part 2",
@@ -1095,11 +1095,6 @@
       "name": "ROAD OF NARUTO",
       "mal": "",
       "al": "https://anilist.co/anime/155348/"
-    },
-    {
-      "name": "Solo Leveling: How to Get Stronger",
-      "mal": "https://myanimelist.net/anime/58224/",
-      "al": ""
     },
     {
       "name": "The Great Cleric",
@@ -1122,34 +1117,39 @@
       "al": "https://anilist.co/anime/156184/"
     },
     {
-      "name": "BURN THE WITCH #0.8",
-      "mal": "https://myanimelist.net/anime/56671/",
-      "al": "https://anilist.co/anime/169362/"
+      "name": "The Weakest Tamer Began a Journey to Pick Up Trash",
+      "mal": "https://myanimelist.net/anime/53590/",
+      "al": "https://anilist.co/anime/156891/"
     },
     {
-      "name": "Arknights: PRELUDE TO DAWN",
-      "mal": "https://myanimelist.net/anime/50205/",
-      "al": "https://anilist.co/anime/140660/"
+      "name": "Dead Mount Death Play",
+      "mal": "https://myanimelist.net/anime/53613/",
+      "al": "https://anilist.co/anime/157198/"
     },
     {
-      "name": "The Eminence in Shadow",
-      "mal": "https://myanimelist.net/anime/48316/",
-      "al": "https://anilist.co/anime/130298/"
+      "name": "BLEACH: Thousand-Year Blood War - The Separation",
+      "mal": "https://myanimelist.net/anime/53998/",
+      "al": "https://anilist.co/anime/159322/"
     },
     {
-      "name": "Demon Slayer: Kimetsu no Yaiba - The Hashira Meeting Arc",
-      "mal": "",
-      "al": null
+      "name": "Zom 100: Bucket List of the Dead",
+      "mal": "https://myanimelist.net/anime/54112/",
+      "al": "https://anilist.co/anime/159831/"
     },
     {
-      "name": "Overlord IV",
-      "mal": "https://myanimelist.net/anime/48895/",
-      "al": "https://anilist.co/anime/133844/"
+      "name": "Boku no Hero Academia: Memories",
+      "mal": "https://myanimelist.net/anime/57519/",
+      "al": ""
     },
     {
-      "name": "Komi Can\u2019t Communicate",
-      "mal": "https://myanimelist.net/anime/48926/",
-      "al": "https://anilist.co/anime/133965/"
+      "name": "JUJUTSU KAISEN Season 2",
+      "mal": "https://myanimelist.net/anime/51009/",
+      "al": "https://anilist.co/anime/145064/"
+    },
+    {
+      "name": "The Quintessential Quintuplets Movie",
+      "mal": "https://myanimelist.net/anime/48548/",
+      "al": "https://anilist.co/anime/131520/"
     },
     {
       "name": "Saga of Tanya the Evil: Operation Desert Pasta",
@@ -1192,34 +1192,34 @@
       "al": "https://anilist.co/anime/138565/"
     },
     {
-      "name": "Demon Slayer: Kimetsu no Yaiba - Mt. Natagumo Arc",
+      "name": "BLUELOCK",
+      "mal": "https://myanimelist.net/anime/49596/",
+      "al": "https://anilist.co/anime/137822/"
+    },
+    {
+      "name": "Street Fighter IV: Aftermath",
+      "mal": "https://myanimelist.net/anime/41873/",
+      "al": null
+    },
+    {
+      "name": "Record of Ragnarok II",
+      "mal": "https://myanimelist.net/anime/49618/",
+      "al": "https://anilist.co/anime/138056/"
+    },
+    {
+      "name": "Komi Can\u2019t Communicate",
+      "mal": "https://myanimelist.net/anime/48926/",
+      "al": "https://anilist.co/anime/133965/"
+    },
+    {
+      "name": "Overlord IV",
+      "mal": "https://myanimelist.net/anime/48895/",
+      "al": "https://anilist.co/anime/133844/"
+    },
+    {
+      "name": "Demon Slayer: Kimetsu no Yaiba - The Hashira Meeting Arc",
       "mal": "",
       "al": null
-    },
-    {
-      "name": "Demon Slayer: Kimetsu no Yaiba - Sibling's Bond",
-      "mal": "https://myanimelist.net/anime/48745/",
-      "al": null
-    },
-    {
-      "name": "The Way of the Househusband Part 2",
-      "mal": "https://myanimelist.net/anime/48707/",
-      "al": "https://anilist.co/anime/132193/"
-    },
-    {
-      "name": "Berserk Recap",
-      "mal": "https://myanimelist.net/anime/35009/",
-      "al": null
-    },
-    {
-      "name": "The Misfit of Demon King Academy \u2161: History's Strongest Demon King Reincarnates and Goes to School with His Descendants",
-      "mal": "https://myanimelist.net/anime/48417/",
-      "al": "https://anilist.co/anime/130588/"
-    },
-    {
-      "name": "The Quintessential Quintuplets Movie",
-      "mal": "https://myanimelist.net/anime/48548/",
-      "al": "https://anilist.co/anime/131520/"
     },
     {
       "name": "JUJUTSU KAISEN 0",
@@ -1262,29 +1262,29 @@
       "al": "https://anilist.co/anime/1292/"
     },
     {
-      "name": "BLUELOCK",
-      "mal": "https://myanimelist.net/anime/49596/",
-      "al": "https://anilist.co/anime/137822/"
+      "name": "The Way of the Househusband Part 2",
+      "mal": "https://myanimelist.net/anime/48707/",
+      "al": "https://anilist.co/anime/132193/"
     },
     {
-      "name": "Street Fighter IV: Aftermath",
-      "mal": "https://myanimelist.net/anime/41873/",
+      "name": "Demon Slayer: Kimetsu no Yaiba - Sibling's Bond",
+      "mal": "https://myanimelist.net/anime/48745/",
       "al": null
     },
     {
-      "name": "Arcane",
+      "name": "Demon Slayer: Kimetsu no Yaiba - Mt. Natagumo Arc",
       "mal": "",
       "al": null
     },
     {
-      "name": "Call of the Night",
-      "mal": "https://myanimelist.net/anime/50346/",
-      "al": "https://anilist.co/anime/141391/"
+      "name": "Reincarnated as a Sword",
+      "mal": "https://myanimelist.net/anime/49891/",
+      "al": "https://anilist.co/anime/139587/"
     },
     {
-      "name": "Bubble",
-      "mal": "https://myanimelist.net/anime/50549/",
-      "al": "https://anilist.co/anime/142455/"
+      "name": "Demon Slayer: Kimetsu no Yaiba Mugen Train Arc",
+      "mal": "https://myanimelist.net/anime/49926/",
+      "al": "https://anilist.co/anime/129874/"
     },
     {
       "name": "Golden Kamuy Season 4",
@@ -1327,34 +1327,34 @@
       "al": "https://anilist.co/anime/143327/"
     },
     {
-      "name": "Tomodachi Game",
-      "mal": "https://myanimelist.net/anime/50273/",
-      "al": "https://anilist.co/anime/141014/"
+      "name": "Shikimori's Not Just a Cutie",
+      "mal": "https://myanimelist.net/anime/45613/",
+      "al": "https://anilist.co/anime/127911/"
     },
     {
-      "name": "Sword Art Online the Movie -Progressive- Scherzo of Deep Night",
-      "mal": "https://myanimelist.net/anime/50275/",
-      "al": "https://anilist.co/anime/140999/"
+      "name": "Arknights: PRELUDE TO DAWN",
+      "mal": "https://myanimelist.net/anime/50205/",
+      "al": "https://anilist.co/anime/140660/"
     },
     {
-      "name": "SPY x FAMILY",
-      "mal": "https://myanimelist.net/anime/50265/",
-      "al": "https://anilist.co/anime/140960/"
+      "name": "Handyman Saitou in Another World",
+      "mal": "https://myanimelist.net/anime/50854/",
+      "al": "https://anilist.co/anime/144092/"
     },
     {
-      "name": "Record of Ragnarok II",
-      "mal": "https://myanimelist.net/anime/49618/",
-      "al": "https://anilist.co/anime/138056/"
+      "name": "Bubble",
+      "mal": "https://myanimelist.net/anime/50549/",
+      "al": "https://anilist.co/anime/142455/"
     },
     {
-      "name": "Reincarnated as a Sword",
-      "mal": "https://myanimelist.net/anime/49891/",
-      "al": "https://anilist.co/anime/139587/"
+      "name": "Call of the Night",
+      "mal": "https://myanimelist.net/anime/50346/",
+      "al": "https://anilist.co/anime/141391/"
     },
     {
-      "name": "Demon Slayer: Kimetsu no Yaiba Mugen Train Arc",
-      "mal": "https://myanimelist.net/anime/49926/",
-      "al": "https://anilist.co/anime/129874/"
+      "name": "Arcane",
+      "mal": "",
+      "al": null
     },
     {
       "name": "Sabikui Bisco",
@@ -1397,19 +1397,34 @@
       "al": "https://anilist.co/anime/138788/"
     },
     {
-      "name": "Shikimori's Not Just a Cutie",
-      "mal": "https://myanimelist.net/anime/45613/",
-      "al": "https://anilist.co/anime/127911/"
+      "name": "SPY x FAMILY",
+      "mal": "https://myanimelist.net/anime/50265/",
+      "al": "https://anilist.co/anime/140960/"
     },
     {
-      "name": "Hitori no Shita - The Outcast",
-      "mal": "https://myanimelist.net/anime/33421/",
-      "al": ""
+      "name": "Sword Art Online the Movie -Progressive- Scherzo of Deep Night",
+      "mal": "https://myanimelist.net/anime/50275/",
+      "al": "https://anilist.co/anime/140999/"
     },
     {
-      "name": "Fate/Zero Season 2",
-      "mal": "https://myanimelist.net/anime/11741/",
-      "al": "https://anilist.co/anime/11741/"
+      "name": "Tomodachi Game",
+      "mal": "https://myanimelist.net/anime/50273/",
+      "al": "https://anilist.co/anime/141014/"
+    },
+    {
+      "name": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc",
+      "mal": "https://myanimelist.net/anime/51019/",
+      "al": "https://anilist.co/anime/145139/"
+    },
+    {
+      "name": "Gleipnir",
+      "mal": "https://myanimelist.net/anime/39463/",
+      "al": "https://anilist.co/anime/108241/"
+    },
+    {
+      "name": "Rurouni Kenshin",
+      "mal": "https://myanimelist.net/anime/45/",
+      "al": "https://anilist.co/anime/45/"
     },
     {
       "name": "The Anthem of the Heart",
@@ -1462,24 +1477,24 @@
       "al": "https://anilist.co/anime/5369/"
     },
     {
+      "name": "Berserk: The Golden Age Arc II - The Battle for Doldrey",
+      "mal": "https://myanimelist.net/anime/12113/",
+      "al": "https://anilist.co/anime/12113/"
+    },
+    {
+      "name": "Initial D Extra Stage 2",
+      "mal": "https://myanimelist.net/anime/5228/",
+      "al": "https://anilist.co/anime/5228/"
+    },
+    {
+      "name": "Fate/Zero Season 2",
+      "mal": "https://myanimelist.net/anime/11741/",
+      "al": "https://anilist.co/anime/11741/"
+    },
+    {
       "name": "HAIKYU!!",
       "mal": "https://myanimelist.net/anime/20583/",
       "al": "https://anilist.co/anime/20464/"
-    },
-    {
-      "name": "My Teen Romantic Comedy SNAFU TOO!",
-      "mal": "https://myanimelist.net/anime/23847/",
-      "al": "https://anilist.co/anime/20698/"
-    },
-    {
-      "name": "5 Centimeters per Second",
-      "mal": "https://myanimelist.net/anime/1689/",
-      "al": "https://anilist.co/anime/1689/"
-    },
-    {
-      "name": "Rurouni Kenshin",
-      "mal": "https://myanimelist.net/anime/45/",
-      "al": "https://anilist.co/anime/45/"
     },
     {
       "name": "Kabaneri of the Iron Fortress",
@@ -1532,14 +1547,14 @@
       "al": "https://anilist.co/anime/20792/"
     },
     {
-      "name": "Berserk: The Golden Age Arc II - The Battle for Doldrey",
-      "mal": "https://myanimelist.net/anime/12113/",
-      "al": "https://anilist.co/anime/12113/"
+      "name": "5 Centimeters per Second",
+      "mal": "https://myanimelist.net/anime/1689/",
+      "al": "https://anilist.co/anime/1689/"
     },
     {
-      "name": "Initial D Extra Stage 2",
-      "mal": "https://myanimelist.net/anime/5228/",
-      "al": "https://anilist.co/anime/5228/"
+      "name": "My Teen Romantic Comedy SNAFU TOO!",
+      "mal": "https://myanimelist.net/anime/23847/",
+      "al": "https://anilist.co/anime/20698/"
     },
     {
       "name": "Initial D Extra Stage",
@@ -1547,9 +1562,9 @@
       "al": "https://anilist.co/anime/822/"
     },
     {
-      "name": "The Girl Who Leapt Through Time",
-      "mal": "https://myanimelist.net/anime/2236/",
-      "al": "https://anilist.co/anime/2236/"
+      "name": "Initial D 4th Stage",
+      "mal": "https://myanimelist.net/anime/18/",
+      "al": "https://anilist.co/anime/18/"
     },
     {
       "name": "A Silent Voice",
@@ -1602,24 +1617,24 @@
       "al": "https://anilist.co/anime/12223/"
     },
     {
+      "name": "Black Lagoon: Roberta's Blood Trail",
+      "mal": "https://myanimelist.net/anime/4901/",
+      "al": "https://anilist.co/anime/4901/"
+    },
+    {
+      "name": "Fate/stay night",
+      "mal": "https://myanimelist.net/anime/356/",
+      "al": "https://anilist.co/anime/356/"
+    },
+    {
+      "name": "The Girl Who Leapt Through Time",
+      "mal": "https://myanimelist.net/anime/2236/",
+      "al": "https://anilist.co/anime/2236/"
+    },
+    {
       "name": "DRIFTERS",
       "mal": "https://myanimelist.net/anime/31339/",
       "al": "https://anilist.co/anime/21123/"
-    },
-    {
-      "name": "Blood Lad OVA",
-      "mal": "https://myanimelist.net/anime/18441/",
-      "al": "https://anilist.co/anime/18441/"
-    },
-    {
-      "name": "AJIN: Demi-Human -Compel-",
-      "mal": "https://myanimelist.net/anime/30868/",
-      "al": "https://anilist.co/anime/21212/"
-    },
-    {
-      "name": "Initial D 4th Stage",
-      "mal": "https://myanimelist.net/anime/18/",
-      "al": "https://anilist.co/anime/18/"
     },
     {
       "name": "Initial D Final Stage",
@@ -1657,7 +1672,7 @@
       "al": "https://anilist.co/anime/30/"
     },
     {
-      "name": "Golden Boy",
+      "name": "GOLDEN BOY",
       "mal": "https://myanimelist.net/anime/268/",
       "al": "https://anilist.co/anime/268/"
     },
@@ -1672,14 +1687,24 @@
       "al": "https://anilist.co/anime/21519/"
     },
     {
-      "name": "Black Lagoon: Roberta's Blood Trail",
-      "mal": "https://myanimelist.net/anime/4901/",
-      "al": "https://anilist.co/anime/4901/"
+      "name": "AJIN: Demi-Human -Compel-",
+      "mal": "https://myanimelist.net/anime/30868/",
+      "al": "https://anilist.co/anime/21212/"
     },
     {
-      "name": "91 Days",
-      "mal": "https://myanimelist.net/anime/32998/",
-      "al": "https://anilist.co/anime/21711/"
+      "name": "Blood Lad OVA",
+      "mal": "https://myanimelist.net/anime/18441/",
+      "al": "https://anilist.co/anime/18441/"
+    },
+    {
+      "name": "Blood Lad",
+      "mal": "https://myanimelist.net/anime/11633/",
+      "al": "https://anilist.co/anime/11633/"
+    },
+    {
+      "name": "Hitori no Shita - The Outcast",
+      "mal": "https://myanimelist.net/anime/33421/",
+      "al": ""
     },
     {
       "name": "ERASED",
@@ -1700,11 +1725,6 @@
       "name": "Sword Art Online II",
       "mal": "https://myanimelist.net/anime/21881/",
       "al": "https://anilist.co/anime/20594/"
-    },
-    {
-      "name": "Attack on Titan",
-      "mal": "https://myanimelist.net/anime/16498/",
-      "al": "https://anilist.co/anime/16498/"
     },
     {
       "name": "A Certain Scientific Railgun",
@@ -1742,6 +1762,16 @@
       "al": "https://anilist.co/anime/889/"
     },
     {
+      "name": "Black Lagoon: The Second Barrage",
+      "mal": "https://myanimelist.net/anime/1519/",
+      "al": "https://anilist.co/anime/1519/"
+    },
+    {
+      "name": "Amagami SS+ plus",
+      "mal": "https://myanimelist.net/anime/11235/",
+      "al": "https://anilist.co/anime/11235/"
+    },
+    {
       "name": "Overlord",
       "mal": "https://myanimelist.net/anime/29803/",
       "al": "https://anilist.co/anime/20832/"
@@ -1750,11 +1780,6 @@
       "name": "Fate/Zero",
       "mal": "https://myanimelist.net/anime/10087/",
       "al": "https://anilist.co/anime/10087/"
-    },
-    {
-      "name": "Fate/stay night: Unlimited Blade Works",
-      "mal": "https://myanimelist.net/anime/22297/",
-      "al": "https://anilist.co/anime/19603/"
     },
     {
       "name": "KONOSUBA -God's blessing on this wonderful world!",
@@ -1812,14 +1837,9 @@
       "al": "https://anilist.co/anime/1735/"
     },
     {
-      "name": "Black Lagoon: The Second Barrage",
-      "mal": "https://myanimelist.net/anime/1519/",
-      "al": "https://anilist.co/anime/1519/"
-    },
-    {
-      "name": "Amagami SS+ plus",
-      "mal": "https://myanimelist.net/anime/11235/",
-      "al": "https://anilist.co/anime/11235/"
+      "name": "Fate/stay night: Unlimited Blade Works",
+      "mal": "https://myanimelist.net/anime/22297/",
+      "al": "https://anilist.co/anime/19603/"
     },
     {
       "name": "Jormungand",
@@ -1827,9 +1847,9 @@
       "al": "https://anilist.co/anime/12413/"
     },
     {
-      "name": "Whisper of the Heart",
-      "mal": "https://myanimelist.net/anime/585/",
-      "al": "https://anilist.co/anime/585/"
+      "name": "Jormungand: Perfect Order",
+      "mal": "https://myanimelist.net/anime/13331/",
+      "al": "https://anilist.co/anime/13331/"
     },
     {
       "name": "Howl\u2018s Moving Castle",
@@ -1840,6 +1860,11 @@
       "name": "Maid-Sama!",
       "mal": "https://myanimelist.net/anime/7054/",
       "al": "https://anilist.co/anime/7054/"
+    },
+    {
+      "name": "Attack on Titan",
+      "mal": "https://myanimelist.net/anime/16498/",
+      "al": "https://anilist.co/anime/16498/"
     },
     {
       "name": "Rage of Bahamut: Genesis",
@@ -1882,24 +1907,19 @@
       "al": "https://anilist.co/anime/21031/"
     },
     {
+      "name": "Alderamin on the Sky",
+      "mal": "https://myanimelist.net/anime/31764/",
+      "al": "https://anilist.co/anime/21410/"
+    },
+    {
+      "name": "Whisper of the Heart",
+      "mal": "https://myanimelist.net/anime/585/",
+      "al": "https://anilist.co/anime/585/"
+    },
+    {
       "name": "Castle in the Sky",
       "mal": "https://myanimelist.net/anime/513/",
       "al": "https://anilist.co/anime/513/"
-    },
-    {
-      "name": "Deadman Wonderland",
-      "mal": "https://myanimelist.net/anime/6880/",
-      "al": "https://anilist.co/anime/6880/"
-    },
-    {
-      "name": "The Seven Deadly Sins",
-      "mal": "https://myanimelist.net/anime/23755/",
-      "al": "https://anilist.co/anime/20789/"
-    },
-    {
-      "name": "Jormungand: Perfect Order",
-      "mal": "https://myanimelist.net/anime/13331/",
-      "al": "https://anilist.co/anime/13331/"
     },
     {
       "name": "Katanagatari",
@@ -1952,29 +1972,24 @@
       "al": "https://anilist.co/anime/20623/"
     },
     {
-      "name": "Alderamin on the Sky",
-      "mal": "https://myanimelist.net/anime/31764/",
-      "al": "https://anilist.co/anime/21410/"
+      "name": "The Seven Deadly Sins",
+      "mal": "https://myanimelist.net/anime/23755/",
+      "al": "https://anilist.co/anime/20789/"
     },
     {
-      "name": "Fate/stay night",
-      "mal": "https://myanimelist.net/anime/356/",
-      "al": "https://anilist.co/anime/356/"
+      "name": "Deadman Wonderland",
+      "mal": "https://myanimelist.net/anime/6880/",
+      "al": "https://anilist.co/anime/6880/"
     },
     {
-      "name": "DARLING in the FRANXX",
-      "mal": "https://myanimelist.net/anime/35849/",
-      "al": "https://anilist.co/anime/99423/"
+      "name": "91 Days",
+      "mal": "https://myanimelist.net/anime/32998/",
+      "al": "https://anilist.co/anime/21711/"
     },
     {
-      "name": "The Outcast 2rd Season",
-      "mal": "",
-      "al": null
-    },
-    {
-      "name": "How NOT to Summon a Demon Lord",
-      "mal": "https://myanimelist.net/anime/37210/",
-      "al": "https://anilist.co/anime/101004/"
+      "name": "B: The Beginning",
+      "mal": "https://myanimelist.net/anime/32827/",
+      "al": "https://anilist.co/anime/21665/"
     },
     {
       "name": "GOBLIN SLAYER",
@@ -2002,6 +2017,11 @@
       "al": "https://anilist.co/anime/101227/"
     },
     {
+      "name": "Afro Samurai Pilot",
+      "mal": "https://myanimelist.net/anime/27939/",
+      "al": "https://anilist.co/anime/99713/"
+    },
+    {
       "name": "That Time I Got Reincarnated as a Slime",
       "mal": "https://myanimelist.net/anime/37430/",
       "al": "https://anilist.co/anime/101280/"
@@ -2027,19 +2047,19 @@
       "al": "https://anilist.co/anime/97918/"
     },
     {
-      "name": "KENGAN ASHURA Part I",
-      "mal": "https://myanimelist.net/anime/36903/",
-      "al": "https://anilist.co/anime/100891/"
+      "name": "Overlord III",
+      "mal": "https://myanimelist.net/anime/37675/",
+      "al": "https://anilist.co/anime/101474/"
     },
     {
-      "name": "Saga of Tanya the Evil - the Movie -",
-      "mal": "https://myanimelist.net/anime/37055/",
-      "al": "https://anilist.co/anime/100878/"
+      "name": "How NOT to Summon a Demon Lord",
+      "mal": "https://myanimelist.net/anime/37210/",
+      "al": "https://anilist.co/anime/101004/"
     },
     {
-      "name": "B: The Beginning",
-      "mal": "https://myanimelist.net/anime/32827/",
-      "al": "https://anilist.co/anime/21665/"
+      "name": "The Outcast 2rd Season",
+      "mal": "",
+      "al": null
     },
     {
       "name": "BAKI",
@@ -2072,11 +2092,6 @@
       "al": "https://anilist.co/anime/100077/"
     },
     {
-      "name": "Afro Samurai Pilot",
-      "mal": "https://myanimelist.net/anime/27939/",
-      "al": "https://anilist.co/anime/99713/"
-    },
-    {
       "name": "Megalobox",
       "mal": "https://myanimelist.net/anime/36563/",
       "al": "https://anilist.co/anime/100298/"
@@ -2097,9 +2112,14 @@
       "al": "https://anilist.co/anime/97988/"
     },
     {
-      "name": "Overlord III",
-      "mal": "https://myanimelist.net/anime/37675/",
-      "al": "https://anilist.co/anime/101474/"
+      "name": "Saga of Tanya the Evil - the Movie -",
+      "mal": "https://myanimelist.net/anime/37055/",
+      "al": "https://anilist.co/anime/100878/"
+    },
+    {
+      "name": "KENGAN ASHURA Part I",
+      "mal": "https://myanimelist.net/anime/36903/",
+      "al": "https://anilist.co/anime/100891/"
     },
     {
       "name": "The Promised Neverland",
@@ -2107,14 +2127,14 @@
       "al": "https://anilist.co/anime/101759/"
     },
     {
-      "name": "Yi Ren Zhi Xia 3",
-      "mal": "https://myanimelist.net/anime/38536/",
-      "al": "https://anilist.co/anime/105401/"
+      "name": "Chinkoroheibei and the Treasure Box",
+      "mal": "https://myanimelist.net/anime/12803/",
+      "al": "https://anilist.co/anime/12803/"
     },
     {
-      "name": "Cautious Hero: The Hero Is Overpowered but Overly Cautious",
-      "mal": "https://myanimelist.net/anime/38659/",
-      "al": "https://anilist.co/anime/105156/"
+      "name": "Golden Kamuy OVA",
+      "mal": "https://myanimelist.net/anime/37884/",
+      "al": "https://anilist.co/anime/101830/"
     },
     {
       "name": "Dorohedoro",
@@ -2167,24 +2187,24 @@
       "al": "https://anilist.co/anime/107622/"
     },
     {
-      "name": "Golden Kamuy Season 2",
-      "mal": "https://myanimelist.net/anime/37989/",
-      "al": "https://anilist.co/anime/102977/"
+      "name": "In/Spectre",
+      "mal": "https://myanimelist.net/anime/39017/",
+      "al": "https://anilist.co/anime/107201/"
     },
     {
-      "name": "A Certain Scientific Accelerator",
-      "mal": "https://myanimelist.net/anime/38480/",
-      "al": "https://anilist.co/anime/104463/"
+      "name": "Miss Kobayashi's Dragon Maid S",
+      "mal": "https://myanimelist.net/anime/39247/",
+      "al": "https://anilist.co/anime/107717/"
     },
     {
-      "name": "Chinkoroheibei and the Treasure Box",
-      "mal": "https://myanimelist.net/anime/12803/",
-      "al": "https://anilist.co/anime/12803/"
+      "name": "Cautious Hero: The Hero Is Overpowered but Overly Cautious",
+      "mal": "https://myanimelist.net/anime/38659/",
+      "al": "https://anilist.co/anime/105156/"
     },
     {
-      "name": "Golden Kamuy OVA",
-      "mal": "https://myanimelist.net/anime/37884/",
-      "al": "https://anilist.co/anime/101830/"
+      "name": "Yi Ren Zhi Xia 3",
+      "mal": "https://myanimelist.net/anime/38536/",
+      "al": "https://anilist.co/anime/105401/"
     },
     {
       "name": "Kaguya-sama: Love is War",
@@ -2237,14 +2257,24 @@
       "al": "https://anilist.co/anime/104462/"
     },
     {
-      "name": "In/Spectre",
-      "mal": "https://myanimelist.net/anime/39017/",
-      "al": "https://anilist.co/anime/107201/"
+      "name": "A Certain Scientific Accelerator",
+      "mal": "https://myanimelist.net/anime/38480/",
+      "al": "https://anilist.co/anime/104463/"
     },
     {
-      "name": "Blood Lad",
-      "mal": "https://myanimelist.net/anime/11633/",
-      "al": "https://anilist.co/anime/11633/"
+      "name": "Golden Kamuy Season 2",
+      "mal": "https://myanimelist.net/anime/37989/",
+      "al": "https://anilist.co/anime/102977/"
+    },
+    {
+      "name": "Sword Art Online: Alicization - Recollection",
+      "mal": "https://myanimelist.net/anime/39239/",
+      "al": null
+    },
+    {
+      "name": "Expelled From Paradise",
+      "mal": "https://myanimelist.net/anime/13391/",
+      "al": "https://anilist.co/anime/13391/"
     },
     {
       "name": "Rage of Bahamut: Virgin Soul",
@@ -2307,9 +2337,9 @@
       "al": "https://anilist.co/anime/97922/"
     },
     {
-      "name": "Dances with the Dragons",
-      "mal": "https://myanimelist.net/anime/33889/",
-      "al": "https://anilist.co/anime/87504/"
+      "name": "KONOSUBA -God's blessing on this wonderful world! 2",
+      "mal": "https://myanimelist.net/anime/32937/",
+      "al": "https://anilist.co/anime/21699/"
     },
     {
       "name": "Fate/stay night: Unlimited Blade Works - Prologue",
@@ -2320,11 +2350,6 @@
       "name": "The World God Only Knows: 4 Girls and an Idol",
       "mal": "https://myanimelist.net/anime/10805/",
       "al": "https://anilist.co/anime/10805/"
-    },
-    {
-      "name": "Expelled From Paradise",
-      "mal": "https://myanimelist.net/anime/13391/",
-      "al": "https://anilist.co/anime/13391/"
     },
     {
       "name": "One-Punch Man Season 2",
@@ -2340,6 +2365,11 @@
       "name": "Initial D 2nd Stage",
       "mal": "https://myanimelist.net/anime/186/",
       "al": "https://anilist.co/anime/186/"
+    },
+    {
+      "name": "Hajime no Ippo: The Fighting! - Champion Road",
+      "mal": "https://myanimelist.net/anime/264/",
+      "al": "https://anilist.co/anime/264/"
     },
     {
       "name": "Hajime no Ippo: The Fighting! - Mashiba vs Kimura",
@@ -2367,11 +2397,6 @@
       "al": "https://anilist.co/anime/21487/"
     },
     {
-      "name": "Hajime no Ippo: The Fighting! - Champion Road",
-      "mal": "https://myanimelist.net/anime/264/",
-      "al": "https://anilist.co/anime/264/"
-    },
-    {
       "name": "Saga of Tanya the Evil",
       "mal": "https://myanimelist.net/anime/32615/",
       "al": "https://anilist.co/anime/21613/"
@@ -2387,14 +2412,24 @@
       "al": "https://anilist.co/anime/20958/"
     },
     {
+      "name": "Dances with the Dragons",
+      "mal": "https://myanimelist.net/anime/33889/",
+      "al": "https://anilist.co/anime/87504/"
+    },
+    {
       "name": "Bastard!!",
       "mal": "https://myanimelist.net/anime/404/",
       "al": "https://anilist.co/anime/404/"
     },
     {
-      "name": "Tsuredure Children",
-      "mal": "https://myanimelist.net/anime/34902/",
-      "al": "https://anilist.co/anime/98291/"
+      "name": "DARLING in the FRANXX",
+      "mal": "https://myanimelist.net/anime/35849/",
+      "al": "https://anilist.co/anime/99423/"
+    },
+    {
+      "name": "The Seven Deadly Sins: Revival of the Commandments",
+      "mal": "https://myanimelist.net/anime/34577/",
+      "al": "https://anilist.co/anime/99539/"
     },
     {
       "name": "Dororo",
@@ -2412,6 +2447,11 @@
       "al": "https://anilist.co/anime/10408/"
     },
     {
+      "name": "Classroom of the Elite",
+      "mal": "https://myanimelist.net/anime/35507/",
+      "al": "https://anilist.co/anime/98659/"
+    },
+    {
       "name": "Spirited Away",
       "mal": "https://myanimelist.net/anime/199/",
       "al": "https://anilist.co/anime/199/"
@@ -2420,11 +2460,6 @@
       "name": "Attack on Titan Season 3",
       "mal": "https://myanimelist.net/anime/35760/",
       "al": "https://anilist.co/anime/99147/"
-    },
-    {
-      "name": "Classroom of the Elite",
-      "mal": "https://myanimelist.net/anime/35507/",
-      "al": "https://anilist.co/anime/98659/"
     },
     {
       "name": "Castlevania Season 1",
@@ -2462,9 +2497,9 @@
       "al": "https://anilist.co/anime/98635/"
     },
     {
-      "name": "The Seven Deadly Sins: Revival of the Commandments",
-      "mal": "https://myanimelist.net/anime/34577/",
-      "al": "https://anilist.co/anime/99539/"
+      "name": "JUNI TAISEN\uff1aZODIAC WAR",
+      "mal": "https://myanimelist.net/anime/35076/",
+      "al": "https://anilist.co/anime/98443/"
     },
     {
       "name": "The Ancient Magus' Bride",
@@ -2472,9 +2507,14 @@
       "al": "https://anilist.co/anime/98436/"
     },
     {
-      "name": "Ajin: Demi-Human Movie 2: Confront",
-      "mal": "https://myanimelist.net/anime/30869/",
-      "al": "https://anilist.co/anime/21505/"
+      "name": "Assassination Classroom: Meeting Time",
+      "mal": "https://myanimelist.net/anime/28405/",
+      "al": "https://anilist.co/anime/21303/"
+    },
+    {
+      "name": "Tsuredure Children",
+      "mal": "https://myanimelist.net/anime/34902/",
+      "al": "https://anilist.co/anime/98291/"
     },
     {
       "name": "Kakegurui",
@@ -2487,36 +2527,26 @@
       "al": "https://anilist.co/anime/98505/"
     },
     {
+      "name": "Ajin: Demi-Human Movie 2: Confront",
+      "mal": "https://myanimelist.net/anime/30869/",
+      "al": "https://anilist.co/anime/21505/"
+    },
+    {
       "name": "Ajin: Demi-Human Movie 3: Collide",
       "mal": "https://myanimelist.net/anime/30870/",
       "al": "https://anilist.co/anime/21681/"
-    },
-    {
-      "name": "KONOSUBA -God's blessing on this wonderful world! 2",
-      "mal": "https://myanimelist.net/anime/32937/",
-      "al": "https://anilist.co/anime/21699/"
-    },
-    {
-      "name": "Assassination Classroom: Meeting Time",
-      "mal": "https://myanimelist.net/anime/28405/",
-      "al": "https://anilist.co/anime/21303/"
-    },
-    {
-      "name": "JUNI TAISEN\uff1aZODIAC WAR",
-      "mal": "https://myanimelist.net/anime/35076/",
-      "al": "https://anilist.co/anime/98443/"
     }
   ],
   "Watching": [
     {
-      "name": "Blue Exorcist",
-      "mal": "https://myanimelist.net/anime/9919/",
-      "al": "https://anilist.co/anime/9919/"
+      "name": "Perfect Blue",
+      "mal": "https://myanimelist.net/anime/437/",
+      "al": "https://anilist.co/anime/437/"
     },
     {
-      "name": "Undead Unluck",
-      "mal": "https://myanimelist.net/anime/52741/",
-      "al": "https://anilist.co/anime/154116/"
+      "name": "KONOSUBA -God's Blessing on This Wonderful World! 3",
+      "mal": "https://myanimelist.net/anime/49458/",
+      "al": "https://anilist.co/anime/136804/"
     },
     {
       "name": "Re:Monster",
@@ -2524,19 +2554,29 @@
       "al": "https://anilist.co/anime/169417/"
     },
     {
-      "name": "A Playthrough of a Certain Dude's VRMMO Life",
-      "mal": "https://myanimelist.net/anime/54431/",
-      "al": "https://anilist.co/anime/161364/"
-    },
-    {
       "name": "Chillin' in Another World with Level 2 Super Cheat Powers",
       "mal": "https://myanimelist.net/anime/56923/",
       "al": "https://anilist.co/anime/170130/"
     },
     {
-      "name": "Ninja Kamui",
-      "mal": "https://myanimelist.net/anime/52563/",
-      "al": "https://anilist.co/anime/151639/"
+      "name": "THE NEW GATE",
+      "mal": "https://myanimelist.net/anime/57100/",
+      "al": "https://anilist.co/anime/170890/"
+    },
+    {
+      "name": "Blue Exorcist",
+      "mal": "https://myanimelist.net/anime/9919/",
+      "al": "https://anilist.co/anime/9919/"
+    },
+    {
+      "name": "86 EIGHTY-SIX Part 2",
+      "mal": "https://myanimelist.net/anime/48569/",
+      "al": "https://anilist.co/anime/131586/"
+    },
+    {
+      "name": "Mission: Yozakura Family",
+      "mal": "https://myanimelist.net/anime/53865/",
+      "al": "https://anilist.co/anime/158898/"
     },
     {
       "name": "Assassination Classroom",
@@ -2549,29 +2589,9 @@
       "al": "https://anilist.co/anime/6746/"
     },
     {
-      "name": "That Time I Got Reincarnated as a Slime Season 3",
-      "mal": "https://myanimelist.net/anime/53580/",
-      "al": "https://anilist.co/anime/156822/"
-    },
-    {
-      "name": "Perfect Blue",
-      "mal": "https://myanimelist.net/anime/437/",
-      "al": "https://anilist.co/anime/437/"
-    },
-    {
-      "name": "Moriarty the Patriot",
-      "mal": "https://myanimelist.net/anime/40911/",
-      "al": "https://anilist.co/anime/114124/"
-    },
-    {
       "name": "Firefighter Daigo: Rescuer in Orange",
       "mal": "https://myanimelist.net/anime/53848/",
       "al": "https://anilist.co/anime/158791/"
-    },
-    {
-      "name": "Mission: Yozakura Family",
-      "mal": "https://myanimelist.net/anime/53865/",
-      "al": "https://anilist.co/anime/158898/"
     },
     {
       "name": "Shin Chan",
@@ -2579,24 +2599,14 @@
       "al": "https://anilist.co/anime/966/"
     },
     {
-      "name": "Ragna Crimson",
-      "mal": "https://myanimelist.net/anime/51297/",
-      "al": "https://anilist.co/anime/146493/"
+      "name": "City Hunter",
+      "mal": "https://myanimelist.net/anime/1470/",
+      "al": "https://anilist.co/anime/1470/"
     },
     {
-      "name": "Dark Gathering",
-      "mal": "https://myanimelist.net/anime/52505/",
-      "al": "https://anilist.co/anime/152802/"
-    },
-    {
-      "name": "ONE PIECE",
-      "mal": "https://myanimelist.net/anime/21/",
-      "al": "https://anilist.co/anime/21/"
-    },
-    {
-      "name": "KONOSUBA -God's Blessing on This Wonderful World! 3",
-      "mal": "https://myanimelist.net/anime/49458/",
-      "al": "https://anilist.co/anime/136804/"
+      "name": "That Time I Got Reincarnated as a Slime Season 3",
+      "mal": "https://myanimelist.net/anime/53580/",
+      "al": "https://anilist.co/anime/156822/"
     },
     {
       "name": "ISHURA",
@@ -2604,14 +2614,34 @@
       "al": "https://anilist.co/anime/161476/"
     },
     {
-      "name": "City Hunter",
-      "mal": "https://myanimelist.net/anime/1470/",
-      "al": "https://anilist.co/anime/1470/"
+      "name": "Moriarty the Patriot",
+      "mal": "https://myanimelist.net/anime/40911/",
+      "al": "https://anilist.co/anime/114124/"
     },
     {
-      "name": "Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside Season 2",
+      "name": "Banished from the Hero\u2019s Party, I Decided to Live a Quiet Life in the Countryside Season 2",
       "mal": "https://myanimelist.net/anime/53488/",
       "al": "https://anilist.co/anime/156131/"
+    },
+    {
+      "name": "ONE PIECE",
+      "mal": "https://myanimelist.net/anime/21/",
+      "al": "https://anilist.co/anime/21/"
+    },
+    {
+      "name": "A Playthrough of a Certain Dude's VRMMO Life",
+      "mal": "https://myanimelist.net/anime/54431/",
+      "al": "https://anilist.co/anime/161364/"
+    },
+    {
+      "name": "Undead Unluck",
+      "mal": "https://myanimelist.net/anime/52741/",
+      "al": "https://anilist.co/anime/154116/"
+    },
+    {
+      "name": "Dark Gathering",
+      "mal": "https://myanimelist.net/anime/52505/",
+      "al": "https://anilist.co/anime/152802/"
     }
   ]
 }

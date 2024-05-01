@@ -40,6 +40,12 @@ interface class RemoteDatasource {
   }
 }
 
+typedef _SeenAnime = ({
+  WatchlistCategoryModel? anime,
+  AnimeFolderType? folder,
+  bool blacklisted
+});
+
 @named
 @Injectable(as: RemoteDatasource)
 class RemoteDatasourceImpl implements RemoteDatasource {
@@ -47,13 +53,42 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
   static final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  static final _visitedAnimeCache =
-      <String?, ({WatchlistCategoryModel? anime, AnimeFolderType? folder})?>{};
+  static final _visitedAnimeCache = <String?, _SeenAnime?>{};
+
+  static int animeRemovedFromRecommendedCount = 0;
+  static int newAnimeAddedCount = 0;
+  static int animeMovedCount = 0;
+  static int animeSkippedCount = 0;
+  static int animeWithoutIdCount = 0;
+  static int animeBlacklistedCount = 0;
+  static int animeThatCouldNotBeMovedCount = 0;
+  static int animeWithoutAddedAtCount = 0;
+
+  void _resetCounters() {
+    log('=============== RESULTS ===============');
+    log('RemovedFromRecommended: $animeRemovedFromRecommendedCount');
+    log('NewAnime: $newAnimeAddedCount');
+    log('Moved: $animeMovedCount');
+    log('Skipped: $animeSkippedCount');
+    log('AnimeWithoutId: $animeWithoutIdCount');
+    log('Blacklisted: $animeBlacklistedCount');
+    log('CouldNotBeMoved: $animeThatCouldNotBeMovedCount');
+    log('WithoutAddedAt: $animeWithoutAddedAtCount');
+    log('=============== END ===============');
+
+    animeRemovedFromRecommendedCount = 0;
+    newAnimeAddedCount = 0;
+    animeMovedCount = 0;
+    animeSkippedCount = 0;
+    animeWithoutIdCount = 0;
+    animeBlacklistedCount = 0;
+    animeThatCouldNotBeMovedCount = 0;
+  }
 
   @override
   Future<WatchlistModel> animeWatchlist() async {
     try {
-      log('getting watchlist');
+      log('GETTING WATCHLIST');
 
       final plannedFolder = await _firestore.collection('Planned').get();
       final droppedFolder = await _firestore.collection('Dropped').get();
@@ -63,7 +98,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       final recommendedFolder =
           await _firestore.collection('Recommended').get();
 
-      log('loaded watchlist');
+      log('LOADED WATCHLIST');
 
       final planned = plannedFolder.docs.map((animeMap) {
         return WatchlistCategoryModel.fromJson(animeMap.data());
@@ -99,7 +134,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
         recommended: sortByName(recommended.toList()),
       );
 
-      log('built watchlist model');
+      log('BUILT WATCHLIST MODEL');
       updateWatchlist(watchlist);
 
       return watchlist;
@@ -128,11 +163,27 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
         if (currentAnimeId.isEmpty) {
           log('EMPTY ID ON: ${currentAnime.name}');
+          animeWithoutIdCount++;
+          continue;
+        }
+
+        final oldAnime = oldItem.anime;
+        final oldAnimeId = oldAnime?.id;
+        if (oldItem.blacklisted) {
+          log('BLACKLISTED: $oldAnimeId');
+          animeBlacklistedCount++;
+          _firestore.doc('${oldItem.folder?.name}/$oldAnimeId').delete();
+          if (oldAnime?.isRecommended == true) {
+            _firestore.doc('Recommended/$oldAnimeId').delete();
+            log('REMOVED: ${oldAnime?.name} FROM RECOMMENDED');
+            animeRemovedFromRecommendedCount++;
+          }
           continue;
         }
 
         if (isNewAnime) {
           log('ADDING NEW ANIME: $currentAnimeId');
+          newAnimeAddedCount++;
           await _mergeDoc(
             '${folder.name}/$currentAnimeId',
             currentAnime.copyWith(addedAt: DateTime.now()).toJson(),
@@ -140,33 +191,43 @@ class RemoteDatasourceImpl implements RemoteDatasource {
           continue;
         }
 
-        final noFolderChange = oldItem.folder == folder;
-        if (noFolderChange) {
-          log('SKIPPING: $currentAnimeId');
+        if (oldAnime == null) {
+          log('COULD NOT MOVE NULL ANIME: $oldAnimeId');
+          animeThatCouldNotBeMovedCount++;
           continue;
         }
 
-        final oldAnime = oldItem.anime;
-        if (oldAnime == null) {
-          log('COULD NOT MOVE NULL ANIME: $currentAnimeId');
+        final addedAt = oldAnime.addedAt ?? DateTime.now();
+        final noFolderChange = oldItem.folder == folder;
+
+        if (noFolderChange) {
+          log('SKIPPING: $currentAnimeId');
+          animeSkippedCount++;
+          if (oldAnime.addedAt == null) {
+            log('ADDING MISSING "addedAt": $currentAnimeId');
+            final updatedAnime = oldAnime.copyWith(addedAt: addedAt);
+
+            _mergeDoc('${folder.name}/$currentAnimeId', updatedAnime.toJson());
+            animeWithoutAddedAtCount++;
+          }
+
           continue;
         }
 
         log('MOVING: $currentAnimeId FROM ${oldItem.folder} TO $folder');
-        _mergeDoc(
-          '${folder.name}/$currentAnimeId',
-          oldAnime.copyWith(addedAt: DateTime.now()).toJson(),
-        );
+        final updatedAnime = oldAnime.copyWith(addedAt: addedAt);
+        _mergeDoc('${folder.name}/$currentAnimeId', updatedAnime.toJson());
 
+        animeMovedCount++;
         _firestore.doc('${oldItem.folder?.name}/$currentAnimeId').delete();
 
         if (oldAnime.isRecommended) {
           if (currentAnimeId.isEmpty) continue;
-          const recommendedFolder = AnimeFolderType.recommended;
+          final recommendedFolder = AnimeFolderType.recommended.name;
 
           _mergeDoc(
             '$recommendedFolder/$currentAnimeId',
-            oldAnime.copyWith(addedAt: DateTime.now()).toJson(),
+            oldAnime.copyWith(addedAt: addedAt).toJson(),
           );
           _firestore.doc('$recommendedFolder/$currentAnimeId').set(
             {'info': oldAnime.info?.toJson()},
@@ -175,41 +236,50 @@ class RemoteDatasourceImpl implements RemoteDatasource {
         }
       }
     }
+    _resetCounters();
     log('UPDATED WATCHLIST');
   }
 
-  ({WatchlistCategoryModel? anime, AnimeFolderType? folder}) _animeExists(
-    WatchlistCategoryModel currentAnime,
-    WatchlistModel newWatchlist,
+  _SeenAnime _animeExists(
+    WatchlistCategoryModel newAnime,
+    WatchlistModel oldWatchlist,
   ) {
-    final animeId = currentAnime.idFromLink(currentAnime.link ?? '');
+    final newAnimeId = newAnime.idFromLink(newAnime.link ?? '');
 
-    if (_visitedAnimeCache.containsKey(animeId)) {
-      final animeCache = _visitedAnimeCache[animeId];
+    if (_visitedAnimeCache.containsKey(newAnimeId)) {
+      final animeCache = _visitedAnimeCache[newAnimeId];
       if (animeCache != null && animeCache.anime != null) {
-        log('_visitedAnimeCache CACHE HIT: $animeId');
+        log('_visitedAnimeCache CACHE HIT: $newAnimeId');
         return animeCache;
       }
     }
 
     for (final folder in AnimeFolderType.values) {
       if (folder == AnimeFolderType.recommended) continue;
-      final newFolderWatchlist = newWatchlist.folder(folder);
+      final oldFolderWatchlist = oldWatchlist.folder(folder);
 
-      for (final anime in newFolderWatchlist) {
-        if (anime.id == animeId) {
-          _visitedAnimeCache[animeId] = (
+      for (final anime in oldFolderWatchlist) {
+        if (anime.id == newAnimeId) {
+          final isBlacklisted = _blacklistedIds.contains(anime.id);
+          _visitedAnimeCache[newAnimeId] = (
             anime: anime,
             folder: folder,
+            blacklisted: isBlacklisted,
           );
-          log('newWatchlist CACHE HIT: $animeId');
-          return (anime: anime, folder: folder);
+          log('CACHE HIT: $newAnimeId');
+          return (anime: anime, folder: folder, blacklisted: isBlacklisted);
         }
       }
     }
 
-    log('CACHE MISS: $animeId');
-    return (anime: null, folder: null);
+    log('CACHE MISS: $newAnimeId');
+    return (anime: null, folder: null, blacklisted: false);
+  }
+
+  List<String> get _blacklistedIds {
+    return [
+      '48745',
+    ];
   }
 
   Future<void> _mergeDoc(String path, Map<String, dynamic> data) async {
@@ -250,6 +320,6 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       );
     }
 
-    log('updated anime info[$id]: ${info.title}');
+    log('UPDATED ANIME INFO[$id]: ${info.title}');
   }
 }
