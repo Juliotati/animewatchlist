@@ -1,17 +1,7 @@
-import 'dart:developer';
+part of '../../watchlist.dart';
 
-import 'package:animewatchlist/core/core.dart';
-import 'package:animewatchlist/features/watchlist/data/data_sources/watchlist.dart';
-import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
-import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
-import 'package:animewatchlist/features/watchlist/presentation/presentation.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
-import 'package:injectable/injectable.dart';
-import 'package:link_preview_generator/link_preview_generator.dart';
-
-interface class RemoteDatasource {
-  Future<WatchlistModel> animeWatchlist() {
+abstract class RemoteDatasource {
+  Future<WatchlistModel> watchlist() async {
     throw UnimplementedError();
   }
 
@@ -27,28 +17,28 @@ interface class RemoteDatasource {
   ///
   /// If an anime is new, only add it to the [newWatchlist].
   /// If an anime is in the same folder, do nothing.
-  Future<void> updateWatchlist(WatchlistModel oldWatchlist) {
+  Future<void> updateWatchlist(WatchlistModel oldWatchlist) async {
     throw UnimplementedError();
   }
 
   Future<void> updateAnimeInfo(
-    AnimeFolderType folder,
+    WatchlistFolderType folder,
     String id,
     WebInfo? info,
-  ) {
+  ) async {
     throw UnimplementedError();
   }
 }
 
 typedef _SeenAnime = ({
   WatchlistCategoryModel? anime,
-  AnimeFolderType? folder,
+  WatchlistFolderType? folder,
   bool blacklisted
 });
 
 @named
 @Injectable(as: RemoteDatasource)
-class RemoteDatasourceImpl implements RemoteDatasource {
+final class RemoteDatasourceImpl implements RemoteDatasource {
   const RemoteDatasourceImpl();
 
   static final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -86,7 +76,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
   }
 
   @override
-  Future<WatchlistModel> animeWatchlist() async {
+  Future<WatchlistModel> watchlist() async {
     try {
       log('GETTING WATCHLIST');
 
@@ -125,7 +115,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       });
 
       log('fetched watchlist');
-      final watchlist = WatchlistModel(
+      final watchlistModel = WatchlistModel(
         planned: sortByName(planned.toList()),
         dropped: sortByName(dropped.toList()),
         onHold: sortByName(onHold.toList()),
@@ -135,9 +125,9 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       );
 
       log('BUILT WATCHLIST MODEL');
-      updateWatchlist(watchlist);
+      updateWatchlist(watchlistModel);
 
-      return watchlist;
+      return watchlistModel;
     } catch (e) {
       throw AppException(e.toString());
     }
@@ -152,7 +142,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
     final newWatchlist = await AnimeWatchList.instance.watchlist();
 
-    for (final folder in AnimeFolderType.values) {
+    for (final folder in WatchlistFolderType.values) {
       if (folder.recommendedFolder) continue;
       final newFolderWatchlist = newWatchlist.folder(folder);
 
@@ -171,23 +161,24 @@ class RemoteDatasourceImpl implements RemoteDatasource {
         final oldAnimeId = oldAnime?.id;
         if (oldItem.blacklisted) {
           log('BLACKLISTED: $oldAnimeId');
+          await _firestore.doc('${oldItem.folder?.name}/$oldAnimeId').delete();
           animeBlacklistedCount++;
-          _firestore.doc('${oldItem.folder?.name}/$oldAnimeId').delete();
           if (oldAnime?.isRecommended == true) {
-            _firestore.doc('Recommended/$oldAnimeId').delete();
+            await _firestore.doc('Recommended/$oldAnimeId').delete();
             log('REMOVED: ${oldAnime?.name} FROM RECOMMENDED');
             animeRemovedFromRecommendedCount++;
           }
           continue;
         }
 
+        final animePath = '${folder.name}/$currentAnimeId';
         if (isNewAnime) {
           log('ADDING NEW ANIME: $currentAnimeId');
-          newAnimeAddedCount++;
           await _mergeDoc(
-            '${folder.name}/$currentAnimeId',
+            animePath,
             currentAnime.copyWith(addedAt: DateTime.now()).toJson(),
           );
+          newAnimeAddedCount++;
           continue;
         }
 
@@ -207,7 +198,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
             log('ADDING MISSING "addedAt": $currentAnimeId');
             final updatedAnime = oldAnime.copyWith(addedAt: addedAt);
 
-            _mergeDoc('${folder.name}/$currentAnimeId', updatedAnime.toJson());
+            await _mergeDoc(animePath, updatedAnime.toJson());
             animeWithoutAddedAtCount++;
           }
 
@@ -216,22 +207,25 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
         log('MOVING: $currentAnimeId FROM ${oldItem.folder} TO $folder');
         final updatedAnime = oldAnime.copyWith(addedAt: addedAt);
-        _mergeDoc('${folder.name}/$currentAnimeId', updatedAnime.toJson());
+        await _mergeDoc(animePath, updatedAnime.toJson());
 
         animeMovedCount++;
-        _firestore.doc('${oldItem.folder?.name}/$currentAnimeId').delete();
+        await _firestore
+            .doc('${oldItem.folder?.name}/$currentAnimeId')
+            .delete();
 
         if (oldAnime.isRecommended) {
           if (currentAnimeId.isEmpty) continue;
-          final recommendedFolder = AnimeFolderType.recommended.name;
+          final recommendedFolder = WatchlistFolderType.recommended.name;
 
-          _mergeDoc(
+          await _mergeDoc(
             '$recommendedFolder/$currentAnimeId',
             oldAnime.copyWith(addedAt: addedAt).toJson(),
           );
-          _firestore.doc('$recommendedFolder/$currentAnimeId').set(
+
+          await _mergeDoc(
+            '$recommendedFolder/$currentAnimeId',
             {'info': oldAnime.info?.toJson()},
-            SetOptions(merge: true),
           );
         }
       }
@@ -254,8 +248,8 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       }
     }
 
-    for (final folder in AnimeFolderType.values) {
-      if (folder == AnimeFolderType.recommended) continue;
+    for (final folder in WatchlistFolderType.values) {
+      if (folder == WatchlistFolderType.recommended) continue;
       final oldFolderWatchlist = oldWatchlist.folder(folder);
 
       for (final anime in oldFolderWatchlist) {
@@ -288,7 +282,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
   @override
   Future<void> updateAnimeInfo(
-    AnimeFolderType folder,
+    WatchlistFolderType folder,
     String? id,
     WebInfo? info,
   ) async {
@@ -314,7 +308,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
     if (folder.recommendedFolder) {
       // Update info on watched folder if recommended happens to load it first
-      _firestore.doc('${AnimeFolderType.watched.name}/$id').set(
+      _firestore.doc('${WatchlistFolderType.watched.name}/$id').set(
         {'info': info.toJson()},
         SetOptions(merge: true),
       );

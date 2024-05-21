@@ -1,4 +1,4 @@
-part of '../presentation.dart';
+part of '../../watchlist.dart';
 
 class AnimeAlert extends StatelessWidget {
   const AnimeAlert({
@@ -6,7 +6,7 @@ class AnimeAlert extends StatelessWidget {
     required this.state,
   });
 
-  final AnimeState state;
+  final WatchlistState state;
 
   @override
   Widget build(BuildContext context) {

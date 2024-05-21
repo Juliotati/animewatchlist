@@ -1,4 +1,4 @@
-part of '../presentation.dart';
+part of '../../watchlist.dart';
 
 class WatchlistCard extends StatelessWidget {
   const WatchlistCard({
@@ -10,7 +10,7 @@ class WatchlistCard extends StatelessWidget {
 
   final Widget child;
   final bool noPadding;
-  final AnimeFolderType folderType;
+  final WatchlistFolderType folderType;
 
   @override
   Widget build(BuildContext context) {

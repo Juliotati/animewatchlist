@@ -1,13 +1,13 @@
-part of '../presentation.dart';
+part of '../../watchlist.dart';
 
-enum AnimeState {
+enum WatchlistState {
   error,
   loading,
   reloading,
   ready,
   empty;
 
-  const AnimeState();
+  const WatchlistState();
 
   bool get isLoading => this == loading;
 
@@ -27,7 +27,7 @@ enum AnimeState {
       loading => 'LOADING...',
       reloading => 'RELOADING...',
       ready => 'READY',
-      empty => 'WATCHLIST IS EMPTY',
+      empty => 'WATCHLIST IS EMPTY 😳',
     };
   }
 

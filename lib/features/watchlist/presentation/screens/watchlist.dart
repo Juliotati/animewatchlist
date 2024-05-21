@@ -1,4 +1,4 @@
-part of '../presentation.dart';
+part of '../../watchlist.dart';
 
 class WatchlistScreen extends StatelessWidget {
   const WatchlistScreen({super.key});
@@ -10,18 +10,18 @@ class WatchlistScreen extends StatelessWidget {
         value: SystemUiOverlayStyle.light,
         child: SafeArea(
           bottom: false,
-          child: Consumer<AnimeProvider>(
+          child: Consumer<WatchlistProvider>(
             builder: (_, provider, __) {
               if (provider.state.isLoading) {
-                return const AnimeAlert(state: AnimeState.loading);
+                return const AnimeAlert(state: WatchlistState.loading);
               }
 
               if (provider.state.hasError) {
-                return const AnimeAlert(state: AnimeState.error);
+                return const AnimeAlert(state: WatchlistState.error);
               }
 
               if (provider.state.notData) {
-                return const AnimeAlert(state: AnimeState.empty);
+                return const AnimeAlert(state: WatchlistState.empty);
               }
 
               final watchlist = provider.watchlist;
@@ -33,7 +33,7 @@ class WatchlistScreen extends StatelessWidget {
                 children: [
                   PageView.builder(
                     itemCount: 2,
-                    controller: context.read<AnimeProvider>().controller,
+                    controller: context.read<WatchlistProvider>().controller,
                     itemBuilder: (context, index) {
                       return [
                         _TopRecommendedAnime(
@@ -80,7 +80,7 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
   bool get hasFocus => _SearchAnimeField._focusNode.hasFocus;
 
   void _clear(BuildContext context) {
-    context.read<AnimeProvider>().filterWatchlist('');
+    context.read<WatchlistProvider>().filterWatchlist('');
     _SearchAnimeField._controller.clear();
     Future.delayed(const Duration(milliseconds: 350), () {
       _SearchAnimeField._focusNode.unfocus();
@@ -99,7 +99,7 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
   @override
   Widget build(BuildContext context) {
     const color = Colors.black;
-    final reloading = context.select((AnimeProvider p) => p.state.isReloading);
+    final reloading = context.select((WatchlistProvider p) => p.state.isReloading);
     final totalWidth = MediaQuery.sizeOf(context).width;
     return AnimatedSize(
       duration: const Duration(milliseconds: 300),
@@ -133,7 +133,7 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
                   )
                 : null,
           ),
-          onChanged: context.read<AnimeProvider>().filterWatchlist,
+          onChanged: context.read<WatchlistProvider>().filterWatchlist,
         ),
       ),
     );

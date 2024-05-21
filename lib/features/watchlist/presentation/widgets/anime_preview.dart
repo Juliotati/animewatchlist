@@ -1,4 +1,4 @@
-part of '../presentation.dart';
+part of '../../watchlist.dart';
 
 class AnimePreview extends StatefulWidget {
   const AnimePreview({
@@ -10,7 +10,7 @@ class AnimePreview extends StatefulWidget {
 
   final bool showInitial;
   final WatchlistCategoryModel anime;
-  final AnimeFolderType folderType;
+  final WatchlistFolderType folderType;
 
   @override
   State<AnimePreview> createState() => _AnimePreviewState();
@@ -36,7 +36,7 @@ class _AnimePreviewState extends State<AnimePreview>
 
   WebInfo? get info => anime.info ?? _info;
 
-  AnimeFolderType get folder => widget.folderType;
+  WatchlistFolderType get folder => widget.folderType;
 
   void _onInfoLoaded(WebInfo? info) {
     if (info?.title == errorTitle) {
@@ -130,7 +130,7 @@ class AnimePreviewPlaceholder extends StatelessWidget {
 
   final bool loading;
   final WatchlistCategoryModel anime;
-  final AnimeFolderType folderType;
+  final WatchlistFolderType folderType;
 
   Future<void> openAnimePage() async {
     try {

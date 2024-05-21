@@ -1,6 +1,9 @@
-import 'package:animewatchlist/core/core.dart';
-import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
+part of '../../watchlist.dart';
+
+typedef WatchlistResult = ({AppException? exception, WatchlistModel data});
 
 abstract class WatchlistRepository {
-  Future<(AppException, WatchlistModel)> animeWatchlist();
+  Future<WatchlistResult> watchlist() async {
+    throw UnimplementedError();
+  }
 }

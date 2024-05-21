@@ -1,4 +1,4 @@
-part of '../presentation.dart';
+part of '../../watchlist.dart';
 
 class WatchListSeparator extends StatelessWidget {
   const WatchListSeparator({
@@ -10,7 +10,7 @@ class WatchListSeparator extends StatelessWidget {
 
   final int totalAnime;
   final String? title;
-  final AnimeFolderType folderType;
+  final WatchlistFolderType folderType;
 
   @override
   Widget build(BuildContext context) {

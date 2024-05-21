@@ -1,8 +1,4 @@
-import 'dart:convert' show jsonDecode;
-import 'dart:developer' show log;
-
-import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
-import 'package:flutter/services.dart' show rootBundle;
+part of '../../watchlist.dart';
 
 class AnimeWatchList {
   const AnimeWatchList._();

@@ -1,18 +1,16 @@
-import 'package:animewatchlist/core/core.dart';
-import 'package:animewatchlist/features/watchlist/data/data_sources/watchlist.dart';
-import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
+part of '../../watchlist.dart';
 
 abstract class LocalDatasource {
-  Future<WatchlistModel> animeWatchlist();
+  Future<WatchlistModel> watchlist();
 }
 
-class LocalDatasourceImpl implements LocalDatasource {
-  LocalDatasourceImpl._();
+final class LocalDatasourceImpl implements LocalDatasource {
+  const LocalDatasourceImpl._();
 
-  static LocalDatasourceImpl instance = LocalDatasourceImpl._();
+  static const LocalDatasourceImpl instance = LocalDatasourceImpl._();
 
   @override
-  Future<WatchlistModel> animeWatchlist() async {
+  Future<WatchlistModel> watchlist() async {
     try {
       final watchlist = await AnimeWatchList.instance.watchlist();
       return watchlist;

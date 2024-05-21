@@ -1,4 +1,4 @@
-part of '../presentation.dart';
+part of '../../watchlist.dart';
 
 class _TopRecommendedAnime extends StatelessWidget {
   const _TopRecommendedAnime({
@@ -12,20 +12,20 @@ class _TopRecommendedAnime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: context.read<AnimeProvider>().reloadWatchlist,
+      onRefresh: context.read<WatchlistProvider>().reloadWatchlist,
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
           Top10AnimeList(topAnime: topAnime),
           const SectionLabel('Swipe for more 👉', 1),
           WatchListSeparator(
-            key: Key('AnimeSeparator<${AnimeFolderType.recommended}>'),
-            folderType: AnimeFolderType.recommended,
+            key: Key('AnimeSeparator<${WatchlistFolderType.recommended}>'),
+            folderType: WatchlistFolderType.recommended,
             totalAnime: recommended.length,
           ),
           AnimeCategoryList(
-            key: Key('AnimeCategoryList<${AnimeFolderType.recommended}>'),
-            folderType: AnimeFolderType.recommended,
+            key: Key('AnimeCategoryList<${WatchlistFolderType.recommended}>'),
+            folderType: WatchlistFolderType.recommended,
             watchlist: recommended,
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 100)),
@@ -94,13 +94,13 @@ class _Top10AnimeListState extends State<Top10AnimeList> {
           slivers: [
             WatchListSeparator(
               key: const Key('AnimeSeparator<TopAnime>'),
-              folderType: AnimeFolderType.recommended,
+              folderType: WatchlistFolderType.recommended,
               title: 'TOP $visibleItemCount 🔥',
               totalAnime: topAnime.length,
             ),
             AnimeCategoryList(
               key: const Key('AnimeCategoryList<TopAnime>'),
-              folderType: AnimeFolderType.recommended,
+              folderType: WatchlistFolderType.recommended,
               watchlist: topAnime,
               showInitial: false,
               showRank: true,

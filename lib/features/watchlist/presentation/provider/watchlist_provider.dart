@@ -1,21 +1,18 @@
 import 'dart:developer';
 
 import 'package:animewatchlist/core/core.dart';
-import 'package:animewatchlist/features/watchlist/data/data_sources/remote_datasource.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
-import 'package:animewatchlist/features/watchlist/presentation/presentation.dart' show AnimeState;
+import 'package:animewatchlist/features/watchlist/watchlist.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-final class AnimeProvider extends ChangeNotifier {
-  AnimeProvider(
-    @Named.from(RemoteDatasourceImpl) this._remoteDatasource,
-  ) {
+final class WatchlistProvider extends ChangeNotifier {
+  WatchlistProvider(@Named.from(WatchlistRepositoryImpl) this._repository) {
     _loadWatchlist();
   }
 
-  final RemoteDatasource _remoteDatasource;
+  final WatchlistRepository _repository;
 
   final PageController controller = PageController();
 
@@ -24,25 +21,25 @@ final class AnimeProvider extends ChangeNotifier {
 
   WatchlistModel get watchlist => _filteredWatchlistModel;
 
-  AnimeState _state = AnimeState.loading;
+  WatchlistState _state = WatchlistState.loading;
 
-  AnimeState get state => _state;
+  WatchlistState get state => _state;
 
-  void _updateState(AnimeState state) {
+  void _updateState(WatchlistState state) {
     _state = state;
     notifyListeners();
   }
 
   Future<void> _loadWatchlist() async {
-    if (!_state.isReloading) _updateState(AnimeState.loading);
+    if (!_state.isReloading) _updateState(WatchlistState.loading);
 
-    _watchlistModel = await _remoteDatasource.animeWatchlist();
+    _watchlistModel = (await _repository.watchlist()).data;
     _filteredWatchlistModel = _watchlistModel;
     _checkIfEmpty();
   }
 
   Future<void> reloadWatchlist() async {
-    _updateState(AnimeState.reloading);
+    _updateState(WatchlistState.reloading);
     return _loadWatchlist();
   }
 
@@ -53,9 +50,9 @@ final class AnimeProvider extends ChangeNotifier {
 
       if (query.isEmpty) _resetWatchlist();
 
-      return _updateState(AnimeState.ready);
+      return _updateState(WatchlistState.ready);
     } catch (error) {
-      _updateState(AnimeState.error);
+      _updateState(WatchlistState.error);
 
       log('FILTER ERROR: $error');
       return _resetWatchlist();
@@ -76,14 +73,14 @@ final class AnimeProvider extends ChangeNotifier {
         dropped.isEmpty &&
         watched.isEmpty &&
         recommended.isEmpty) {
-      return _updateState(AnimeState.empty);
+      return _updateState(WatchlistState.empty);
     }
-    _updateState(AnimeState.ready);
+    _updateState(WatchlistState.ready);
   }
 
   void _resetWatchlist() {
     _filteredWatchlistModel = _watchlistModel;
-    _updateState(AnimeState.ready);
+    _updateState(WatchlistState.ready);
   }
 
   void goToPage(int index) {
