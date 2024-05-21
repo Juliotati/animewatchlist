@@ -96,10 +96,7 @@ class _AnimePreviewState extends State<AnimePreview>
                 final starterInfoIndex = desc.indexOf('. ') + 2;
                 return desc.substring(starterInfoIndex);
               },
-              titleStyle: TextStyle(
-                fontSize: 18,
-                color: folder.color,
-              ),
+              titleStyle: TextStyle(fontSize: 18, color: folder.color),
               boxShadow: const [],
               backgroundColor: folder.color.withOpacity(0.05),
               errorBody: errorDescription,
