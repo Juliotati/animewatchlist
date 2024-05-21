@@ -8,9 +8,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await setupGetIt();
   runApp(const AnimeArchive());
 }
@@ -25,9 +23,7 @@ class AnimeArchive extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
       home: ListenableProvider<AnimeProvider>(
         create: (_) => sl.get<AnimeProvider>(),
         child: const WatchlistScreen(),
