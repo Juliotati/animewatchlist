@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:animewatchlist/core/core.dart';
-import 'package:animewatchlist/features/watchlist/data/datasources/datasource_watchlist.dart';
+import 'package:animewatchlist/features/watchlist/data/data_sources/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
 import 'package:animewatchlist/features/watchlist/presentation/presentation.dart';

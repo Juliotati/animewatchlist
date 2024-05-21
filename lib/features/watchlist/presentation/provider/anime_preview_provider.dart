@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:animewatchlist/core/core.dart';
-import 'package:animewatchlist/features/watchlist/data/datasources/remote_datasource.dart';
+import 'package:animewatchlist/features/watchlist/data/data_sources/remote_datasource.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/presentation/presentation.dart' show AnimeState;
 import 'package:flutter/cupertino.dart';

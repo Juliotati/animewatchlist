@@ -3,7 +3,7 @@ library presentation;
 import 'dart:developer';
 
 import 'package:animewatchlist/core/core.dart';
-import 'package:animewatchlist/features/watchlist/data/datasources/remote_datasource.dart';
+import 'package:animewatchlist/features/watchlist/data/data_sources/remote_datasource.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
 import 'package:animewatchlist/features/watchlist/presentation/provider/anime_preview_provider.dart';
