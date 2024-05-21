@@ -12,11 +12,6 @@ on:
   # Enable manual run on gh actions in case a manual deployment is needed
   # https://github.com/Juliotati/animewatchlist/actions/workflows/cd_release_web.yml
   workflow_dispatch:
-    inputs:
-      environment:
-        description: "Send me to war!! (push live build)"
-        required: false
-        default: "production"
 
 jobs:
   publish-web-app:
