@@ -154,15 +154,15 @@ extension AnimeWatchlistExtension on WatchlistModel {
 }
 
 const List<String> blazerTopAnimeIds = [
-  '20',     // 1. Naruto
-  '1735',   // 2. Naruto Shippuden
-  '12031',  // 3. Kingdom
-  '16498',  // 4. Attack on Titan
-  '19',     // 5. Monster
-  '37521',  // 6. Vinland Saga
-  '2418',   // 7. Sword of the Stranger
-  '39535',  // 8. Mushoku Tensei: Jobless Reincarnation
-  '52991',  // 9. Frieren: Beyond Journey's End
+  '20',     // 1.  Naruto
+  '1735',   // 2.  Naruto Shippuden
+  '12031',  // 3.  Kingdom
+  '16498',  // 4.  Attack on Titan
+  '19',     // 5.  Monster
+  '37521',  // 6.  Vinland Saga
+  '2418',   // 7.  Sword of the Stranger
+  '39535',  // 8.  Mushoku Tensei: Jobless Reincarnation
+  '52991',  // 9.  Frieren: Beyond Journey's End
   '38000',  // 10. Demon Slayer: Kimetsu no Yaiba
   '31240',  // 11. Re:ZERO -Starting Life in Another World-
   '37430',  // 12. That Time I Got Reincarnated as a Slime
