@@ -3,51 +3,9 @@ import 'dart:developer';
 import 'package:animewatchlist/core/core.dart';
 import 'package:animewatchlist/features/watchlist/data/datasources/remote_datasource.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
-import 'package:animewatchlist/gen/assets.gen.dart';
+import 'package:animewatchlist/features/watchlist/presentation/presentation.dart' show AnimeState;
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
-
-enum AnimeState {
-  error,
-  loading,
-  reloading,
-  ready,
-  empty;
-
-  const AnimeState();
-
-  bool get isLoading => this == loading;
-
-  bool get isReloading => this == reloading;
-
-  bool get showLoading => this == loading || this == reloading;
-
-  bool get isReady => this == ready;
-
-  bool get hasError => this == error;
-
-  bool get notData => this == empty;
-
-  String get stateMessage {
-    return switch (this) {
-      error => 'ERROR - COULD NOT LOAD WATCHLIST 🥲',
-      loading => 'LOADING...',
-      reloading => 'RELOADING...',
-      ready => 'READY',
-      empty => 'WATCHLIST IS EMPTY',
-    };
-  }
-
-  String get stateImage {
-    return switch (this) {
-      error => Assets.loadingGifs.luffySearch.path,
-      loading => Assets.loadingGifs.values.randomElement.path,
-      reloading => '',
-      ready => '',
-      empty => Assets.loadingGifs.luffySearch.path,
-    };
-  }
-}
 
 @lazySingleton
 final class AnimeProvider extends ChangeNotifier {
