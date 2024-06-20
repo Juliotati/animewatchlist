@@ -1,6 +1,6 @@
 import 'package:animewatchlist/core/config/di/app_di.dart';
-import 'package:animewatchlist/features/watchlist/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/presentation/provider/watchlist_provider.dart';
+import 'package:animewatchlist/features/watchlist/watchlist.dart';
 import 'package:animewatchlist/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

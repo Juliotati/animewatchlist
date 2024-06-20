@@ -19,9 +19,8 @@ class WatchlistCategoryModel {
   }
 
   Map<String, dynamic> toJson() {
-    final anime = WatchlistCategoryModel(
+    final anime = copyWith(
       id: idFromLink(link ?? info?.image ?? ''),
-      link: link,
       name: displayName,
     );
     return _$WatchlistCategoryModelToJson(anime);

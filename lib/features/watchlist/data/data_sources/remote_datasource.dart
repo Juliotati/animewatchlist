@@ -5,15 +5,11 @@ abstract class RemoteDatasource {
     throw UnimplementedError();
   }
 
-  /// [newWatchlist] is in cache (.json), oldWatchlist is on remote database and
-  /// [oldWatchlist] needs to be updated to match newWatchlist.
-
-  /// Some anime will need to be moved from one folder to another without losing
-  /// data.
-  /// Meaning [oldWatchlist] anime data should be present within [newWatchlist]
-  /// when it changes folder.
-  /// after moving an anime to a new folder, delete the duplicate in anime in
-  /// [oldWatchlist].
+  /// Keeps the data on the database represented by `oldWatchlist` updated with
+  /// and from `newWatchlist` that is present on assets.
+  ///
+  /// Anime that where moved from one folder to another maintain the same
+  /// [WatchlistCategoryModel.info] to avoid unnecessary data reloading.
   ///
   /// If an anime is new, only add it to the [newWatchlist].
   /// If an anime is in the same folder, do nothing.
@@ -188,7 +184,7 @@ final class RemoteDatasourceImpl implements RemoteDatasource {
           continue;
         }
 
-        final addedAt = oldAnime.addedAt ?? DateTime.now();
+        final addedAt = oldAnime.addedAt ?? DateTime.now().subtract(const Duration(days: 90));
         final noFolderChange = oldItem.folder == folder;
 
         if (noFolderChange) {
