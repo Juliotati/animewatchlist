@@ -184,7 +184,7 @@ final class RemoteDatasourceImpl implements RemoteDatasource {
           continue;
         }
 
-        final addedAt = oldAnime.addedAt ?? DateTime.now().subtract(const Duration(days: 90));
+        final addedAt = oldAnime.addedAt ?? DateTime.now();
         final noFolderChange = oldItem.folder == folder;
 
         if (noFolderChange) {
