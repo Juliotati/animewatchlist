@@ -33,7 +33,7 @@ jobs:
       - name: build-web-release-canvaskit
         run: |
           flutter pub get
-          flutter build web --release --web-renderer canvaskit
+          flutter build web --release --wasm
 
       - name: deploy-to-firebase-hosting
         uses: actions/setup-node@v4
