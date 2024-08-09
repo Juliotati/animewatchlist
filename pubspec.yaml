@@ -3,19 +3,19 @@ description: A simple app to display all the anime I have on my 9anime.to watchl
 
 publish_to: 'none'
 
-version: 0.4.4+9
+version: 0.5.0+10
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   animations: ^2.0.0
-  cloud_firestore: ^4.15.9
+  cloud_firestore: ^5.2.1
   collection: ^1.18.0
   cupertino_icons: ^1.0.6
 
-  firebase_analytics: ^10.8.10
-  firebase_core: ^2.27.1
+  firebase_analytics: ^11.2.1
+  firebase_core: ^3.3.0
   flutter:
     sdk: flutter
 
@@ -51,6 +51,5 @@ dev_dependencies:
 flutter:
 
   assets:
-    - shorebird.yaml
     - assets/loading_gifs/
   uses-material-design: true

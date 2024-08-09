@@ -110,8 +110,9 @@ function build_wasm_for_preview {
 
   echo "🧹 Don't forget to terminate the server when you're done!"
   dart pub global activate dhttpd
-  dhttpd '--headers=Cross-Origin-Embedder-Policy=credentialless;Cross-Origin-Opener-Policy=same-origin'
+  echo "🚀 Server started at: http://localhost:8080"
   open http://localhost:8080
+  dhttpd '--headers=Cross-Origin-Embedder-Policy=credentialless;Cross-Origin-Opener-Policy=same-origin'
 }
 
 function build_and_release_wasm {

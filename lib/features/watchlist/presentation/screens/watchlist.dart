@@ -99,17 +99,20 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
   @override
   Widget build(BuildContext context) {
     const color = Colors.black;
-    final reloading = context.select((WatchlistProvider p) => p.state.isReloading);
+    final reloading = context.select(
+      (WatchlistProvider p) => p.state.isReloading,
+    );
     final totalWidth = MediaQuery.sizeOf(context).width;
+    final inputWidth = hasFocus
+        ? totalWidth * (kIsWeb ? 0.4 : 0.8)
+        : reloading
+            ? 120.0
+            : 100.0;
     return AnimatedSize(
       duration: const Duration(milliseconds: 300),
       child: SizedBox(
         height: 45,
-        width: hasFocus
-            ? totalWidth * (kIsWeb ? 0.4 : 0.8)
-            : reloading
-                ? 120
-                : 105,
+        width: inputWidth,
         child: TextFormField(
           controller: _SearchAnimeField._controller,
           focusNode: _SearchAnimeField._focusNode,

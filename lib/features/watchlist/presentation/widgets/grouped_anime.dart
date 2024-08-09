@@ -5,18 +5,18 @@ class _GroupedAnime extends StatelessWidget {
 
   final WatchlistModel watchlist;
 
-  int get watchingTotal => watchlist.watching.length;
+  int get watching => watchlist.watching.length;
 
-  int get plannedTotal => watchlist.planned.length;
+  int get planned => watchlist.planned.length;
 
-  int get onHoldTotal => watchlist.onHold.length;
+  int get onHold => watchlist.onHold.length;
 
-  int get droppedTotal => watchlist.dropped.length;
+  int get dropped => watchlist.dropped.length;
 
-  int get watchedTotal => watchlist.watched.length;
+  int get watched => watchlist.watched.length;
 
   String get totalAnime {
-    return '${watchingTotal + plannedTotal + onHoldTotal + droppedTotal + watchedTotal}';
+    return '${watching + planned + onHold + dropped + watched}';
   }
 
   @override
@@ -33,14 +33,11 @@ class _GroupedAnime extends StatelessWidget {
                 spacing: 6.0,
                 runSpacing: 8.0,
                 children: [
-                  AnimeStats(
-                    '$watchingTotal',
-                    folder: WatchlistFolderType.watching,
-                  ),
-                  AnimeStats('$plannedTotal', folder: WatchlistFolderType.planned),
-                  AnimeStats('$onHoldTotal', folder: WatchlistFolderType.onHold),
-                  AnimeStats('$droppedTotal', folder: WatchlistFolderType.dropped),
-                  AnimeStats('$watchedTotal', folder: WatchlistFolderType.watched),
+                  AnimeStats('$watching', folder: WatchlistFolderType.watching),
+                  AnimeStats('$planned', folder: WatchlistFolderType.planned),
+                  AnimeStats('$onHold', folder: WatchlistFolderType.onHold),
+                  AnimeStats('$dropped', folder: WatchlistFolderType.dropped),
+                  AnimeStats('$watched', folder: WatchlistFolderType.watched),
                   AnimeStats(totalAnime, label: 'Total Anime'),
                 ],
               ),
@@ -50,7 +47,7 @@ class _GroupedAnime extends StatelessWidget {
           WatchListSeparator(
             key: Key('WatchlistSeparator<${WatchlistFolderType.watching}>'),
             folderType: WatchlistFolderType.watching,
-            totalAnime: watchingTotal,
+            totalAnime: watching,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${WatchlistFolderType.watching}>'),
@@ -60,7 +57,7 @@ class _GroupedAnime extends StatelessWidget {
           WatchListSeparator(
             key: Key('WatchlistSeparator<${WatchlistFolderType.planned}>'),
             folderType: WatchlistFolderType.planned,
-            totalAnime: plannedTotal,
+            totalAnime: planned,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${WatchlistFolderType.planned}>'),
@@ -70,7 +67,7 @@ class _GroupedAnime extends StatelessWidget {
           WatchListSeparator(
             key: Key('WatchlistSeparator<${WatchlistFolderType.onHold}>'),
             folderType: WatchlistFolderType.onHold,
-            totalAnime: onHoldTotal,
+            totalAnime: onHold,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${WatchlistFolderType.onHold}>'),
@@ -80,7 +77,7 @@ class _GroupedAnime extends StatelessWidget {
           WatchListSeparator(
             key: Key('WatchlistSeparator<${WatchlistFolderType.dropped}>'),
             folderType: WatchlistFolderType.dropped,
-            totalAnime: droppedTotal,
+            totalAnime: dropped,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${WatchlistFolderType.dropped}>'),
@@ -90,7 +87,7 @@ class _GroupedAnime extends StatelessWidget {
           WatchListSeparator(
             key: Key('WatchlistSeparator<${WatchlistFolderType.watched}>'),
             folderType: WatchlistFolderType.watched,
-            totalAnime: watchedTotal,
+            totalAnime: watched,
           ),
           AnimeCategoryList(
             key: Key('AnimeCategoryList<${WatchlistFolderType.watched}>'),

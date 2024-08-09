@@ -131,7 +131,7 @@ extension AnimeWatchlistExtension on WatchlistModel {
 
   List<WatchlistCategoryModel> get topAnime {
     final rawList = <WatchlistCategoryModel>[];
-    final topAnimeIds = blazerTopAnimeIds.take(30);
+    final topAnimeIds = myTopAnimeIds.take(30);
 
     for (final anime in watchedAndRecommended) {
       if (!topAnimeIds.contains(anime.id)) continue;
@@ -153,7 +153,7 @@ extension AnimeWatchlistExtension on WatchlistModel {
   }
 }
 
-const List<String> blazerTopAnimeIds = [
+const List<String> myTopAnimeIds = [
   '20',     // 1.  Naruto
   '1735',   // 2.  Naruto Shippuden
   '12031',  // 3.  Kingdom
@@ -189,13 +189,9 @@ const List<String> blazerTopAnimeIds = [
 List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
   if (data == null || data.isEmpty) return [];
   return data
-    ..sort(
-      (a, b) {
-        return a.displayName
-            .toLowerCase()
-            .compareTo(b.displayName.toLowerCase());
-      },
-    )
+    ..sort((a, b) {
+      return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
+    })
     ..toList();
 }
 
