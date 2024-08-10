@@ -82,36 +82,39 @@ class _AnimePreviewState extends State<AnimePreview>
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
           child: AnimatedSize(
             duration: const Duration(milliseconds: 300),
-            child: LinkPreviewGenerator(
-              key: ValueKey(anime.link),
-              info: noAnimeInfo ? null : info,
-              bodyMaxLines: 4,
-              link: anime.link ?? '',
-              cacheDuration: const Duration(days: 90),
-              linkPreviewStyle: LinkPreviewStyle.small,
-              borderRadius: 8.0,
-              showDomain: false,
-              removeShadow: true,
-              description: (desc) {
-                final starterInfoIndex = desc.indexOf('. ') + 2;
-                return desc.substring(starterInfoIndex);
-              },
-              titleStyle: TextStyle(fontSize: 18, color: folder.color),
-              boxShadow: const [],
-              backgroundColor: folder.color.withOpacity(0.05),
-              errorBody: errorDescription,
-              errorTitle: errorTitle,
-              errorImage: errorImage,
-              errorWidget: AnimePreviewPlaceholder(
-                anime: anime,
-                folderType: folder,
+            child: LinkTargetHover(
+              linkTarget: anime.link ?? '',
+              child: LinkPreviewGenerator(
+                key: ValueKey(anime.link),
+                info: noAnimeInfo ? null : info,
+                bodyMaxLines: 4,
+                link: anime.link ?? '',
+                cacheDuration: const Duration(days: 90),
+                linkPreviewStyle: LinkPreviewStyle.small,
+                borderRadius: 8.0,
+                showDomain: false,
+                removeShadow: true,
+                description: (desc) {
+                  final starterInfoIndex = desc.indexOf('. ') + 2;
+                  return desc.substring(starterInfoIndex);
+                },
+                titleStyle: TextStyle(fontSize: 18, color: folder.color),
+                boxShadow: const [],
+                backgroundColor: folder.color.withOpacity(0.05),
+                errorBody: errorDescription,
+                errorTitle: errorTitle,
+                errorImage: errorImage,
+                errorWidget: AnimePreviewPlaceholder(
+                  anime: anime,
+                  folderType: folder,
+                ),
+                placeholderWidget: AnimePreviewPlaceholder(
+                  anime: anime,
+                  loading: _loading,
+                  folderType: folder,
+                ),
+                onInfoLoaded: _onInfoLoaded,
               ),
-              placeholderWidget: AnimePreviewPlaceholder(
-                anime: anime,
-                loading: _loading,
-                folderType: folder,
-              ),
-              onInfoLoaded: _onInfoLoaded,
             ),
           ),
         ),

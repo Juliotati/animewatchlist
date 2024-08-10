@@ -11,13 +11,18 @@ class _TopRecommendedAnime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = defaultTargetPlatform == TargetPlatform.iOS ||
+        defaultTargetPlatform == TargetPlatform.android;
     return RefreshIndicator(
       onRefresh: context.read<WatchlistProvider>().reloadWatchlist,
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
           Top10AnimeList(topAnime: topAnime),
-          const SectionLabel('Swipe for more 👉', 1),
+          if (isMobile)
+            const SectionLabel('👈 Swipe/press for grouped folders', 1)
+          else
+            const SectionLabel('Click for grouped folders 👉', 1),
           WatchListSeparator(
             key: Key('AnimeSeparator<${WatchlistFolderType.recommended}>'),
             folderType: WatchlistFolderType.recommended,

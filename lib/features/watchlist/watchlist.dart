@@ -2,8 +2,10 @@ library watchlist;
 
 import 'dart:convert' show jsonDecode;
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:animewatchlist/core/core.dart';
+import 'package:animewatchlist/core/link_target_provider/link_target_provider.dart';
 import 'package:animewatchlist/core/use_cases/use_case.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';

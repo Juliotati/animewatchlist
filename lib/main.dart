@@ -1,4 +1,5 @@
 import 'package:animewatchlist/core/config/di/app_di.dart';
+import 'package:animewatchlist/core/link_target_provider/link_target_provider.dart';
 import 'package:animewatchlist/features/watchlist/presentation/provider/watchlist_provider.dart';
 import 'package:animewatchlist/features/watchlist/watchlist.dart';
 import 'package:animewatchlist/firebase_options.dart';
@@ -24,9 +25,16 @@ class AnimeArchive extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       theme: ThemeData(primarySwatch: Colors.blueGrey),
-      home: ListenableProvider<WatchlistProvider>(
-        create: (_) => sl.get<WatchlistProvider>(),
-        child: const WatchlistScreen(),
+      home: MultiProvider(
+        providers: [
+          ListenableProvider<WatchlistProvider>(
+            create: (_) => sl.get<WatchlistProvider>(),
+          ),
+          ListenableProvider<LinkTargetProvider>(
+            create: (_) => LinkTargetProvider(),
+          ),
+        ],
+        child: const LinkTargetWrapper(child: WatchlistScreen()),
       ),
     );
   }

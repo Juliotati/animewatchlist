@@ -120,25 +120,30 @@ class AnimeCategoryList extends StatelessWidget {
     final isLargeScreen = MediaQuery.sizeOf(context).width > 600;
 
     if (isLargeScreen) {
-      return SliverGrid(
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: showRank ? 300 : 400,
-          childAspectRatio: showRank ? (300 / 120) : (400 / 212),
-        ),
-        delegate: SliverChildBuilderDelegate(
-          (_, int index) {
-            final currentAnime = watchlist[index];
-            return _AnimeRanking(
-              rank: index + 1,
-              showRank: showRank,
-              preview: AnimePreview(
-                key: Key('Anime<${currentAnime.name}-$index>'),
-                anime: currentAnime,
-                folderType: folderType,
-              ),
-            );
-          },
-          childCount: watchlist.length,
+      return SliverPadding(
+        padding: folderType.recommendedFolder && showRank
+            ? const EdgeInsets.symmetric(horizontal: 16.0)
+            : EdgeInsets.zero,
+        sliver: SliverGrid(
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: showRank ? 300 : 400,
+            childAspectRatio: showRank ? (300 / 120) : (400 / 212),
+          ),
+          delegate: SliverChildBuilderDelegate(
+            (_, int index) {
+              final currentAnime = watchlist[index];
+              return _AnimeRanking(
+                rank: index + 1,
+                showRank: showRank,
+                preview: AnimePreview(
+                  key: Key('Anime<${currentAnime.name}-$index>'),
+                  anime: currentAnime,
+                  folderType: folderType,
+                ),
+              );
+            },
+            childCount: watchlist.length,
+          ),
         ),
       );
     }
@@ -207,70 +212,75 @@ class _AnimeRanking extends StatelessWidget {
       child: WatchlistCard(
         folderType: WatchlistFolderType.watched,
         noPadding: true,
-        child: InkWell(
-          splashColor: Colors.transparent,
-          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-          onTap: openAnimePage,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              if (hasImage)
-                ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(8.0),
-                    bottomLeft: Radius.circular(8.0),
+        child: LinkTargetHover(
+          linkTarget: anime.link ?? '',
+          child: InkWell(
+            splashColor: Colors.transparent,
+            borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+            onTap: openAnimePage,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                if (hasImage)
+                  ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(8.0),
+                      bottomLeft: Radius.circular(8.0),
+                    ),
+                    child: Image.network(image, fit: BoxFit.cover, height: 110),
                   ),
-                  child: Image.network(image, fit: BoxFit.cover, height: 110),
-                ),
-              Expanded(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 6.0, left: 10.0),
-                        child: Text(
-                          anime.name ?? anime.info?.title ?? '???',
-                          maxLines: 3,
-                          softWrap: true,
-                          overflow: TextOverflow.ellipsis,
-                          style: headline6?.copyWith(
-                            fontSize: 18.0,
-                            color: WatchlistFolderType.watched.color,
+                Expanded(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 6.0, left: 10.0),
+                          child: Text(
+                            anime.name ?? anime.info?.title ?? '???',
+                            maxLines: 3,
+                            softWrap: true,
+                            overflow: TextOverflow.ellipsis,
+                            style: headline6?.copyWith(
+                              fontSize: 18.0,
+                              color: WatchlistFolderType.watched.color,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 8.0),
-                    DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.5),
-                        borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(8.0),
-                          bottomLeft: Radius.circular(8.0),
+                      const SizedBox(width: 8.0),
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.5),
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(8.0),
+                            bottomLeft: Radius.circular(8.0),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8.0,
+                            vertical: 4.0,
+                          ),
+                          child: Text(
+                            '#$rank',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
                         ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8.0,
-                          vertical: 4.0,
-                        ),
-                        child: Text(
-                          '#$rank',
-                          style:
-                              Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
