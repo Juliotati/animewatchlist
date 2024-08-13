@@ -131,7 +131,7 @@ final class RemoteDatasourceImpl implements RemoteDatasource {
 
   @override
   Future<void> updateWatchlist(WatchlistModel oldWatchlist) async {
-      return;
+
     if (!kDebugMode) {
       log('updateWatchlist IS DISABLED IN RELEASE MODE');
       return;
