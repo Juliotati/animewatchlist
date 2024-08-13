@@ -30,7 +30,7 @@ dependencies:
       ref: main
   link_target:
     git:
-      url: https://github.com/Juliotati/link_target
+      url: https://github.com/Juliotati/link_target.git
       ref: main
   path: ^1.9.0
   path_provider: ^2.1.2
