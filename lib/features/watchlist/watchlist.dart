@@ -4,7 +4,6 @@ import 'dart:convert' show jsonDecode;
 import 'dart:developer';
 
 import 'package:animewatchlist/core/core.dart';
-import 'package:animewatchlist/core/link_target_provider/link_target_provider.dart';
 import 'package:animewatchlist/core/use_cases/use_case.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
@@ -16,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:link_preview_generator/link_preview_generator.dart';
+import 'package:link_target/link_target.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 

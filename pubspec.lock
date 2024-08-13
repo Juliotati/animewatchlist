@@ -566,6 +566,15 @@ packages:
       url: "https://github.com/Juliotati/link_preview_generator.git"
     source: git
     version: "1.4.3"
+  link_target:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: main
+      resolved-ref: bc14d46ba32f13f31e917c9f0913709223f4329a
+      url: "https://github.com/Juliotati/link_target"
+    source: git
+    version: "0.0.1"
   lint:
     dependency: "direct dev"
     description:
@@ -1108,5 +1117,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.5.0-259.0.dev <4.0.0"
+  dart: ">=3.5.0 <4.0.0"
   flutter: ">=3.22.0"

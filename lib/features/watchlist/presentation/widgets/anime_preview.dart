@@ -82,8 +82,8 @@ class _AnimePreviewState extends State<AnimePreview>
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
           child: AnimatedSize(
             duration: const Duration(milliseconds: 300),
-            child: LinkTargetHover(
-              linkTarget: anime.link ?? '',
+            child: LinkTargetDetector(
+              target: anime.link ?? '',
               child: LinkPreviewGenerator(
                 key: ValueKey(anime.link),
                 info: noAnimeInfo ? null : info,

@@ -1,10 +1,10 @@
 import 'package:animewatchlist/core/config/di/app_di.dart';
-import 'package:animewatchlist/core/link_target_provider/link_target_provider.dart';
 import 'package:animewatchlist/features/watchlist/presentation/provider/watchlist_provider.dart';
 import 'package:animewatchlist/features/watchlist/watchlist.dart';
 import 'package:animewatchlist/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:link_target/link_target.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -30,11 +30,8 @@ class AnimeArchive extends StatelessWidget {
           ListenableProvider<WatchlistProvider>(
             create: (_) => sl.get<WatchlistProvider>(),
           ),
-          ListenableProvider<LinkTargetProvider>(
-            create: (_) => LinkTargetProvider(),
-          ),
         ],
-        child: const LinkTargetWrapper(child: WatchlistScreen()),
+        child: const LinkTargetRegion(child: WatchlistScreen()),
       ),
     );
   }
