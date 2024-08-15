@@ -213,7 +213,7 @@ class _AnimeRanking extends StatelessWidget {
         folderType: WatchlistFolderType.watched,
         noPadding: true,
         child: LinkTargetDetector(
-          target: anime.link ?? '',
+          target: anime.link,
           child: InkWell(
             splashColor: Colors.transparent,
             borderRadius: const BorderRadius.all(Radius.circular(8.0)),
