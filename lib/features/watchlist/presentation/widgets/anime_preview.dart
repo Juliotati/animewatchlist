@@ -83,7 +83,7 @@ class _AnimePreviewState extends State<AnimePreview>
           child: AnimatedSize(
             duration: const Duration(milliseconds: 300),
             child: LinkTargetDetector(
-              target: anime.link ?? '',
+              target: anime.link,
               child: LinkPreviewGenerator(
                 key: ValueKey(anime.link),
                 info: noAnimeInfo ? null : info,
@@ -123,7 +123,7 @@ class _AnimePreviewState extends State<AnimePreview>
   }
 }
 
-class AnimePreviewPlaceholder extends StatelessWidget {
+class AnimePreviewPlaceholder extends StatefulWidget {
   const AnimePreviewPlaceholder({
     super.key,
     required this.anime,
@@ -135,53 +135,74 @@ class AnimePreviewPlaceholder extends StatelessWidget {
   final WatchlistCategoryModel anime;
   final WatchlistFolderType folderType;
 
+  @override
+  State<AnimePreviewPlaceholder> createState() =>
+      _AnimePreviewPlaceholderState();
+}
+
+class _AnimePreviewPlaceholderState extends State<AnimePreviewPlaceholder> {
   Future<void> openAnimePage() async {
     try {
-      if (anime.link == null) return;
-      await launchUrl(Uri.parse(anime.link ?? ''));
+      final link = widget.anime.link;
+      if (link == null || link.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            backgroundColor: Color.fromRGBO(18, 18, 18, 1.0),
+            content: Text(
+              'o.OPs! We have an invalid link here',
+              style: TextStyle(color: Color.fromRGBO(245, 245, 245, 1.0)),
+            ),
+          ),
+        );
+        return;
+      }
+      await launchUrl(Uri.parse(link));
     } catch (_) {
       rethrow;
     }
   }
 
   String get animeName {
-    if (anime.isRecommended) return '🔥 ${anime.displayName}';
-    return anime.displayName;
+    if (widget.anime.isRecommended) return '🔥 ${widget.anime.displayName}';
+    return widget.anime.displayName;
   }
 
   @override
   Widget build(BuildContext context) {
     final headline6 = Theme.of(context).textTheme.titleLarge;
     return WatchlistCard(
-      folderType: folderType,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Expanded(
-            child: Text(
-              animeName,
-              maxLines: 2,
-              style: headline6?.copyWith(fontSize: 16.0),
-              overflow: TextOverflow.ellipsis,
+      folderType: widget.folderType,
+      child: GestureDetector(
+        onTap: openAnimePage,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Expanded(
+              child: Text(
+                animeName,
+                maxLines: 2,
+                style: headline6?.copyWith(fontSize: 16.0),
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
-          InkWell(
-            onTap: openAnimePage,
-            splashColor: const Color.fromRGBO(0, 0, 0, 0.0),
-            highlightColor: folderType.color.withOpacity(0.15),
-            borderRadius: BorderRadius.circular(8.0),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: loading
-                  ? const SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(),
-                    )
-                  : Icon(Icons.launch, color: folderType.color),
+            InkWell(
+              onTap: openAnimePage,
+              splashColor: const Color.fromRGBO(0, 0, 0, 0.0),
+              highlightColor: widget.folderType.color.withOpacity(0.15),
+              borderRadius: BorderRadius.circular(8.0),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: widget.loading
+                    ? const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(),
+                      )
+                    : Icon(Icons.launch, color: widget.folderType.color),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
