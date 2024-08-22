@@ -153,6 +153,7 @@ extension AnimeWatchlistExtension on WatchlistModel {
   }
 }
 
+// dart format off
 const List<String> myTopAnimeIds = [
   '20',     // 1.  Naruto
   '1735',   // 2.  Naruto Shippuden
@@ -185,6 +186,7 @@ const List<String> myTopAnimeIds = [
   '38826',  // 29. Weathering with You
   '40834',  // 30. Ranking of Kings
 ];
+// dart format on
 
 List<WatchlistCategoryModel> sortByName(List<WatchlistCategoryModel>? data) {
   if (data == null || data.isEmpty) return [];
