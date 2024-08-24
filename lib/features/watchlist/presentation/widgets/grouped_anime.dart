@@ -127,7 +127,7 @@ class AnimeCategoryList extends StatelessWidget {
         sliver: SliverGrid(
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: showRank ? 300 : 400,
-            childAspectRatio: showRank ? (300 / 120) : (400 / 212),
+            mainAxisExtent: showRank ? 120 : 150,
           ),
           delegate: SliverChildBuilderDelegate(
             (_, int index) {
