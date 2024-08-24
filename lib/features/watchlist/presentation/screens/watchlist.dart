@@ -44,18 +44,11 @@ class WatchlistScreen extends StatelessWidget {
                       ][index];
                     },
                   ),
-                  if (kIsWeb)
-                    const Positioned(
-                      right: 30,
-                      bottom: 20,
-                      child: _SearchAnimeField(key: Key('SearchAnimeField')),
-                    )
-                  else
-                    const Positioned(
-                      left: 30,
-                      bottom: 20,
-                      child: _SearchAnimeField(key: Key('SearchAnimeField')),
-                    ),
+                  const Positioned(
+                    right: 30,
+                    bottom: 20,
+                    child: _SearchAnimeField(key: Key('SearchAnimeField')),
+                  ),
                 ],
               );
             },
@@ -88,12 +81,10 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
   }
 
   @override
-  void initState() {
-    _SearchAnimeField._focusNode.addListener(() {
-      setState(() {});
-    });
+  void didChangeDependencies() {
+    _SearchAnimeField._focusNode.addListener(() => setState(() {}));
 
-    super.initState();
+    super.didChangeDependencies();
   }
 
   @override
@@ -104,14 +95,15 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
     );
     final totalWidth = MediaQuery.sizeOf(context).width;
     final inputWidth = hasFocus
-        ? totalWidth * (kIsWeb ? 0.4 : 0.8)
+        ? totalWidth * (totalWidth > 450 ? 0.4 : 0.8)
         : reloading
-            ? 120.0
-            : 100.0;
+            ? 150.0
+            : 130.0;
     return AnimatedSize(
+      clipBehavior: Clip.none,
       duration: const Duration(milliseconds: 300),
       child: SizedBox(
-        height: 45,
+        height: 50,
         width: inputWidth,
         child: TextFormField(
           controller: _SearchAnimeField._controller,
@@ -122,7 +114,7 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
                 ? 'reloading...'
                 : hasFocus
                     ? 'search anime name'
-                    : 'search...',
+                    : 'search an...',
             contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             fillColor: hasFocus ? color : color.withOpacity(0.9),
             border: OutlineInputBorder(
@@ -130,9 +122,12 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
               borderSide: BorderSide.none,
             ),
             suffixIcon: hasFocus
-                ? IconButton(
-                    icon: const Icon(Icons.clear, size: 24),
-                    onPressed: () => _clear(context),
+                ? Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: IconButton(
+                      icon: const Icon(Icons.clear, size: 24),
+                      onPressed: () => _clear(context),
+                    ),
                   )
                 : null,
           ),
