@@ -53,9 +53,9 @@ class _AnimePreviewState extends State<AnimePreview>
   }
 
   @override
-  void initState() {
+  void didChangeDependencies() {
     _loading = anime.info == null;
-    super.initState();
+    super.didChangeDependencies();
   }
 
   @override
