@@ -9,8 +9,7 @@ class AnimeWatchList {
     try {
       log(name: 'cache', 'UPDATING: WATCHLIST');
       const fileName = 'anime_watchlist.json';
-      final encodedWatchlist = await rootBundle.loadString(fileName, cache: false);
-
+      final encodedWatchlist = await rootBundle.loadString(fileName);
       if (encodedWatchlist.isEmpty) throw Exception('No watchlist found');
       log(name: 'cache', 'LOADED: WATCHLIST');
 
