@@ -7,15 +7,15 @@ class AnimeWatchList {
 
   Future<WatchlistModel> watchlist() async {
     try {
-      log('UPDATING WATCHLIST');
+      log(name: 'cache', 'UPDATING: WATCHLIST');
       const fileName = 'anime_watchlist.json';
-      final encodedWatchlist = await rootBundle.loadString(fileName);
+      final encodedWatchlist = await rootBundle.loadString(fileName, cache: false);
 
       if (encodedWatchlist.isEmpty) throw Exception('No watchlist found');
-      log('LOADED watchlist');
+      log(name: 'cache', 'LOADED: WATCHLIST');
 
       final watchlistMap = jsonDecode(encodedWatchlist) as Map<String, dynamic>;
-      log('DECODED watchlist');
+      log(name: 'cache', 'DECODED: WATCHLIST');
 
       return WatchlistModel.fromJson(watchlistMap);
     } catch (e) {
