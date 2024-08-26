@@ -1,0 +1,24 @@
+name: 🚀 Deploy AniWave Watchlist
+on:
+  push:
+    paths:
+      - 'lib/**'
+      - '.github/workflows/app_cd_web.yml'
+      - 'pubspec.yaml'
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    strategy:
+      matrix:
+        target: [ production ]
+    uses: Juliotati/juliotati_app/.github/workflows/release_web.yml@main
+    with:
+      target: ${{ matrix.target }}
+      projectId: 'aniwavewatchlist'
+    secrets:
+      firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANIWAVEWATCHLIST }}
+      repoToken: ${{ secrets.GITHUB_TOKEN }}
