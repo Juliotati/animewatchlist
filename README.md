@@ -1,4 +1,6 @@
-[![Web deployments](https://github.com/Juliotati/animewatchlist/actions/workflows/cd_release_web.yml/badge.svg)](https://github.com/Juliotati/animewatchlist/actions/workflows/cd_release_web.yml)
+[![🚀 Deploy Anime Watchlist](https://github.com/Juliotati/animewatchlist/actions/workflows/app_cd_web.yml/badge.svg)](https://github.com/Juliotati/animewatchlist/actions/workflows/app_cd_web.yml)
+[![🧹 Sort Watchlist Json](https://github.com/Juliotati/animewatchlist/actions/workflows/sort_watchlist.yml/badge.svg)](https://github.com/Juliotati/animewatchlist/actions/workflows/sort_watchlist.yml)
+
 
 # Anime Watchlist
 
