@@ -1,4 +1,4 @@
-name: 🚀 Deploy AniWave Watchlist
+name: 🚀 Deploy Anime Watchlist
 on:
   push:
     paths:
