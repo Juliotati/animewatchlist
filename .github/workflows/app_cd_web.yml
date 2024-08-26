@@ -18,7 +18,7 @@ jobs:
     uses: Juliotati/juliotati_app/.github/workflows/cd_web.yml@main
     with:
       target: ${{ matrix.target }}
-      projectId: 'aniwavewatchlist'
+      projectId: aniwavewatchlist
     secrets:
       firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANIWAVEWATCHLIST }}
       repoToken: ${{ secrets.GITHUB_TOKEN }}
