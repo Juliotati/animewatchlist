@@ -7,13 +7,13 @@ on:
       - main
 
 jobs:
-  validate-config:
+  sort-watchlist:
     runs-on: macos-latest
     steps:
       - name: setup-repo
         uses: actions/checkout@v4
       - name: verify-config-existence-and-contents
         run: |
-          chmod +x "${GITHUB_WORKSPACE}/lib/scripts/all_functions.sh"
-          chmod +x "${GITHUB_WORKSPACE}/lib/scripts/sort_anime_watchlist.sh"
+          chmod +x "${GITHUB_WORKSPACE}/scripts/all_functions.sh"
+          chmod +x "${GITHUB_WORKSPACE}/scripts/sort_anime_watchlist.sh"
           bash "${GITHUB_WORKSPACE}/lib/scripts/sort_anime_watchlist.sh"

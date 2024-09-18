@@ -35,7 +35,7 @@ function sort_anime_watchlist_data {
   # directory only.
   if [ -n "$(git status --porcelain "$file_path")" ]; then
     git add "$file_path"
-    git commit -m "chore(🧹): Sorted anime watchlist data"
+    git commit -m "chore(🤖): Sorted anime watchlist data"
 
     # Push the change/commit from github workflow to the current branch
     if [ -n "$GITHUB_ACTIONS" ]; then
