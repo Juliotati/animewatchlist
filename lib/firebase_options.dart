@@ -70,6 +70,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '638684765228',
     projectId: 'aniwavewatchlist',
     storageBucket: 'aniwavewatchlist.appspot.com',
-    iosBundleId: 'com.juliotati.animewatchlist',
+    iosBundleId: 'com.juliotati.anime',
   );
 }

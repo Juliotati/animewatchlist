@@ -27,7 +27,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace "com.juliotati.animewatchlist"
+    namespace "com.juliotati.anime"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion = "26.1.10909125"
 
@@ -45,7 +45,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.juliotati.animewatchlist"
+        applicationId "com.juliotati.anime"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
