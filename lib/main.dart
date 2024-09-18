@@ -1,16 +1,13 @@
+import 'package:animewatchlist/core/config/app_config.dart';
 import 'package:animewatchlist/core/config/di/app_di.dart';
 import 'package:animewatchlist/features/watchlist/presentation/provider/watchlist_provider.dart';
 import 'package:animewatchlist/features/watchlist/watchlist.dart';
-import 'package:animewatchlist/firebase_options.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:link_target/link_target.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await setupGetIt();
+  await AppConfig.initialize();
   runApp(const AnimeArchive());
 }
 

@@ -32,10 +32,13 @@ dependencies:
     git:
       url: https://github.com/Juliotati/link_target.git
       ref: main
+  logger: ^2.4.0
   path: ^1.9.0
   path_provider: ^2.1.2
   provider: ^6.1.2
   url_launcher: ^6.2.5
+  url_strategy: ^0.3.0
+  web: ^1.0.0
 
 dependency_overrides:
   meta: ^1.12.0

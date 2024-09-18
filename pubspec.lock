@@ -330,18 +330,18 @@ packages:
     dependency: transitive
     description:
       name: firebase_core_platform_interface
-      sha256: "3c3a1e92d6f4916c32deea79c4a7587aa0e9dbbe5889c7a16afcf005a485ee02"
+      sha256: e30da58198a6d4b49d5bce4e852f985c32cb10db329ebef9473db2b9f09ce810
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.0"
+    version: "5.3.0"
   firebase_core_web:
     dependency: transitive
     description:
       name: firebase_core_web
-      sha256: e8d1e22de72cb21cdcfc5eed7acddab3e99cd83f3b317f54f7a96c32f25fd11e
+      sha256: f967a7138f5d2ffb1ce15950e2a382924239eaa521150a8f144af34e68b3b3e5
       url: "https://pub.dev"
     source: hosted
-    version: "2.17.4"
+    version: "2.18.1"
   fixnum:
     dependency: transitive
     description:
@@ -583,6 +583,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+  logger:
+    dependency: "direct main"
+    description:
+      name: logger
+      sha256: "697d067c60c20999686a0add96cf6aba723b3aa1f83ecf806a8097231529ec32"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.0"
   logging:
     dependency: transitive
     description:
@@ -1028,6 +1036,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
+  url_strategy:
+    dependency: "direct main"
+    description:
+      name: url_strategy
+      sha256: "6eff69fa0900b731a23552b38b54389f399d247dbb0998f2cbdf25bef6790a7c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
   vector_graphics_codec:
     dependency: transitive
     description:
@@ -1069,13 +1085,13 @@ packages:
     source: hosted
     version: "1.1.0"
   web:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: web
-      sha256: "97da13628db363c635202ad97068d47c5b8aa555808e7a9411963c533b449b27"
+      sha256: d43c1d6b787bf0afad444700ae7f4db8827f701bc61c255ac8d328c6f4d52062
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.1"
+    version: "1.0.0"
   web_socket:
     dependency: transitive
     description:
