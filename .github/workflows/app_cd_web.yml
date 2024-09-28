@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         target: [ production ]
-    uses: Juliotati/juliotati_app/.github/workflows/cd_web.yml@main
+    uses: Juliotati/juliotati.com/.github/workflows/cd_web.yml@main
     with:
       target: ${{ matrix.target }}
       projectId: aniwavewatchlist
