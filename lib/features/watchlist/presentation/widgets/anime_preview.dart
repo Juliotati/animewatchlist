@@ -19,9 +19,11 @@ class AnimePreview extends StatefulWidget {
 class _AnimePreviewState extends State<AnimePreview>
     with AutomaticKeepAliveClientMixin {
   static String errorTitle = 'Ops could\'t get a title';
-  static String errorDescription = 'DANG!! Could\'t load the description. '
+  static String errorDescription =
+      'DANG!! Could\'t load the description. '
       'Pretty sure it\'s a BANGER!!';
-  static String errorImage = 'https://fonts.gstatic.com/s/e/notoemoji/latest/1f'
+  static String errorImage =
+      'https://fonts.gstatic.com/s/e/notoemoji/latest/1f'
       '972/512.webp';
 
   WebInfo? _info;

@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -20,23 +21,26 @@ _i174.GetIt initGetIt(
   String? environment,
   _i526.EnvironmentFilter? environmentFilter,
 }) {
-  final gh = _i526.GetItHelper(
-    getIt,
-    environment,
-    environmentFilter,
-  );
+  final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
   gh.factory<_i58.RemoteDatasource>(
     () => const _i58.RemoteDatasourceImpl(),
     instanceName: 'RemoteDatasourceImpl',
   );
   gh.factory<_i58.WatchlistRepository>(
     () => _i58.WatchlistRepositoryImpl(
-        gh<_i58.RemoteDatasource>(instanceName: 'RemoteDatasourceImpl')),
+      gh<_i58.RemoteDatasource>(instanceName: 'RemoteDatasourceImpl'),
+    ),
     instanceName: 'WatchlistRepositoryImpl',
   );
-  gh.lazySingleton<_i824.WatchlistProvider>(() => _i824.WatchlistProvider(
-      gh<_i58.WatchlistRepository>(instanceName: 'WatchlistRepositoryImpl')));
-  gh.factory<_i58.GetWatchlist>(() => _i58.GetWatchlist(
-      gh<_i58.WatchlistRepository>(instanceName: 'WatchlistRepositoryImpl')));
+  gh.lazySingleton<_i824.WatchlistProvider>(
+    () => _i824.WatchlistProvider(
+      gh<_i58.WatchlistRepository>(instanceName: 'WatchlistRepositoryImpl'),
+    ),
+  );
+  gh.factory<_i58.GetWatchlist>(
+    () => _i58.GetWatchlist(
+      gh<_i58.WatchlistRepository>(instanceName: 'WatchlistRepositoryImpl'),
+    ),
+  );
   return getIt;
 }

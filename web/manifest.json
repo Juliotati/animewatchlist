@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A simple app to display all the anime I have on my 9anime.to watchlist",
+    "description": "A simple app to display all the anime I had on my 9anime.to watchlist",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

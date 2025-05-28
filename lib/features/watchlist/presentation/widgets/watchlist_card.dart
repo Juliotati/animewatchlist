@@ -25,8 +25,10 @@ class WatchlistCard extends StatelessWidget {
       child: noPadding
           ? child
           : Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10.0,
+                vertical: 6.0,
+              ),
               child: child,
             ),
     );

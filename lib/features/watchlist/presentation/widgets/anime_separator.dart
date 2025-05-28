@@ -20,9 +20,9 @@ class WatchListSeparator extends StatelessWidget {
         child: Text(
           (title ?? '${folderType.name} - $totalAnime').toUpperCase(),
           style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                fontWeight: FontWeight.bold,
-                color: folderType.color,
-              ),
+            fontWeight: FontWeight.bold,
+            color: folderType.color,
+          ),
         ),
       ),
     );

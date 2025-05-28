@@ -129,50 +129,45 @@ class AnimeCategoryList extends StatelessWidget {
             maxCrossAxisExtent: showRank ? 300 : 400,
             mainAxisExtent: showRank ? 120 : 150,
           ),
-          delegate: SliverChildBuilderDelegate(
-            (_, int index) {
-              final currentAnime = watchlist[index];
-              return _AnimeRanking(
-                rank: index + 1,
-                showRank: showRank,
-                preview: AnimePreview(
-                  key: Key('Anime<${currentAnime.name}-$index>'),
-                  anime: currentAnime,
-                  folderType: folderType,
-                ),
-              );
-            },
-            childCount: watchlist.length,
-          ),
+          delegate: SliverChildBuilderDelegate((_, int index) {
+            final currentAnime = watchlist[index];
+            return _AnimeRanking(
+              rank: index + 1,
+              showRank: showRank,
+              preview: AnimePreview(
+                key: Key('Anime<${currentAnime.name}-$index>'),
+                anime: currentAnime,
+                folderType: folderType,
+              ),
+            );
+          }, childCount: watchlist.length),
         ),
       );
     }
 
     return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (_, int index) {
-          String validChar(Characters char) => char.isEmpty ? '' : char.first;
+      delegate: SliverChildBuilderDelegate((_, int index) {
+        String validChar(Characters char) => char.isEmpty ? '' : char.first;
 
-          final validIndex = (index - 1).clamp(0, index);
+        final validIndex = (index - 1).clamp(0, index);
 
-          final anime = watchlist[index];
-          final hasDifferentInitial = validChar(anime.displayName.characters) !=
-              validChar(watchlist[validIndex].displayName.characters);
-          final shouldShowInitial = index == 0 || hasDifferentInitial;
+        final anime = watchlist[index];
+        final hasDifferentInitial =
+            validChar(anime.displayName.characters) !=
+            validChar(watchlist[validIndex].displayName.characters);
+        final shouldShowInitial = index == 0 || hasDifferentInitial;
 
-          return _AnimeRanking(
-            rank: index + 1,
-            showRank: showRank,
-            preview: AnimePreview(
-              key: Key('Anime<${anime.name}-$index>'),
-              showInitial: showInitial ? shouldShowInitial : showInitial,
-              anime: anime,
-              folderType: folderType,
-            ),
-          );
-        },
-        childCount: watchlist.length,
-      ),
+        return _AnimeRanking(
+          rank: index + 1,
+          showRank: showRank,
+          preview: AnimePreview(
+            key: Key('Anime<${anime.name}-$index>'),
+            showInitial: showInitial ? shouldShowInitial : showInitial,
+            anime: anime,
+            folderType: folderType,
+          ),
+        );
+      }, childCount: watchlist.length),
     );
   }
 }
@@ -266,9 +261,7 @@ class _AnimeRanking extends StatelessWidget {
                           ),
                           child: Text(
                             '#$rank',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium
+                            style: Theme.of(context).textTheme.bodyMedium
                                 ?.copyWith(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -310,9 +303,9 @@ class AnimeStats extends StatelessWidget {
           '${folder?.name ?? label}: $data',
           textAlign: TextAlign.right,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: folder?.color,
-                fontWeight: FontWeight.w300,
-              ),
+            color: folder?.color,
+            fontWeight: FontWeight.w300,
+          ),
         ),
       ),
     );
@@ -333,11 +326,7 @@ class SectionLabel extends StatelessWidget {
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: Padding(
-            padding: const EdgeInsets.only(
-              left: 16.0,
-              top: 10.0,
-              bottom: 8.0,
-            ),
+            padding: const EdgeInsets.only(left: 16.0, top: 10.0, bottom: 8.0),
             child: GestureDetector(
               onTap: () => context.read<WatchlistProvider>().goToPage(screen),
               child: Card(
@@ -356,9 +345,9 @@ class SectionLabel extends StatelessWidget {
                     data,
                     textAlign: TextAlign.right,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

@@ -1,10 +1,7 @@
 part of '../../watchlist.dart';
 
 class AnimeAlert extends StatelessWidget {
-  const AnimeAlert({
-    super.key,
-    required this.state,
-  });
+  const AnimeAlert({super.key, required this.state});
 
   final WatchlistState state;
 

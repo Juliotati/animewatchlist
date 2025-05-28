@@ -11,7 +11,8 @@ class _TopRecommendedAnime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = defaultTargetPlatform == TargetPlatform.iOS ||
+    final isMobile =
+        defaultTargetPlatform == TargetPlatform.iOS ||
         defaultTargetPlatform == TargetPlatform.android;
     return RefreshIndicator(
       onRefresh: context.read<WatchlistProvider>().reloadWatchlist,
@@ -115,10 +116,9 @@ class _Top10AnimeListState extends State<Top10AnimeList> {
                 onPressed: toggleVisibleItemCount,
                 child: Text(
                   title,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall
-                      ?.copyWith(letterSpacing: 1),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodySmall?.copyWith(letterSpacing: 1),
                 ),
               ),
             ),

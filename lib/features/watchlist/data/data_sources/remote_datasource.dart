@@ -29,7 +29,7 @@ abstract class RemoteDatasource {
 typedef _SeenAnime = ({
   WatchlistCategoryModel? anime,
   WatchlistFolderType? folder,
-  bool blacklisted
+  bool blacklisted,
 });
 
 @named
@@ -81,8 +81,9 @@ final class RemoteDatasourceImpl implements RemoteDatasource {
       final onHoldFolder = await _firestore.collection('On-Hold').get();
       final watchedFolder = await _firestore.collection('Watched').get();
       final watchingFolder = await _firestore.collection('Watching').get();
-      final recommendedFolder =
-          await _firestore.collection('Recommended').get();
+      final recommendedFolder = await _firestore
+          .collection('Recommended')
+          .get();
 
       log('LOADED WATCHLIST');
 
@@ -219,10 +220,9 @@ final class RemoteDatasourceImpl implements RemoteDatasource {
             oldAnime.copyWith(addedAt: addedAt).toJson(),
           );
 
-          await _mergeDoc(
-            '$recommendedFolder/$currentAnimeId',
-            {'info': oldAnime.info?.toJson()},
-          );
+          await _mergeDoc('$recommendedFolder/$currentAnimeId', {
+            'info': oldAnime.info?.toJson(),
+          });
         }
       }
     }
@@ -267,9 +267,7 @@ final class RemoteDatasourceImpl implements RemoteDatasource {
   }
 
   List<String> get _blacklistedIds {
-    return [
-      '48745',
-    ];
+    return ['48745'];
   }
 
   Future<void> _mergeDoc(String path, Map<String, dynamic> data) async {
@@ -297,17 +295,15 @@ final class RemoteDatasourceImpl implements RemoteDatasource {
       return;
     }
 
-    _firestore.doc('${folder.name}/$id').set(
-      {'info': info.toJson()},
-      SetOptions(merge: true),
-    );
+    _firestore.doc('${folder.name}/$id').set({
+      'info': info.toJson(),
+    }, SetOptions(merge: true));
 
     if (folder.recommendedFolder) {
       // Update info on watched folder if recommended happens to load it first
-      _firestore.doc('${WatchlistFolderType.watched.name}/$id').set(
-        {'info': info.toJson()},
-        SetOptions(merge: true),
-      );
+      _firestore.doc('${WatchlistFolderType.watched.name}/$id').set({
+        'info': info.toJson(),
+      }, SetOptions(merge: true));
     }
 
     log('UPDATED ANIME INFO[$id]: ${info.title}');

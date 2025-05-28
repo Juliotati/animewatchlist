@@ -8,12 +8,7 @@ import 'package:logger/logger.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:web/web.dart' as web;
 
-final logMin = Logger(
-  printer: PrettyPrinter(
-    methodCount: 0,
-    lineLength: 40,
-  ),
-);
+final logMin = Logger(printer: PrettyPrinter(methodCount: 0, lineLength: 40));
 
 final class AppEnv {
   const AppEnv._();
@@ -30,8 +25,7 @@ class AppConfig {
     WidgetsFlutterBinding.ensureInitialized();
     setPathUrlStrategy();
 
-    /// TODO(Jùlio): Maybe add go router so this is not here like this
-    redirectStrategy;
+    redirectStrategy();
 
     await setupGetIt();
 
@@ -48,7 +42,7 @@ class AppConfig {
     }
   }
 
-  static String? get redirectStrategy {
+  static String? redirectStrategy() {
     final base = Uri.base;
     if (base.host.contains(Links.firebaseHostname) ||
         base.host.contains(Links.firebaseAppHostname)) {

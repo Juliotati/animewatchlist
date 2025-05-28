@@ -97,8 +97,8 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
     final inputWidth = hasFocus
         ? totalWidth * (totalWidth > 450 ? 0.4 : 0.8)
         : reloading
-            ? 150.0
-            : 130.0;
+        ? 150.0
+        : 130.0;
     return AnimatedSize(
       clipBehavior: Clip.none,
       duration: const Duration(milliseconds: 300),
@@ -113,8 +113,8 @@ class _SearchAnimeFieldState extends State<_SearchAnimeField> {
             hintText: reloading
                 ? 'reloading...'
                 : hasFocus
-                    ? 'search anime name'
-                    : 'search an...',
+                ? 'search anime name'
+                : 'search an...',
             contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             fillColor: hasFocus ? color : color.withOpacity(0.9),
             border: OutlineInputBorder(
