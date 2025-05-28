@@ -1,12 +1,15 @@
 import 'package:animewatchlist/core/config/di/app_di.dart';
+import 'package:animewatchlist/core/helpers/window.dart'
+    if (dart.library.html) 'package:web/web.dart'
+    as web;
 import 'package:animewatchlist/core/links.dart';
 import 'package:animewatchlist/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:logger/logger.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'package:web/web.dart' as web;
 
 final logMin = Logger(printer: PrettyPrinter(methodCount: 0, lineLength: 40));
 
@@ -23,9 +26,15 @@ final class AppEnv {
 class AppConfig {
   static Future<void> initialize() async {
     WidgetsFlutterBinding.ensureInitialized();
-    setPathUrlStrategy();
-
-    redirectStrategy();
+    if (kIsWeb) {
+      setPathUrlStrategy();
+      redirectStrategy();
+    } else {
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+      SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+        DeviceOrientation.portraitUp,
+      ]);
+    }
 
     await setupGetIt();
 
