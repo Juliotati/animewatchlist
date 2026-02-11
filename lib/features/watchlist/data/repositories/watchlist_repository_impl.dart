@@ -16,4 +16,13 @@ final class WatchlistRepositoryImpl implements WatchlistRepository {
       throw AppException(e.toString());
     }
   }
+
+  @override
+  Future<void> moveAnime({
+    required WatchlistFolderType from,
+    required WatchlistFolderType to,
+    required WatchlistCategoryModel anime,
+  }) async {
+    await _datasource.moveAnime(from: from, to: to, anime: anime);
+  }
 }

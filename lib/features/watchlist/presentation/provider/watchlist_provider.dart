@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:animewatchlist/core/core.dart';
 import 'package:animewatchlist/features/watchlist/data/models/watchlist.dart';
+import 'package:animewatchlist/features/watchlist/data/models/watchlist_category.dart';
 import 'package:animewatchlist/features/watchlist/watchlist.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
@@ -38,7 +39,15 @@ final class WatchlistProvider extends ChangeNotifier {
     _checkIfEmpty();
   }
 
-  Future<void> reloadWatchlist() async {
+  Future<void> moveAnime({
+    required WatchlistFolderType from,
+    required WatchlistFolderType to,
+    required WatchlistCategoryModel anime,
+  }) async {
+    await _repository.moveAnime(from: from, to: to, anime: anime);
+  }
+
+  Future<void> reloadWatchlist() {
     _updateState(WatchlistState.reloading);
     return _loadWatchlist();
   }

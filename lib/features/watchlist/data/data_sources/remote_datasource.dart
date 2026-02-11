@@ -24,6 +24,14 @@ abstract class RemoteDatasource {
   ) {
     throw UnimplementedError();
   }
+
+  Future<void> moveAnime({
+    required WatchlistFolderType from,
+    required WatchlistFolderType to,
+    required WatchlistCategoryModel anime,
+  }) {
+    throw UnimplementedError();
+  }
 }
 
 typedef _SeenAnime = ({
@@ -307,5 +315,21 @@ final class RemoteDatasourceImpl implements RemoteDatasource {
     }
 
     log('UPDATED ANIME INFO[$id]: ${info.title}');
+  }
+
+  @override
+  Future<void> moveAnime({
+    required WatchlistFolderType from,
+    required WatchlistFolderType to,
+    required WatchlistCategoryModel anime,
+  }) async {
+    if (from == to) return;
+    if (kIsWeb) return;
+
+    final toPath = '${to.name}/${anime.id}';
+    final fromPath = '${from.name}/${anime.id}';
+
+    await _firestore.doc(toPath).set(anime.toJson());
+    await _firestore.doc(fromPath).delete();
   }
 }
