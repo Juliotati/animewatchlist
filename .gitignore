@@ -14,7 +14,7 @@
 *.ipr
 *.iws
 .idea/
-
+*logs.txt
 # .vscode related
 .vscode/settings.json
 

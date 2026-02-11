@@ -11,27 +11,18 @@ class _TopRecommendedAnime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobile =
-        defaultTargetPlatform == TargetPlatform.iOS ||
-        defaultTargetPlatform == TargetPlatform.android;
     return RefreshIndicator(
       onRefresh: context.read<WatchlistProvider>().reloadWatchlist,
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
           Top10AnimeList(topAnime: topAnime),
-          if (isMobile)
-            const SectionLabel('👈 Swipe/press for grouped folders', 1)
-          else
-            const SectionLabel('Click for grouped folders 👉', 1),
-          WatchListSeparator(
+          const SectionLabel('View grouped folders 👉', 1),
+          WatchExpansionTileGroup(
+            startExpanded: true,
             key: Key('AnimeSeparator<${WatchlistFolderType.recommended}>'),
             folderType: WatchlistFolderType.recommended,
             totalAnime: recommended.length,
-          ),
-          AnimeCategoryList(
-            key: Key('AnimeCategoryList<${WatchlistFolderType.recommended}>'),
-            folderType: WatchlistFolderType.recommended,
             watchlist: recommended,
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 100)),
@@ -69,18 +60,13 @@ class _Top10AnimeListState extends State<Top10AnimeList> {
   }
 
   void toggleVisibleItemCount() {
-    switch (visibleItemCount) {
-      case 5:
-        visibleItemCount = 10;
-      case 10:
-        visibleItemCount = 15;
-      case 15:
-        visibleItemCount = 20;
-      case 20:
-        visibleItemCount = 30;
-      default:
-        visibleItemCount = 5;
-    }
+    visibleItemCount = switch (visibleItemCount) {
+      5 => 10,
+      10 => 15,
+      15 => 20,
+      20 => 30,
+      _ => 5,
+    };
     setState(() {});
   }
 
@@ -98,18 +84,13 @@ class _Top10AnimeListState extends State<Top10AnimeList> {
           physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
           slivers: [
-            WatchListSeparator(
+            WatchExpansionTileGroup(
+              startExpanded: true,
               key: const Key('AnimeSeparator<TopAnime>'),
               folderType: WatchlistFolderType.recommended,
-              title: 'TOP $visibleItemCount 🔥',
+              title: 'RANKING | TOP $visibleItemCount 🔥',
               totalAnime: topAnime.length,
-            ),
-            AnimeCategoryList(
-              key: const Key('AnimeCategoryList<TopAnime>'),
-              folderType: WatchlistFolderType.recommended,
               watchlist: topAnime,
-              showInitial: false,
-              showRank: true,
             ),
             SliverToBoxAdapter(
               child: TextButton(

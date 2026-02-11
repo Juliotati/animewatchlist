@@ -43,58 +43,87 @@ class _GroupedAnime extends StatelessWidget {
               ),
             ),
           ),
+          const SliverToBoxAdapter(child: SizedBox(height: 30)),
           const SectionLabel('👈 Top anime', 0),
-          WatchListSeparator(
+          const SliverToBoxAdapter(child: SizedBox(height: 20)),
+          WatchExpansionTileGroup(
             key: Key('WatchlistSeparator<${WatchlistFolderType.watching}>'),
             folderType: WatchlistFolderType.watching,
             totalAnime: watching,
-          ),
-          AnimeCategoryList(
-            key: Key('AnimeCategoryList<${WatchlistFolderType.watching}>'),
-            folderType: WatchlistFolderType.watching,
             watchlist: watchlist.watching,
           ),
-          WatchListSeparator(
+          WatchExpansionTileGroup(
             key: Key('WatchlistSeparator<${WatchlistFolderType.planned}>'),
             folderType: WatchlistFolderType.planned,
             totalAnime: planned,
-          ),
-          AnimeCategoryList(
-            key: Key('AnimeCategoryList<${WatchlistFolderType.planned}>'),
-            folderType: WatchlistFolderType.planned,
             watchlist: watchlist.planned,
           ),
-          WatchListSeparator(
+          WatchExpansionTileGroup(
             key: Key('WatchlistSeparator<${WatchlistFolderType.onHold}>'),
             folderType: WatchlistFolderType.onHold,
             totalAnime: onHold,
-          ),
-          AnimeCategoryList(
-            key: Key('AnimeCategoryList<${WatchlistFolderType.onHold}>'),
-            folderType: WatchlistFolderType.onHold,
             watchlist: watchlist.onHold,
           ),
-          WatchListSeparator(
+          WatchExpansionTileGroup(
             key: Key('WatchlistSeparator<${WatchlistFolderType.dropped}>'),
             folderType: WatchlistFolderType.dropped,
             totalAnime: dropped,
-          ),
-          AnimeCategoryList(
-            key: Key('AnimeCategoryList<${WatchlistFolderType.dropped}>'),
-            folderType: WatchlistFolderType.dropped,
             watchlist: watchlist.dropped,
           ),
-          WatchListSeparator(
+          WatchExpansionTileGroup(
             key: Key('WatchlistSeparator<${WatchlistFolderType.watched}>'),
             folderType: WatchlistFolderType.watched,
             totalAnime: watched,
-          ),
-          AnimeCategoryList(
-            key: Key('AnimeCategoryList<${WatchlistFolderType.watched}>'),
-            folderType: WatchlistFolderType.watched,
             watchlist: watchlist.watched,
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 120)),
+        ],
+      ),
+    );
+  }
+}
+
+class WatchExpansionTileGroup extends StatelessWidget {
+  const WatchExpansionTileGroup({
+    required this.folderType,
+    required this.totalAnime,
+    required this.watchlist,
+    this.startExpanded = false,
+    this.title,
+    super.key,
+  });
+
+  final int totalAnime;
+  final String? title;
+  final bool startExpanded;
+  final WatchlistFolderType folderType;
+  final List<WatchlistCategoryModel> watchlist;
+
+  @override
+  Widget build(BuildContext context) {
+    final shape = RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(16.0),
+    );
+
+    return SliverToBoxAdapter(
+      child: ExpansionTile(
+        shape: shape,
+        initiallyExpanded: startExpanded,
+        collapsedIconColor: folderType.color,
+        collapsedShape: shape,
+        title: Text(
+          (title ?? '${folderType.name} - $totalAnime').toUpperCase(),
+          style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+            fontWeight: FontWeight.bold,
+            color: folderType.color,
+          ),
+        ),
+        children: [
+          AnimeCategoryList(
+            key: Key('AnimeCategoryList<$folderType>'),
+            folderType: folderType,
+            watchlist: watchlist,
+          ),
         ],
       ),
     );
@@ -120,16 +149,18 @@ class AnimeCategoryList extends StatelessWidget {
     final isLargeScreen = MediaQuery.sizeOf(context).width > 600;
 
     if (isLargeScreen) {
-      return SliverPadding(
+      return Padding(
         padding: folderType.recommendedFolder && showRank
             ? const EdgeInsets.symmetric(horizontal: 16.0)
             : EdgeInsets.zero,
-        sliver: SliverGrid(
+        child: GridView.builder(
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: showRank ? 300 : 400,
             mainAxisExtent: showRank ? 120 : 150,
           ),
-          delegate: SliverChildBuilderDelegate((_, int index) {
+          shrinkWrap: true,
+          itemCount: watchlist.length,
+          itemBuilder: (_, int index) {
             final currentAnime = watchlist[index];
             return _AnimeRanking(
               rank: index + 1,
@@ -140,13 +171,17 @@ class AnimeCategoryList extends StatelessWidget {
                 folderType: folderType,
               ),
             );
-          }, childCount: watchlist.length),
+          },
         ),
       );
     }
 
-    return SliverList(
-      delegate: SliverChildBuilderDelegate((_, int index) {
+    return ListView.builder(
+      itemCount: watchlist.length,
+      primary: false,
+      shrinkWrap: true,
+      padding: const EdgeInsets.only(bottom: 16.0),
+      itemBuilder: (_, int index) {
         String validChar(Characters char) => char.isEmpty ? '' : char.first;
 
         final validIndex = (index - 1).clamp(0, index);
@@ -167,7 +202,7 @@ class AnimeCategoryList extends StatelessWidget {
             folderType: folderType,
           ),
         );
-      }, childCount: watchlist.length),
+      },
     );
   }
 }
@@ -298,12 +333,13 @@ class AnimeStats extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(8.0)),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
         child: Text(
           '${folder?.name ?? label}: $data',
           textAlign: TextAlign.right,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
             color: folder?.color,
+            fontSize: 16,
             fontWeight: FontWeight.w300,
           ),
         ),

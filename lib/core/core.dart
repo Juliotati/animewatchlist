@@ -1,4 +1,4 @@
-library core;
+library;
 
 import 'dart:math' as math;
 

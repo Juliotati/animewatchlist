@@ -1,4 +1,4 @@
-library watchlist;
+library;
 
 import 'dart:convert' show jsonDecode;
 import 'dart:developer';
@@ -30,7 +30,6 @@ part 'presentation/provider/watchlist_state.dart';
 part 'presentation/screens/watchlist.dart';
 part 'presentation/widgets/anime_alert.dart';
 part 'presentation/widgets/anime_preview.dart';
-part 'presentation/widgets/anime_separator.dart';
 part 'presentation/widgets/grouped_anime.dart';
 part 'presentation/widgets/top_recommended_anime.dart';
 part 'presentation/widgets/watchlist_card.dart';

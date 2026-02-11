@@ -1,7 +1,7 @@
 part of '../../watchlist.dart';
 
 abstract class RemoteDatasource {
-  Future<WatchlistModel> watchlist() async {
+  Future<WatchlistModel> watchlist() {
     throw UnimplementedError();
   }
 
@@ -13,7 +13,7 @@ abstract class RemoteDatasource {
   ///
   /// If an anime is new, only add it to the [newWatchlist].
   /// If an anime is in the same folder, do nothing.
-  Future<void> updateWatchlist(WatchlistModel oldWatchlist) async {
+  Future<void> updateWatchlist(WatchlistModel oldWatchlist) {
     throw UnimplementedError();
   }
 
@@ -21,7 +21,7 @@ abstract class RemoteDatasource {
     WatchlistFolderType folder,
     String id,
     WebInfo? info,
-  ) async {
+  ) {
     throw UnimplementedError();
   }
 }
