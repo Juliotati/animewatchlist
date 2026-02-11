@@ -5,7 +5,7 @@ Future<void> foldersOptionsSheet(
   WatchlistFolderType current,
   WatchlistCategoryModel anime,
 ) async {
-  if (kIsWeb || anime.isRecommended || current.recommendedFolder) return;
+  if (kIsWeb || current.recommendedFolder) return;
 
   showModalBottomSheet(
     context: context,
